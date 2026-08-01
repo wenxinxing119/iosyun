@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投稿推荐 | iosyun</title>
+<meta name="description" content="向 iosyun 推荐你喜欢的 iOS 应用">
+<meta name="keywords" content="iOS应用投稿,应用推荐,提交应用,iOSyun投稿">
+<meta property="og:title" content="投稿推荐 | iosyun">
+<meta property="og:description" content="向 iosyun 推荐你喜欢的 iOS 应用，让更多人发现好应用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iosyun.com/submit.html">
+<meta property="og:site_name" content="iosyun">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="投稿推荐 | iosyun">
+<meta name="twitter:description" content="向 iosyun 推荐你喜欢的 iOS 应用。">
+<link rel="canonical" href="https://iosyun.com/submit.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.submit-hero { background:linear-gradient(135deg,#1a1a2e,#16213e); color:#fff; padding:56px 0; text-align:center; }
+.submit-hero h1 { font-size:36px; font-weight:800; letter-spacing:-1px; }
+.submit-hero p { color:rgba(255,255,255,.5); margin-top:8px; }
+.form-section { padding:56px 0; }
+.form-card { background:#fff; border-radius:var(--radius-lg); padding:40px; max-width:680px; margin:0 auto; border:1px solid var(--gray-100); box-shadow:var(--shadow); }
+.form-group { margin-bottom:24px; }
+.form-group label { display:block; font-size:14px; font-weight:600; color:var(--gray-700); margin-bottom:8px; }
+.form-group label .required { color:var(--red); }
+.form-group input, .form-group textarea, .form-group select {
+  width:100%; padding:12px 16px; border:1px solid var(--gray-200); border-radius:10px;
+  font-size:15px; font-family:inherit; color:var(--gray-900); background:var(--gray-50);
+  transition:all var(--transition);
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,122,255,.1); background:#fff;
+}
+.form-group textarea { resize:vertical; min-height:100px; }
+.form-group .hint { font-size:12px; color:var(--gray-500); margin-top:4px; }
+.btn-submit {
+  width:100%; padding:14px; background:var(--blue); color:#fff; border:none; border-radius:12px;
+  font-size:16px; font-weight:600; cursor:pointer; transition:all var(--transition);
+}
+.btn-submit:hover { background:var(--blue-dark); transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,122,255,.25); }
+.btn-submit:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+.success-card { display:none; text-align:center; padding:60px 20px; }
+.success-card .check { width:72px; height:72px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+.success-card h2 { font-size:24px; margin-bottom:8px; }
+.success-card p { color:var(--gray-500); margin-bottom:24px; }
+@media (max-width:768px) { .form-card { padding:24px; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="category.html">应用分类</a></li>
+      <li><a href="category.html?filter=free">今日限免</a></li>
+      <li><a href="submit.html" class="active">投稿推荐</a></li>
+      <li><a href="about.html">关于</a></li>
+    </ul>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="navSearch" placeholder="搜索应用...">
+    </div>
+    <button class="nav-mobile" style="background:none;font-size:24px;cursor:pointer;">☰</button>
+  </div>
+</nav>
+
+<section class="submit-hero">
+  <div class="container">
+    <h1>📮 推荐好应用</h1>
+    <p>发现了好应用？填下表，让更多人看到它</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="container">
+    <div class="form-card" id="formCard">
+      <form id="submitForm">
+        <div class="form-group">
+          <label>应用名称 <span class="required">*</span></label>
+          <input type="text" id="appName" placeholder="例如：Things 3" required>
+        </div>
+        <div class="form-group">
+          <label>App Store 链接 <span class="required">*</span></label>
+          <input type="url" id="appUrl" placeholder="https://apps.apple.com/..." required>
+          <div class="hint">粘贴 App Store 上的应用链接</div>
+        </div>
+        <div class="form-group">
+          <label>应用分类 <span class="required">*</span></label>
+          <select id="appCategory" required>
+            <option value="">请选择分类</option>
+            <option value="效率">效率</option>
+            <option value="摄影">摄影与录像</option>
+            <option value="图形设计">图形与设计</option>
+            <option value="健康">健康与健身</option>
+            <option value="工具">工具</option>
+            <option value="天气">天气</option>
+            <option value="新闻">新闻</option>
+            <option value="教育">教育</option>
+            <option value="音乐">音乐</option>
+            <option value="社交">社交</option>
+            <option value="购物">购物</option>
+            <option value="财务">财务</option>
+            <option value="美食">美食佳饮</option>
+            <option value="图书">图书</option>
+            <option value="导航">导航</option>
+            <option value="娱乐">娱乐</option>
+            <option value="其他">其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>当前价格</label>
+          <input type="text" id="appPrice" placeholder="例如：¥68 / 免费 / ¥198/年">
+          <div class="hint">如果是限免应用，请标出原价</div>
+        </div>
+        <div class="form-group">
+          <label>推荐理由 <span class="required">*</span></label>
+          <textarea id="appReason" placeholder="说说你为什么推荐这款应用？它解决了什么问题？有什么亮点？" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>你的昵称（选填）</label>
+          <input type="text" id="submitterName" placeholder="会在推荐页署名感谢">
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">✈️ 提交推荐</button>
+      </form>
+    </div>
+
+    <div class="success-card" id="successCard">
+      <div class="check">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>推荐已收到！</h2>
+      <p>感谢你的推荐！我们将尽快审核，通过后会在 iosyun 上展示。<br>也欢迎你推荐更多好应用~</p>
+      <a href="index.html" style="color:var(--blue);font-weight:600;">← 返回首页</a>
+      <span style="margin:0 16px;color:var(--gray-200);">|</span>
+      <a href="#" onclick="resetForm()" style="color:var(--blue);font-weight:600;">再推荐一个</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>iosyun.com</h4><p style="color:var(--gray-500);line-height:1.8;">发现 App Store 里的宝藏应用。</p></div>
+      <div><h4>导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="category.html">分类</a></li><li><a href="about.html">关于</a></li></ul></div>
+      <div><h4>关于</h4><ul><li><a href="about.html#contact">联系我们</a></li></ul></div>
+      <div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 iosyun.com</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('submitForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = '提交中...';
+
+  // Collect submission
+  const submission = {
+    name: document.getElementById('appName').value.trim(),
+    url: document.getElementById('appUrl').value.trim(),
+    category: document.getElementById('appCategory').value,
+    price: document.getElementById('appPrice').value.trim(),
+    reason: document.getElementById('appReason').value.trim(),
+    submitter: document.getElementById('submitterName').value.trim() || '匿名用户',
+    submittedAt: new Date().toISOString()
+  };
+
+  // Save to localStorage for admin review
+  const submissions = JSON.parse(localStorage.getItem('iosyun_submissions') || '[]');
+  submissions.unshift(submission);
+  localStorage.setItem('iosyun_submissions', JSON.stringify(submissions));
+
+  // Show success
+  setTimeout(() => {
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('successCard').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '✈️ 提交推荐';
+  }, 800);
+});
+
+function resetForm() {
+  document.getElementById('submitForm').reset();
+  document.getElementById('formCard').style.display = 'block';
+  document.getElementById('successCard').style.display = 'none';
+}
+</script>
+</body>
+</html>

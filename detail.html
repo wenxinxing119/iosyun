@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应用详情 | iosyun</title>
+<meta name="description" id="metaDesc" content="在 iosyun 查看应用详情">
+<meta name="keywords" id="metaKeywords" content="iOS应用,iOS应用详情,App推荐,应用测评,App Store">
+<meta property="og:title" id="ogTitle" content="应用详情 | iosyun">
+<meta property="og:description" id="ogDesc" content="在 iosyun 查看应用详情">
+<meta property="og:image" id="ogImage" content="">
+<meta property="og:type" content="website">
+<meta property="og:url" id="ogUrl" content="https://iosyun.com/detail.html">
+<meta property="og:site_name" content="iosyun">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="应用详情 | iosyun">
+<meta name="twitter:description" id="twDesc" content="在 iosyun 查看应用详情">
+<meta name="twitter:image" id="twImage" content="">
+<link rel="canonical" id="canonicalUrl" href="https://iosyun.com/detail.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json" id="jsonld">
+{"@context":"https://schema.org","@type":"WebPage","name":"应用详情 | iosyun","url":"https://iosyun.com/detail.html"}
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="category.html">应用分类</a></li>
+      <li><a href="category.html?filter=free">今日限免</a></li>
+      <li><a href="submit.html">投稿推荐</a></li>
+      <li><a href="about.html">关于</a></li>
+    </ul>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="navSearch" placeholder="搜索应用...">
+    </div>
+    <button class="nav-mobile" style="background:none;font-size:24px;cursor:pointer;">☰</button>
+  </div>
+</nav>
+
+<section class="detail-hero" id="detailHero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span>
+      <a href="category.html" id="breadCat">应用分类</a><span>/</span>
+      <span id="breadName">加载中...</span>
+    </div>
+    <div class="detail-header" id="detailHeader"></div>
+  </div>
+</section>
+
+<section class="screenshots-section" id="screenshotsSection">
+  <div class="container">
+    <div class="section-header"><h2>📸 应用截图</h2></div>
+    <div class="screenshots" id="screenshots"></div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main" id="contentMain"></div>
+      <div class="content-side" id="contentSide"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header"><h2>👍 你可能也会喜欢</h2><a href="category.html">查看更多 →</a></div>
+    <div class="app-grid" id="relatedApps"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>iosyun.com</h4>
+        <p style="color:var(--gray-500);line-height:1.8;">发现 App Store 里的宝藏应用。每日更新限免速报、编辑精选推荐和深度应用测评。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">应用分类</a></li>
+          <li><a href="submit.html">投稿推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门分类</h4>
+        <ul>
+          <li><a href="category.html?cat=效率">效率工具</a></li>
+          <li><a href="category.html?cat=摄影">摄影修图</a></li>
+          <li><a href="category.html?cat=健康">健康生活</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="about.html">关于 iosyun</a></li>
+          <li><a href="about.html#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 iosyun.com</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const appId = parseInt(params.get('id'));
+const apps = loadApps();
+const app = apps.find(a => a.id === appId);
+
+function updateMetaTags(app) {
+  const desc = `${app.name} - ${app.category}应用，${app.price}${app.originalPrice ? '（原价' + app.originalPrice + '）' : ''}，⭐${app.rating}分${app.reviewCount > 0 ? ' / ' + app.reviewCount + '条评价' : ''}。${(app.description || '').slice(0, 120)}`;
+  const url = 'https://iosyun.com/detail.html?id=' + app.id;
+  const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+  const setContent = (sel, val) => setMeta(sel, 'content', val);
+
+  setContent('meta[name="description"]', desc);
+  setContent('meta[name="keywords"]', (app.tags || []).join(',') + ',iOS应用,iOS应用推荐,' + app.category + '应用');
+  setContent('meta[property="og:title"]', app.name + ' | iosyun');
+  setContent('meta[property="og:description"]', desc);
+  setContent('meta[property="og:image"]', app.icon || '');
+  setContent('meta[property="og:url"]', url);
+  setContent('meta[name="twitter:title"]', app.name + ' | iosyun');
+  setContent('meta[name="twitter:description"]', desc);
+  setContent('meta[name="twitter:image"]', app.icon || '');
+  setMeta('link[rel="canonical"]', 'href', url);
+
+  var ld = document.getElementById('jsonld');
+  if (ld) ld.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': app.name,
+    'applicationCategory': app.category || 'Utilities',
+    'operatingSystem': 'iOS',
+    'description': app.description || desc,
+    'url': app.appStoreUrl || url,
+    'offers': {
+      '@type': 'Offer',
+      'price': app.price === '免费' ? '0' : (app.price || '0').replace(/[^0-9.]/g, ''),
+      'priceCurrency': 'CNY'
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': app.rating,
+      'ratingCount': app.reviewCount
+    },
+    'author': { '@type': 'Organization', 'name': app.developer || 'Unknown' }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!app) {
+    document.getElementById('detailHero').innerHTML = '<div class="container" style="text-align:center;padding:80px 0;"><div style="font-size:64px;margin-bottom:16px;">📱</div><h2 style="margin-bottom:8px;">应用未找到</h2><p style="color:rgba(255,255,255,.5);margin-bottom:24px;">该应用可能已下架或链接无效</p><a href="index.html" style="color:var(--blue);font-weight:500;">← 返回首页</a></div>';
+    document.getElementById('screenshotsSection').style.display = 'none';
+    return;
+  }
+
+  document.title = app.name + ' | iosyun';
+  updateMetaTags(app);
+  document.getElementById('breadCat').textContent = app.category;
+  document.getElementById('breadCat').href = 'category.html?cat=' + app.category;
+  document.getElementById('breadName').textContent = app.name;
+
+  let badgeHTML = '';
+  if (app.isFree && app.originalPrice) badgeHTML = '<span class="badge badge-free" style="position:static;display:inline-block;margin-bottom:8px;">限时免费</span>';
+  else if (app.originalPrice) badgeHTML = '<span class="badge badge-off" style="position:static;display:inline-block;margin-bottom:8px;">限时降价</span>';
+
+  document.getElementById('detailHeader').innerHTML = appIcon(app, 100) + `
+    <div class="detail-info">
+      ${badgeHTML}
+      <h1>${app.name}</h1>
+      <div class="dev">${app.developer}</div>
+      <div class="detail-meta">
+        <div class="detail-meta-item"><svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--orange);"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>${app.rating} · ${app.reviewCount.toLocaleString()} 个评分</div>
+        <div class="detail-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>更新于 ${app.updatedAt}</div>
+        <div class="detail-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${app.version}</div>
+      </div>
+    </div>
+    <div class="detail-price-box">
+      <div class="price ${app.isFree || app.price === '免费' ? 'free' : ''}">${app.price}</div>
+      ${app.originalPrice ? '<div class="original">' + app.originalPrice + '</div>' : ''}
+      <a class="btn-get" href="${app.appStoreUrl}" target="_blank" rel="noopener">前往 App Store</a>
+    </div>`;
+
+  // Screenshots
+  if (app.screenshots && app.screenshots.length > 0) {
+    document.getElementById('screenshots').innerHTML = app.screenshots.map(s => '<img src="' + s + '" alt="' + app.name + ' 截图" loading="lazy">').join('');
+  } else {
+    const colors = ['#667eea','#764ba2','#f093fb','#f5576c','#4facfe','#00f2fe'];
+    document.getElementById('screenshots').innerHTML = [1,2,3,4].map((_, i) =>
+      '<div style="width:260px;height:560px;border-radius:16px;flex-shrink:0;background:linear-gradient(135deg,' + colors[i] + ',' + (colors[i+1]||colors[0]) + ');display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;opacity:.7;box-shadow:0 4px 16px rgba(0,0,0,.08);">截图 ' + (i+1) + '</div>'
+    ).join('');
+  }
+
+  // Content
+  document.getElementById('contentMain').innerHTML = '<h3>📝 应用介绍</h3><p>' + app.description + '</p><h3 style="margin-top:32px;">🏷️ 标签</h3><div>' + app.tags.map(t => '<span class="tag">' + t + '</span>').join(' ') + '</div>';
+
+  document.getElementById('contentSide').innerHTML = `
+    <div class="side-card">
+      <h3>📋 应用信息</h3>
+      <div class="side-row"><span class="side-label">开发者</span><span class="side-value">${app.developer}</span></div>
+      <div class="side-row"><span class="side-label">大小</span><span class="side-value">${app.size}</span></div>
+      <div class="side-row"><span class="side-label">版本</span><span class="side-value">${app.version}</span></div>
+      <div class="side-row"><span class="side-label">兼容性</span><span class="side-value">${app.compatibility}</span></div>
+      <div class="side-row"><span class="side-label">语言</span><span class="side-value">${app.language}</span></div>
+      <div class="side-row"><span class="side-label">更新时间</span><span class="side-value">${app.updatedAt}</span></div>
+    </div>
+    <a class="btn-get" href="${app.appStoreUrl}" target="_blank" rel="noopener" style="display:block;text-align:center;padding:14px;border-radius:14px;background:var(--blue);color:#fff;font-size:15px;font-weight:600;">🚀 前往 App Store 下载</a>`;
+
+  // Related
+  const related = apps.filter(a => a.id !== app.id && (a.category === app.category || a.tags.some(t => app.tags.includes(t)))).slice(0, 4);
+  document.getElementById('relatedApps').innerHTML = related.map(createAppCard).join('');
+});
+</script>
+</body>
+</html>

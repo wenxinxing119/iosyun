@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 | iosyun</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root { --sidebar-w: 240px; }
+.admin-body { background:#f0f2f5; min-height:100vh; display:flex; }
+.sidebar {
+  width:var(--sidebar-w); background:linear-gradient(180deg,#1a1a2e,#16213e); color:#fff;
+  padding:24px 0; position:fixed; top:0; left:0; bottom:0; z-index:200; overflow-y:auto;
+}
+.sidebar .logo { padding:0 24px 28px; font-size:20px; font-weight:700; display:flex; align-items:center;gap:8px; border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px; }
+.sidebar .logo .dot { width:8px;height:8px;background:var(--blue);border-radius:50%; }
+.sidebar-menu { list-style:none; }
+.sidebar-menu li { padding:0 16px; margin-bottom:4px; }
+.sidebar-menu a {
+  display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:10px;
+  font-size:14px; color:rgba(255,255,255,.6); transition:all .2s;
+}
+.sidebar-menu a:hover, .sidebar-menu a.active { background:rgba(255,255,255,.08); color:#fff; }
+.sidebar-menu .icon { font-size:18px;width:22px;text-align:center; }
+.main-content { margin-left:var(--sidebar-w); flex:1; padding:32px; min-height:100vh; }
+.page-title { font-size:26px; font-weight:800; margin-bottom:4px; }
+.page-sub { font-size:14px; color:var(--gray-500); margin-bottom:28px; }
+.stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
+.stat-card {
+  background:#fff; border-radius:var(--radius); padding:20px 24px;
+  border:1px solid var(--gray-100); display:flex; align-items:center; justify-content:space-between;
+}
+.stat-card .stat-icon { width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px; }
+.stat-card .stat-label { font-size:13px;color:var(--gray-500);margin-bottom:2px; }
+.stat-card .stat-value { font-size:24px;font-weight:800; }
+.bg-blue { background:#e8f2ff;color:var(--blue); }
+.bg-green { background:#e6f9ed;color:var(--green); }
+.bg-orange { background:#fff3e6;color:var(--orange); }
+.bg-purple { background:#f3e8ff;color:#7c3aed; }
+
+.toolbar {
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  gap:12px; margin-bottom:20px;
+}
+.toolbar-left { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.toolbar input, .toolbar select {
+  padding:9px 14px; border:1px solid var(--gray-200); border-radius:10px;
+  font-size:14px; color:var(--gray-900); background:#fff;
+}
+.toolbar input:focus, .toolbar select:focus { outline:none; border-color:var(--blue); }
+.toolbar input { width:220px; }
+
+.btn { display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; transition:all .2s; border:none; }
+.btn-primary { background:var(--blue); color:#fff; }
+.btn-primary:hover { background:var(--blue-dark); }
+.btn-outline { background:#fff; border:1px solid var(--gray-200); color:var(--gray-700); }
+.btn-outline:hover { border-color:var(--blue); color:var(--blue); }
+.btn-danger { background:var(--red); color:#fff; }
+.btn-danger:hover { opacity:.85; }
+.btn-sm { padding:5px 10px; font-size:12px; border-radius:6px; }
+.btn-green { background:var(--green); color:#fff; }
+
+.data-table { width:100%; border-collapse:collapse; background:#fff; border-radius:var(--radius); overflow:hidden; border:1px solid var(--gray-100); }
+.data-table th, .data-table td { padding:12px 16px; text-align:left; font-size:14px; border-bottom:1px solid var(--gray-100); }
+.data-table th { background:var(--gray-50); font-weight:600; color:var(--gray-700); font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+.data-table tr:last-child td { border-bottom:none; }
+.data-table tr:hover td { background:#fafbff; }
+.data-table .actions { display:flex; gap:6px; }
+.badge-sm { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
+.badge-sm.blue { background:#e8f2ff; color:var(--blue); }
+.badge-sm.green { background:#e6f9ed; color:var(--green); }
+.badge-sm.orange { background:#fff3e6; color:var(--orange); }
+
+/* Modal */
+.modal-overlay {
+  position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.5);
+  z-index:1000; display:flex; align-items:center; justify-content:center;
+  animation:fadeIn .2s;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal {
+  background:#fff; border-radius:var(--radius-lg); padding:32px; max-width:640px; width:90%;
+  max-height:85vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+.modal h3 { font-size:22px; font-weight:700; margin-bottom:24px; }
+.modal .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.modal .form-group { margin-bottom:16px; }
+.modal .form-group label { display:block; font-size:13px; font-weight:600; color:var(--gray-700); margin-bottom:6px; }
+.modal .form-group input, .modal .form-group textarea, .modal .form-group select {
+  width:100%; padding:10px 14px; border:1px solid var(--gray-200); border-radius:8px;
+  font-size:14px; font-family:inherit; background:var(--gray-50);
+}
+.modal .form-group input:focus, .modal .form-group textarea:focus, .modal .form-group select:focus {
+  outline:none; border-color:var(--blue); background:#fff;
+}
+.modal .form-group textarea { min-height:80px; resize:vertical; }
+.modal .form-group .checkbox-row { display:flex; gap:20px; align-items:center; }
+.modal .btn-row { display:flex; gap:10px; justify-content:flex-end; margin-top:24px; }
+
+.empty-state { text-align:center; padding:60px; color:var(--gray-500); }
+.empty-state .icon { font-size:48px; margin-bottom:16px; }
+
+/* Submissions */
+.submission-card {
+  background:#fff; border-radius:var(--radius); padding:20px 24px; border:1px solid var(--gray-100); margin-bottom:12px;
+}
+.submission-card .sub-header { display:flex; justify-content:space-between; margin-bottom:8px; }
+.submission-card .sub-name { font-size:16px; font-weight:700; }
+.submission-card .sub-meta { font-size:12px; color:var(--gray-500); }
+.submission-card .sub-reason { font-size:14px; color:var(--gray-700); line-height:1.7; margin:12px 0; }
+.submission-card .sub-actions { display:flex; gap:8px; }
+
+@media (max-width:900px) {
+  .sidebar { display:none; }
+  .main-content { margin-left:0; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  .modal .form-row { grid-template-columns:1fr; }
+}
+
+.section { display:none; }
+.section.active { display:block; }
+
+.password-gate {
+  display:flex; align-items:center; justify-content:center;
+  min-height:100vh; background:linear-gradient(135deg,#1a1a2e,#16213e);
+}
+.password-gate .gate-card {
+  background:#fff; border-radius:var(--radius-lg); padding:40px; width:360px; text-align:center;
+}
+.password-gate .gate-card h2 { font-size:22px; margin-bottom:6px; }
+.password-gate .gate-card p { color:var(--gray-500); font-size:14px; margin-bottom:24px; }
+.password-gate .gate-card input {
+  width:100%; padding:12px 16px; border:2px solid var(--gray-200); border-radius:12px;
+  font-size:15px; text-align:center; margin-bottom:16px;
+}
+.password-gate .gate-card input:focus { outline:none; border-color:var(--blue); }
+.password-gate .gate-card button {
+  width:100%; padding:12px; background:var(--blue); color:#fff; border:none; border-radius:12px;
+  font-size:15px; font-weight:600; cursor:pointer;
+}
+.password-gate .error { color:var(--red); font-size:13px; margin-top:8px; display:none; }
+</style>
+</head>
+<body id="adminBody">
+
+<!-- Password Gate -->
+<div id="gate" class="password-gate">
+  <div class="gate-card">
+    <h2>🔐 管理后台</h2>
+    <p>请输入管理密码</p>
+    <input type="password" id="gatePass" placeholder="管理密码" onkeydown="if(event.key==='Enter')checkPass()">
+    <button onclick="checkPass()">进入后台</button>
+    <p class="error" id="gateError">密码错误</p>
+  </div>
+</div>
+
+<!-- Admin Layout (hidden by default) -->
+<div id="admin" style="display:none;">
+<div class="sidebar">
+  <div class="logo"><span class="dot"></span>iosyun 后台</div>
+  <ul class="sidebar-menu">
+    <li><a href="#" class="active" data-section="dashboard"><span class="icon">📊</span>仪表盘</a></li>
+    <li><a href="#" data-section="apps"><span class="icon">📱</span>应用管理</a></li>
+    <li><a href="#" data-section="submissions"><span class="icon">📮</span>投稿审核</a></li>
+    <li><a href="#" data-section="export"><span class="icon">📤</span>数据导出</a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <!-- Dashboard -->
+  <div class="section active" id="section-dashboard">
+    <h1 class="page-title">📊 仪表盘</h1>
+    <p class="page-sub">站点数据概览</p>
+    <div class="stats-row" id="adminStats"></div>
+    <div style="background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--gray-100);margin-top:24px;">
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">快捷操作</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="switchSection('apps');document.getElementById('addBtn').click();">➕ 添加应用</button>
+        <button class="btn btn-outline" onclick="switchSection('submissions');">📮 查看投稿</button>
+        <button class="btn btn-outline" id="refreshAllBtn" onclick="refreshAllApps()">🔄 刷新全部数据</button>
+        <span id="refreshStatus" style="font-size:13px;color:var(--gray-500);"></span>
+        <button class="btn btn-outline" onclick="switchSection('export');">📤 导出数据</button>
+        <button class="btn btn-danger" onclick="logout()" style="margin-left:auto;">退出登录</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apps Management -->
+  <div class="section" id="section-apps">
+    <h1 class="page-title">📱 应用管理</h1>
+    <p class="page-sub" id="appCount">共 - 款应用</p>
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <input type="text" id="appSearch" placeholder="搜索应用名称..." oninput="renderAppTable()">
+        <select id="appCatFilter" onchange="renderAppTable()">
+          <option value="all">全部分类</option>
+        </select>
+        <select id="appStatusFilter" onchange="renderAppTable()">
+          <option value="all">全部状态</option>
+          <option value="free">限免 / 免费</option>
+          <option value="paid">付费</option>
+          <option value="featured">精选</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="openAppModal()">➕ 添加应用</button>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>名称</th><th>分类</th><th>价格</th><th>评分</th><th>状态</th><th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="appTableBody"></tbody>
+      </table>
+    </div>
+    <div class="empty-state" id="appEmpty" style="display:none;">
+      <div class="icon">📭</div>
+      <p>没有匹配的应用</p>
+    </div>
+  </div>
+
+  <!-- Submissions -->
+  <div class="section" id="section-submissions">
+    <h1 class="page-title">📮 投稿审核</h1>
+    <p class="page-sub">用户推荐的应用，审核后可添加到应用库</p>
+    <div id="submissionsList"></div>
+  </div>
+
+  <!-- Export -->
+  <div class="section" id="section-export">
+    <h1 class="page-title">📤 数据导出</h1>
+    <p class="page-sub">导出数据用于部署更新</p>
+    <div style="background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--gray-100);max-width:680px;">
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;">导出 data.js</h3>
+      <p style="color:var(--gray-500);margin-bottom:16px;">当前有 <strong id="exportCount">-</strong> 款应用。导出后替换 js/data.js 文件并重新部署即可。</p>
+      <button class="btn btn-primary" onclick="downloadDataJS()">📥 下载 data.js</button>
+      <button class="btn btn-outline" onclick="copyDataJS()">📋 复制到剪贴板</button>
+      <hr style="margin:24px 0;border-color:var(--gray-100);">
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;">导入数据</h3>
+      <p style="color:var(--gray-500);margin-bottom:12px;">上传 data.js 文件批量导入应用（会合并到现有数据）</p>
+      <input type="file" id="importFile" accept=".js" style="margin-bottom:8px;">
+      <button class="btn btn-outline" onclick="importDataJS()">📥 导入</button>
+      <div id="importMsg" style="margin-top:8px;font-size:13px;"></div>
+      <hr style="margin:24px 0;border-color:var(--gray-100);">
+      <button class="btn btn-danger" onclick="if(confirm('确定要重置所有数据为默认值？此操作不可撤销！')){resetApps();renderAll();showToast('数据已重置');}">🔄 重置为默认数据</button>
+    </div>
+  </div>
+</div>
+</div><!-- /#admin -->
+
+<!-- App Edit Modal -->
+<div id="appModal" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeAppModal()">
+  <div class="modal">
+    <h3 id="modalTitle">添加应用</h3>
+    <form id="appForm" onsubmit="saveApp(event)">
+      <input type="hidden" id="editId">
+      <input type="hidden" id="editIcon">
+      <input type="hidden" id="editScreenshotsData">
+
+      <!-- App Store ID Fetcher -->
+      <div class="as-fetch-row">
+        <div class="form-group" style="flex:1;margin-bottom:0;">
+          <label>App Store ID（自动拉取）</label>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="asciiAppId" placeholder="例如 904237743（从 App Store URL 中获取）" style="flex:1;">
+            <button type="button" class="btn btn-outline" id="fetchBtn" onclick="fetchFromAppStore()" style="white-space:nowrap;">🔍 自动拉取</button>
+          </div>
+        </div>
+      </div>
+      <div id="fetchStatus" style="font-size:13px;margin-bottom:16px;display:none;"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>应用名称 *</label>
+          <input type="text" id="editName" required>
+        </div>
+        <div class="form-group">
+          <label>分类 *</label>
+          <select id="editCategory" required></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>价格</label>
+          <input type="text" id="editPrice" placeholder="¥68 / 免费 / ¥198/年">
+        </div>
+        <div class="form-group">
+          <label>原价（如有降价/限免）</label>
+          <input type="text" id="editOriginalPrice" placeholder="¥128">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>评分</label>
+          <input type="number" id="editRating" step="0.1" min="0" max="5" placeholder="4.8">
+        </div>
+        <div class="form-group">
+          <label>评分数量</label>
+          <input type="number" id="editReviewCount" placeholder="12340">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>开发者</label>
+          <input type="text" id="editDeveloper">
+        </div>
+        <div class="form-group">
+          <label>App Store 链接</label>
+          <input type="url" id="editAppStoreUrl">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>应用大小</label>
+          <input type="text" id="editSize" placeholder="156 MB">
+        </div>
+        <div class="form-group">
+          <label>版本号</label>
+          <input type="text" id="editVersion">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>兼容性</label>
+          <input type="text" id="editCompatibility" placeholder="iOS 16.0+">
+        </div>
+        <div class="form-group">
+          <label>语言</label>
+          <input type="text" id="editLanguage" placeholder="中文 / 英文">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>标签（逗号分隔）</label>
+        <input type="text" id="editTags" placeholder="效率,工具,生产力">
+      </div>
+      <div class="form-group">
+        <label>应用描述</label>
+        <textarea id="editDescription" placeholder="描述这款应用的功能和亮点..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>截图链接（每行一个URL，自动拉取时无需手动填写）</label>
+        <textarea id="editScreenshots" placeholder="https://...screenshot1.png&#10;https://...screenshot2.png" style="min-height:60px;font-size:12px;"></textarea>
+      </div>
+      <div class="form-group">
+        <div class="checkbox-row">
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="checkbox" id="editFeatured"> 编辑精选
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="checkbox" id="editIsHot"> 热门标记
+          </label>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-outline" onclick="closeAppModal()">取消</button>
+        <button type="submit" class="btn btn-primary">💾 保存</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+// === Auth ===
+const ADMIN_PASS = 'iosyun2026'; // Change this!
+
+function checkPass() {
+  const pass = document.getElementById('gatePass').value;
+  if (pass === ADMIN_PASS) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('admin').style.display = 'flex';
+    initAdmin();
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+  }
+}
+
+function logout() {
+  document.getElementById('gate').style.display = 'flex';
+  document.getElementById('admin').style.display = 'none';
+  document.getElementById('gatePass').value = '';
+}
+
+// === Navigation ===
+function switchSection(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + name).classList.add('active');
+  document.querySelectorAll('.sidebar-menu a').forEach(a => {
+    a.classList.toggle('active', a.dataset.section === name);
+  });
+}
+
+// === Init ===
+function initAdmin() {
+  // Sidebar clicks
+  document.querySelectorAll('.sidebar-menu a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      switchSection(e.currentTarget.dataset.section);
+    });
+  });
+
+  renderAll();
+}
+
+function renderAll() {
+  renderDashboard();
+  renderAppTable();
+  renderSubmissions();
+  renderExportSection();
+}
+
+// === Dashboard ===
+function renderDashboard() {
+  const apps = loadApps();
+  const subs = JSON.parse(localStorage.getItem('iosyun_submissions') || '[]');
+  const free = apps.filter(a => a.isFree || a.price === '免费').length;
+  document.getElementById('adminStats').innerHTML = `
+    <div class="stat-card"><div><div class="stat-label">收录应用</div><div class="stat-value">${apps.length}</div></div><div class="stat-icon bg-blue">📱</div></div>
+    <div class="stat-card"><div><div class="stat-label">编辑精选</div><div class="stat-value">${apps.filter(a=>a.featured).length}</div></div><div class="stat-icon bg-green">⭐</div></div>
+    <div class="stat-card"><div><div class="stat-label">限免/免费</div><div class="stat-value">${free}</div></div><div class="stat-icon bg-orange">🎉</div></div>
+    <div class="stat-card"><div><div class="stat-label">待审核</div><div class="stat-value">${subs.length}</div></div><div class="stat-icon bg-purple">📮</div></div>
+  `;
+}
+
+// === App Table ===
+function renderAppTable() {
+  const apps = loadApps();
+  const search = document.getElementById('appSearch').value.toLowerCase();
+  const catFilter = document.getElementById('appCatFilter').value;
+  const statusFilter = document.getElementById('appStatusFilter').value;
+
+  // Populate cat filter
+  const catSelect = document.getElementById('appCatFilter');
+  const uniqueCats = [...new Set(apps.map(a => a.category))].sort();
+  catSelect.innerHTML = '<option value="all">全部分类</option>' + uniqueCats.map(c => '<option value="' + c + '"' + (catFilter===c?' selected':'') + '>' + c + '</option>').join('');
+  catSelect.value = catFilter;
+
+  let filtered = [...apps];
+  if (search) filtered = filtered.filter(a => a.name.toLowerCase().includes(search));
+  if (catFilter !== 'all') filtered = filtered.filter(a => a.category === catFilter);
+  if (statusFilter === 'free') filtered = filtered.filter(a => a.isFree || a.price === '免费');
+  if (statusFilter === 'paid') filtered = filtered.filter(a => !a.isFree && a.price !== '免费');
+  if (statusFilter === 'featured') filtered = filtered.filter(a => a.featured);
+
+  document.getElementById('appCount').textContent = '共 ' + filtered.length + ' 款应用';
+
+  const tbody = document.getElementById('appTableBody');
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--gray-500);">没有匹配的应用</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(a => `
+    <tr>
+      <td>${a.id}</td>
+      <td><strong>${a.name}</strong></td>
+      <td>${a.category}</td>
+      <td>${a.price}${a.originalPrice?' <del style="color:var(--gray-300);font-size:12px;">'+a.originalPrice+'</del>':''}</td>
+      <td>⭐ ${a.rating}</td>
+      <td>
+        ${a.featured?'<span class="badge-sm blue">精选</span> ':''}
+        ${a.isFree||a.price==='免费'?'<span class="badge-sm green">免费</span> ':''}
+        ${a.isHot?'<span class="badge-sm orange">热门</span>':''}
+      </td>
+      <td class="actions">
+        <button class="btn btn-outline btn-sm" onclick="editApp(${a.id})">编辑</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteApp(${a.id})">删除</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+// === CRUD ===
+function openAppModal(app) {
+  document.getElementById('editId').value = app ? app.id : '';
+  document.getElementById('modalTitle').textContent = app ? '编辑应用' : '添加应用';
+  document.getElementById('editIcon').value = app ? (app.icon || '') : '';
+  document.getElementById('editName').value = app ? app.name : '';
+  document.getElementById('editCategory').value = app ? app.category : '效率';
+  document.getElementById('editPrice').value = app ? app.price : '';
+  document.getElementById('editOriginalPrice').value = app ? (app.originalPrice || '') : '';
+  document.getElementById('editRating').value = app ? app.rating : '';
+  document.getElementById('editReviewCount').value = app ? app.reviewCount : '';
+  document.getElementById('editDeveloper').value = app ? app.developer : '';
+  document.getElementById('editAppStoreUrl').value = app ? app.appStoreUrl : '';
+  document.getElementById('editSize').value = app ? app.size : '';
+  document.getElementById('editVersion').value = app ? app.version : '';
+  document.getElementById('editCompatibility').value = app ? app.compatibility : '';
+  document.getElementById('editLanguage').value = app ? app.language : '';
+  document.getElementById('editTags').value = app ? (app.tags||[]).join(', ') : '';
+  document.getElementById('editDescription').value = app ? app.description : '';
+  document.getElementById('editFeatured').checked = app ? app.featured : false;
+  document.getElementById('editIsHot').checked = app ? app.isHot : false;
+  document.getElementById('asciiAppId').value = '';
+  document.getElementById('fetchStatus').style.display = 'none';
+  document.getElementById('fetchBtn').textContent = '🔍 自动拉取';
+  const scrEl = document.getElementById('editScreenshots');
+  if (scrEl) scrEl.value = app && app.screenshots ? app.screenshots.join('\n') : '';
+
+  // Populate categories
+  const uniqueCats = [...new Set([...loadApps().map(a=>a.category),...categories.filter(c=>c.key!=='all').map(c=>c.key)])].sort();
+  document.getElementById('editCategory').innerHTML = uniqueCats.map(c => '<option>' + c + '</option>').join('');
+  document.getElementById('editCategory').value = app ? app.category : '效率';
+
+  document.getElementById('appModal').style.display = 'flex';
+}
+
+function closeAppModal() {
+  document.getElementById('appModal').style.display = 'none';
+}
+
+function saveApp(e) {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const apps = loadApps();
+
+  const data = {
+    id: id ? parseInt(id) : nextId(apps),
+    name: document.getElementById('editName').value.trim(),
+    icon: document.getElementById('editIcon').value.trim() || null,
+    category: document.getElementById('editCategory').value,
+    price: document.getElementById('editPrice').value.trim() || '免费',
+    originalPrice: document.getElementById('editOriginalPrice').value.trim() || null,
+    isFree: document.getElementById('editPrice').value.trim() === '免费',
+    rating: parseFloat(document.getElementById('editRating').value) || 4.5,
+    reviewCount: parseInt(document.getElementById('editReviewCount').value) || 0,
+    developer: document.getElementById('editDeveloper').value.trim(),
+    appStoreUrl: document.getElementById('editAppStoreUrl').value.trim(),
+    size: document.getElementById('editSize').value.trim(),
+    version: document.getElementById('editVersion').value.trim(),
+    compatibility: document.getElementById('editCompatibility').value.trim(),
+    language: document.getElementById('editLanguage').value.trim(),
+    tags: document.getElementById('editTags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    description: document.getElementById('editDescription').value.trim(),
+    screenshots: parseEditorScreenshots(),
+    featured: document.getElementById('editFeatured').checked,
+    isHot: document.getElementById('editIsHot').checked,
+    updatedAt: new Date().toISOString().slice(0,10)
+  };
+
+  if (id) {
+    const idx = apps.findIndex(a => a.id === parseInt(id));
+    if (idx >= 0) {
+      // Preserve screenshots if the editor field is empty
+      if (data.screenshots.length === 0) data.screenshots = apps[idx].screenshots || [];
+      apps[idx] = data;
+    }
+  } else {
+    apps.unshift(data);
+  }
+
+  saveApps(apps);
+  closeAppModal();
+  renderAll();
+  showToast(id ? '应用已更新' : '应用已添加');
+}
+
+function editApp(id) {
+  const apps = loadApps();
+  const app = apps.find(a => a.id === id);
+  if (app) openAppModal(app);
+}
+
+function deleteApp(id) {
+  if (!confirm('确定要删除这款应用吗？')) return;
+  const apps = loadApps().filter(a => a.id !== id);
+  saveApps(apps);
+  renderAll();
+  showToast('应用已删除');
+}
+
+// === Submissions ===
+function renderSubmissions() {
+  const subs = JSON.parse(localStorage.getItem('iosyun_submissions') || '[]');
+  const el = document.getElementById('submissionsList');
+  if (subs.length === 0) {
+    el.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无待审核的应用推荐</p><p style="font-size:13px;color:var(--gray-300);">用户通过投稿页面提交后会出现在这里</p></div>';
+    return;
+  }
+
+  el.innerHTML = subs.map((s, i) => `
+    <div class="submission-card">
+      <div class="sub-header">
+        <div><span class="sub-name">${s.name}</span> <span style="color:var(--gray-300);font-size:13px;">${s.category || ''}</span></div>
+        <div class="sub-meta">${s.submitter} · ${new Date(s.submittedAt).toLocaleDateString('zh-CN')}</div>
+      </div>
+      ${s.price ? '<div style="font-size:14px;color:var(--gray-700);margin-bottom:8px;">价格：' + s.price + '</div>' : ''}
+      <div class="sub-reason">${s.reason}</div>
+      ${s.url ? '<div style="font-size:12px;color:var(--gray-400);margin-bottom:8px;">' + s.url + '</div>' : ''}
+      <div class="sub-actions">
+        <button class="btn btn-green btn-sm" onclick="approveSubmission(${i})">✅ 审核通过</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteSubmission(${i})">🗑 删除</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function approveSubmission(idx) {
+  const subs = JSON.parse(localStorage.getItem('iosyun_submissions') || '[]');
+  const s = subs[idx];
+  const apps = loadApps();
+  apps.unshift({
+    id: nextId(apps),
+    name: s.name,
+    category: s.category || '其他',
+    price: s.price || '免费',
+    originalPrice: null,
+    isFree: s.price === '免费' || !s.price,
+    rating: 4.5,
+    reviewCount: 0,
+    developer: s.submitter,
+    appStoreUrl: s.url,
+    size: '',
+    version: '',
+    compatibility: '',
+    language: '',
+    tags: [],
+    description: s.reason,
+    screenshots: [],
+    featured: false,
+    isHot: false,
+    updatedAt: new Date().toISOString().slice(0,10)
+  });
+  saveApps(apps);
+  subs.splice(idx, 1);
+  localStorage.setItem('iosyun_submissions', JSON.stringify(subs));
+  renderAll();
+  showToast('投稿已通过，应用已添加');
+}
+
+function deleteSubmission(idx) {
+  if (!confirm('确定删除这条投稿？')) return;
+  const subs = JSON.parse(localStorage.getItem('iosyun_submissions') || '[]');
+  subs.splice(idx, 1);
+  localStorage.setItem('iosyun_submissions', JSON.stringify(subs));
+  renderSubmissions();
+  renderDashboard();
+  showToast('投稿已删除');
+}
+
+// === Export ===
+function renderExportSection() {
+  document.getElementById('exportCount').textContent = loadApps().length;
+}
+
+function downloadDataJS() {
+  const content = exportDataJS(loadApps());
+  const blob = new Blob([content], { type: 'text/javascript' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'data.js';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('data.js 已下载');
+}
+
+function copyDataJS() {
+  const content = exportDataJS(loadApps());
+  navigator.clipboard.writeText(content).then(() => showToast('已复制到剪贴板'));
+}
+
+function importDataJS() {
+  const file = document.getElementById('importFile').files[0];
+  if (!file) return showToast('请先选择文件');
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const text = e.target.result;
+      const match = text.match(/const defaultApps = (\[[\s\S]*?\]);/);
+      if (!match) throw new Error('格式错误');
+      const imported = JSON.parse(match[1]);
+      if (!Array.isArray(imported)) throw new Error('不是有效的应用列表');
+      const existing = loadApps();
+      const existingIds = new Set(existing.map(a => a.id));
+      const newApps = imported.filter(a => !existingIds.has(a.id));
+      const merged = [...existing, ...newApps];
+      saveApps(merged);
+      document.getElementById('importMsg').innerHTML = '<span style="color:var(--green);">✅ 导入成功！新增 ' + newApps.length + ' 款应用</span>';
+      renderAll();
+    } catch(err) {
+      document.getElementById('importMsg').innerHTML = '<span style="color:var(--red);">❌ 导入失败：' + err.message + '</span>';
+    }
+  };
+  reader.readAsText(file);
+}
+
+// === Helper: parse screenshots textarea ===
+function parseEditorScreenshots() {
+  const el = document.getElementById('editScreenshots');
+  if (!el) return [];
+  return el.value.trim().split('\n').map(s => s.trim()).filter(Boolean);
+}
+
+// === Toast ===
+function showToast(msg) {
+  let t = document.getElementById('adminToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'adminToast';
+    t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:12px 28px;border-radius:20px;font-size:14px;font-weight:600;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._timeout);
+  t._timeout = setTimeout(() => { t.style.opacity = '0'; }, 2000);
+}
+
+// === Refresh All Apps from App Store ===
+async function refreshAllApps() {
+  const btn = document.getElementById('refreshAllBtn');
+  const status = document.getElementById('refreshStatus');
+  btn.disabled = true;
+  btn.textContent = '⏳ 刷新中...';
+
+  const apps = loadApps();
+  if (apps.length === 0) { status.textContent = '无应用可刷新'; btn.disabled = false; btn.textContent = '🔄 刷新全部数据'; return; }
+
+  let updated = 0, errors = 0;
+
+  for (let i = 0; i < apps.length; i++) {
+    const app = apps[i];
+    const idMatch = app.appStoreUrl?.match(/id(\d+)/);
+    const iconMatch = app.icon?.match(/\/.*\/(\d+)x\d+bb/);
+    const aid = (idMatch?.[1]) || (iconMatch?.[1]);
+    if (!aid) { errors++; continue; }
+
+    status.textContent = `(${i + 1}/${apps.length}) ${app.name}...`;
+
+    try {
+      const resp = await fetch(`https://itunes.apple.com/lookup?id=${aid}&country=cn`);
+      const json = await resp.json();
+      if (json.resultCount > 0) {
+        const r = json.results[0];
+        app.price = r.formattedPrice || (r.price === 0 ? '免费' : '¥' + r.price);
+        app.isFree = r.price === 0;
+        app.rating = Math.round((r.averageUserRating || 0) * 10) / 10;
+        app.reviewCount = r.userRatingCount || 0;
+        app.version = r.version || app.version;
+        app.size = r.fileSizeBytes ? Math.round(r.fileSizeBytes / 1048576) + ' MB' : app.size;
+        app.compatibility = r.minimumOsVersion ? 'iOS ' + r.minimumOsVersion + '+' : app.compatibility;
+        app.icon = r.artworkUrl512 || r.artworkUrl100 || app.icon;
+        app.appStoreUrl = r.trackViewUrl || app.appStoreUrl;
+        let scrns = [];
+        if (r.screenshotUrls?.length > 0) scrns = r.screenshotUrls;
+        else if (r.ipadScreenshotUrls?.length > 0) scrns = r.ipadScreenshotUrls;
+        if (scrns.length > 0) app.screenshots = scrns;
+        app.updatedAt = new Date().toISOString().slice(0, 10);
+        updated++;
+      }
+    } catch (e) { errors++; }
+    await new Promise(r => setTimeout(r, 200));
+  }
+
+  saveApps(apps);
+  status.textContent = `✅ 刷新完成: ${updated} 个更新, ${errors} 个失败`;
+  btn.textContent = '🔄 刷新全部数据';
+  btn.disabled = false;
+  renderAppTable();
+  setTimeout(() => { status.textContent = ''; }, 4000);
+  showToast(`已刷新 ${updated} 个应用`);
+}
+
+// === iTunes Genre -> Chinese Category Mapping ===
+const GENRE_MAP = {
+  'Productivity':'效率', 'Utilities':'工具', 'Lifestyle':'生活', 'Health & Fitness':'健康',
+  'Education':'教育', 'Finance':'财务', 'Business':'商务', 'Social Networking':'社交',
+  'Entertainment':'娱乐', 'Music':'音乐', 'Photo & Video':'摄影', 'Travel':'旅行',
+  'Food & Drink':'美食', 'Shopping':'购物', 'Sports':'体育', 'News':'新闻',
+  'Navigation':'导航', 'Book':'图书', 'Medical':'医疗', 'Reference':'参考',
+  'Weather':'天气', 'Games':'游戏', 'Developer Tools':'开发工具', 'Graphics & Design':'设计'
+};
+
+// === App Store Fetcher ===
+async function fetchFromAppStore() {
+  const appId = document.getElementById('asciiAppId').value.trim();
+  if (!appId) { showToast('请输入 App Store ID'); return; }
+
+  const status = document.getElementById('fetchStatus');
+  const btn = document.getElementById('fetchBtn');
+  status.style.display = 'block';
+  status.innerHTML = '⏳ 正在从 App Store 拉取数据...';
+  status.style.color = 'var(--gray-700)';
+  btn.textContent = '⏳ 拉取中...';
+  btn.disabled = true;
+
+  try {
+    const resp = await fetch('https://itunes.apple.com/lookup?id=' + encodeURIComponent(appId) + '&country=cn');
+    const data = await resp.json();
+
+    if (data.resultCount === 0) {
+      status.innerHTML = '❌ 未找到该 App Store ID 对应的应用';
+      status.style.color = 'var(--red)';
+      btn.textContent = '🔍 自动拉取';
+      btn.disabled = false;
+      return;
+    }
+
+    const r = data.results[0];
+
+    // Fill all fields
+    document.getElementById('editName').value = r.trackName || '';
+    document.getElementById('editPrice').value = r.formattedPrice || (r.price === 0 ? '免费' : ('¥' + r.price));
+    document.getElementById('editOriginalPrice').value = '';
+    document.getElementById('editRating').value = r.averageUserRating || 4.5;
+    setVal('editReviewCount', r.userRatingCount || 0);
+    document.getElementById('editDeveloper').value = r.sellerName || r.artistName || '';
+    document.getElementById('editAppStoreUrl').value = r.trackViewUrl || '';
+    document.getElementById('editSize').value = r.fileSizeBytes ? Math.round(r.fileSizeBytes / 1048576) + ' MB' : '';
+    document.getElementById('editVersion').value = r.version || '';
+    document.getElementById('editCompatibility').value = r.minimumOsVersion ? ('iOS ' + r.minimumOsVersion + '+') : '';
+
+    // Language
+    if (r.languageCodesISO2A && r.languageCodesISO2A.length > 0) {
+      const langMap = { 'ZH':'中文', 'EN':'英文', 'JA':'日文', 'KO':'韩文', 'FR':'法文', 'DE':'德文' };
+      document.getElementById('editLanguage').value = r.languageCodesISO2A.map(l => langMap[l] || l).join(' / ');
+    }
+
+    // Category -> Chinese
+    const rawCat = r.primaryGenreName || '';
+    document.getElementById('editCategory').value = GENRE_MAP[rawCat] || rawCat || '其他';
+
+    // Description
+    document.getElementById('editDescription').value = (r.description || '').slice(0, 2000);
+
+    // App Store link is now set from trackViewUrl
+
+    // Icon (hidden field)
+    document.getElementById('editIcon').value = r.artworkUrl512 || r.artworkUrl100 || '';
+
+    // Screenshots
+    const scrEl = document.getElementById('editScreenshots');
+    if (scrEl) {
+      let scrUrls = (r.screenshotUrls && r.screenshotUrls.length > 0) ? r.screenshotUrls : null;
+      // Fallback to iPad screenshots if no iPhone screenshots
+      if (!scrUrls && r.ipadScreenshotUrls && r.ipadScreenshotUrls.length > 0) {
+        scrUrls = r.ipadScreenshotUrls;
+      }
+      if (scrUrls) {
+        scrEl.value = scrUrls.map(u => u.replace(/\/\d+x\d+bb\.(png|jpg)/, '/392x696bb.$1')).join('\n');
+      }
+    }
+
+    status.innerHTML = '✅ 拉取成功！已自动填充 ' + Object.keys(GENRE_MAP).length + ' 项数据，请确认后保存';
+    status.style.color = 'var(--green)';
+  } catch (err) {
+    status.innerHTML = '❌ 网络错误：' + err.message;
+    status.style.color = 'var(--red)';
+  }
+
+  btn.textContent = '🔍 自动拉取';
+  btn.disabled = false;
+}
+
+function setVal(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.value = val;
+}
+</script>
+</body>
+</html>

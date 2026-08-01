@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 | iosyun</title>
+<meta name="description" content="了解 iosyun - 你的 iOS 应用发现平台">
+<meta name="keywords" content="关于iosyun,iOS应用推荐平台,应用发现,iOSyun团队">
+<meta property="og:title" content="关于我们 | iosyun">
+<meta property="og:description" content="了解 iosyun - 你的 iOS 应用发现平台">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iosyun.com/about.html">
+<meta property="og:site_name" content="iosyun">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于我们 | iosyun">
+<meta name="twitter:description" content="了解 iosyun - 你的 iOS 应用发现平台">
+<link rel="canonical" href="https://iosyun.com/about.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"iosyun","url":"https://iosyun.com/","description":"iOS 应用发现平台，每日精选推荐优质应用。","foundingDate":"2026"}
+</script>
+<style>
+.about-hero { background:linear-gradient(135deg,#1a1a2e,#0f3460); color:#fff; padding:72px 0 64px; text-align:center; }
+.about-hero h1 { font-size:40px; font-weight:800; letter-spacing:-1px; margin-bottom:12px; }
+.about-hero p { color:rgba(255,255,255,.5); font-size:17px; max-width:560px; margin:0 auto; }
+.about-content { padding:64px 0; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+.about-card { background:#fff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--gray-100); }
+.about-card h3 { font-size:20px; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.about-card p { color:var(--gray-700); line-height:1.8; }
+.about-card ul { list-style:none; padding:0; }
+.about-card li { padding:8px 0; color:var(--gray-700); line-height:1.7; display:flex; align-items:flex-start; gap:8px; }
+.about-card li::before { content:'✨'; flex-shrink:0; }
+.faq-section { background:#fff; padding:64px 0; }
+.faq-item { border-bottom:1px solid var(--gray-100); padding:24px 0; cursor:pointer; }
+.faq-item h4 { font-size:17px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
+.faq-item h4 .icon { font-size:20px; transition:transform .3s; }
+.faq-item.open h4 .icon { transform:rotate(45deg); }
+.faq-item .answer { max-height:0; overflow:hidden; transition:max-height .3s,padding .3s; }
+.faq-item.open .answer { max-height:300px; padding-top:12px; }
+.faq-item .answer p { color:var(--gray-700); line-height:1.8; }
+#contact { scroll-margin-top:80px; }
+.contact-section { padding:64px 0; }
+.contact-card { background:#fff; border-radius:var(--radius-lg); padding:40px; text-align:center; border:1px solid var(--gray-100); }
+.contact-card h3 { font-size:24px; font-weight:700; margin-bottom:12px; }
+.contact-card p { color:var(--gray-500); margin-bottom:24px; }
+.contact-links { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; }
+.contact-link { display:flex; align-items:center; gap:8px; background:var(--gray-50); padding:14px 24px; border-radius:12px; font-weight:500; transition:all var(--transition); border:1px solid transparent; }
+.contact-link:hover { background:#fff; border-color:var(--blue); color:var(--blue); }
+@media (max-width:768px) { .about-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="category.html">应用分类</a></li>
+      <li><a href="category.html?filter=free">今日限免</a></li>
+      <li><a href="submit.html">投稿推荐</a></li>
+      <li><a href="about.html" class="active">关于</a></li>
+    </ul>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="navSearch" placeholder="搜索应用...">
+    </div>
+    <button class="nav-mobile" style="background:none;font-size:24px;cursor:pointer;">☰</button>
+  </div>
+</nav>
+
+<section class="about-hero">
+  <div class="container">
+    <h1>关于 iosyun</h1>
+    <p>每天花一点时间，帮你发现 App Store 里那些被埋没的好应用</p>
+  </div>
+</section>
+
+<section class="about-content">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>💡 我们为什么做这个</h3>
+        <p>App Store 里有超过 200 万个应用，但每天你看到的只有排行榜前 100 个。很多优秀的小众应用、独立开发者的心血之作，因为没钱做推广而石沉大海。</p>
+        <p style="margin-top:12px;">iosyun 的使命很简单：<strong>每天手动精选 3-5 款真正好用的 iOS 应用</strong>，帮你省去筛选的时间。</p>
+      </div>
+      <div class="about-card">
+        <h3>🎯 推荐标准</h3>
+        <ul>
+          <li>必须是亲自试用过的，不推纯广告</li>
+          <li>优先推荐买断制而非订阅制</li>
+          <li>关注独立开发者的作品</li>
+          <li>实时追踪限免和降价动态</li>
+          <li>详细说明适用场景，不说空话</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>📊 数据一览</h3>
+        <ul id="aboutStats" style="list-style:none;">
+          <li style="display:flex;justify-content:space-between;"><span>收录应用</span><strong id="asApps">-</strong></li>
+          <li style="display:flex;justify-content:space-between;"><span>编辑精选</span><strong id="asFeatured">-</strong></li>
+          <li style="display:flex;justify-content:space-between;"><span>限免应用</span><strong id="asFree">-</strong></li>
+          <li style="display:flex;justify-content:space-between;"><span>应用分类</span><strong id="asCats">-</strong></li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>🤝 成为推荐官</h3>
+        <p>发现了好应用想跟大家分享？我们欢迎所有人推荐！</p>
+        <p style="margin-top:8px;">只需填写应用名称、推荐理由和下载链接，审核通过后就会在 iosyun 上推荐给所有读者。</p>
+        <a href="submit.html" style="display:inline-block;margin-top:16px;background:var(--blue);color:#fff;padding:10px 24px;border-radius:10px;font-weight:600;">📮 我要推荐</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header"><h2>❓ 常见问题</h2></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>iosyun 的推荐是付费广告吗？<span class="icon">+</span></h4>
+      <div class="answer"><p>不是。所有推荐都基于编辑真实体验和筛选。如果哪天接了付费推广，我们会明确标注"广告"。目前我们主要通过 App Store 联盟佣金获得收入。</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>限免信息从哪里来？<span class="icon">+</span></h4>
+      <div class="answer"><p>我们每日监控多个数据源，包括 App Store 价格变动、开发者公告、以及社区的限免分享。确认限免真实有效后才会推荐。</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>如何让我的应用被推荐？<span class="icon">+</span></h4>
+      <div class="answer"><p>请通过 <a href="submit.html" style="color:var(--blue);">投稿推荐</a> 页面提交你的应用。或者直接联系我们。推荐基于应用质量，不收取费用。</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>每天更新多少内容？<span class="icon">+</span></h4>
+      <div class="answer"><p>每日更新 3-5 款应用推荐，限免信息实时追踪。我们坚持"少而精"的原则，不做信息轰炸。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h3>📬 联系我们</h3>
+      <p>有任何建议、合作意向或应用推荐，欢迎通过以下方式联系</p>
+      <div class="contact-links">
+        <a href="mailto:hello@iosyun.com" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          hello@iosyun.com
+        </a>
+        <a href="submit.html" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          提交推荐
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>iosyun.com</h4><p style="color:var(--gray-500);line-height:1.8;">发现 App Store 里的宝藏应用。</p></div>
+      <div><h4>导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="category.html">分类</a></li><li><a href="submit.html">投稿</a></li></ul></div>
+      <div><h4>分类</h4><ul><li><a href="category.html?cat=效率">效率</a></li><li><a href="category.html?cat=摄影">摄影</a></li><li><a href="category.html?cat=健康">健康</a></li></ul></div>
+      <div><h4>关于</h4><ul><li><a href="about.html">关于</a></li><li><a href="about.html#contact">联系</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 iosyun.com</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const apps = loadApps();
+  const cats = [...new Set(apps.map(a => a.category))];
+  document.getElementById('asApps').textContent = apps.length + ' 款';
+  document.getElementById('asFeatured').textContent = apps.filter(a => a.featured).length + ' 款';
+  document.getElementById('asFree').textContent = apps.filter(a => a.isFree || a.price === '免费').length + ' 款';
+  document.getElementById('asCats').textContent = cats.length + ' 个';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iosyun - 发现好应用，每天都有新推荐</title>
+<meta name="description" content="iosyun 每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览，帮你发现 App Store 里的宝藏应用。">
+<meta name="keywords" content="iOS应用推荐,App推荐,限免,App Store,应用测评,iPhone应用,iPad应用">
+<meta property="og:title" content="iosyun - 发现好应用，每天都有新推荐">
+<meta property="og:description" content="每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览，帮你发现 App Store 里的宝藏应用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iosyun.com/">
+<meta property="og:site_name" content="iosyun">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iosyun - 发现好应用，每天都有新推荐">
+<meta name="twitter:description" content="每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览。">
+<link rel="canonical" href="https://iosyun.com/">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"iosyun","url":"https://iosyun.com/","description":"每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览。","potentialAction":{"@type":"SearchAction","target":"https://iosyun.com/category.html?search={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="dot"></span>iosyun<span>.com</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="category.html">应用分类</a></li>
+      <li><a href="category.html?filter=free">今日限免</a></li>
+      <li><a href="submit.html">投稿推荐</a></li>
+      <li><a href="about.html">关于</a></li>
+    </ul>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="navSearch" placeholder="搜索应用...">
+    </div>
+    <button class="nav-mobile" style="background:none;font-size:24px;cursor:pointer;">☰</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="pulse"></span>今日限免进行中</div>
+    <h1>发现 App Store 里的<span>宝藏应用</span></h1>
+    <p>每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览</p>
+    <div class="hero-search">
+      <input type="text" id="heroSearch" placeholder="搜索你感兴趣的应用...">
+      <button onclick="document.getElementById('heroSearch').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}))">搜索</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="statApps">12,000+</div><div class="label">收录应用</div></div>
+      <div class="hero-stat"><div class="num" id="statFree">500+</div><div class="label">限免速报</div></div>
+      <div class="hero-stat"><div class="num" id="statFeatured">50+</div><div class="label">编辑精选</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="free-banner">
+      <div class="fb-info">
+        <h3>🎉 今日限免应用</h3>
+        <p>原价付费应用限时免费，手慢无！</p>
+      </div>
+      <div class="fb-timer">
+        <div style="font-size:12px;opacity:.7;margin-bottom:4px;">距离今日结束</div>
+        <div class="time" id="countdown">00:00:00</div>
+      </div>
+    </div>
+    <div class="app-grid" id="freeApps"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>⭐ 编辑精选</h2>
+      <a href="category.html">查看全部 →</a>
+    </div>
+    <div class="featured-row" id="featuredApps"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header"><h2>📂 应用分类</h2></div>
+    <div class="categories" id="categoriesList"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>🆕 最新收录</h2>
+      <a href="category.html">查看全部 →</a>
+    </div>
+    <div class="app-grid" id="latestApps"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:linear-gradient(135deg,#007AFF,#5856D6);color:#fff;text-align:center;">
+  <div class="container">
+    <h2 style="font-size:28px;font-weight:700;margin-bottom:12px;">发现了好应用？</h2>
+    <p style="opacity:.85;margin-bottom:24px;">向 iosyun 推荐你喜欢的 iOS 应用，帮助更多人找到宝藏</p>
+    <a href="submit.html" style="display:inline-block;background:#fff;color:var(--blue);padding:12px 32px;border-radius:12px;font-size:15px;font-weight:600;">📮 我要推荐</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>iosyun.com</h4>
+        <p style="color:var(--gray-500);line-height:1.8;">发现 App Store 里的宝藏应用。每日更新限免速报、编辑精选推荐和深度应用测评。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">应用分类</a></li>
+          <li><a href="category.html?filter=free">限免应用</a></li>
+          <li><a href="submit.html">投稿推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门分类</h4>
+        <ul>
+          <li><a href="category.html?cat=效率">效率工具</a></li>
+          <li><a href="category.html?cat=摄影">摄影修图</a></li>
+          <li><a href="category.html?cat=健康">健康生活</a></li>
+          <li><a href="category.html?cat=工具">实用工具</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="about.html">关于 iosyun</a></li>
+          <li><a href="submit.html">推荐应用</a></li>
+          <li><a href="about.html#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 iosyun.com · 发现好应用，每天都有新推荐</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const apps = loadApps();
+  document.getElementById('statApps').textContent = apps.length.toLocaleString() + '+';
+  document.getElementById('statFree').textContent = apps.filter(a => a.isFree || a.price === '免费').length.toLocaleString() + '+';
+  document.getElementById('statFeatured').textContent = apps.filter(a => a.featured).length.toLocaleString() + '+';
+
+  const freeApps = apps.filter(a => a.isFree && a.originalPrice);
+  document.getElementById('freeApps').innerHTML = freeApps.length
+    ? freeApps.map(createAppCard).join('')
+    : '<p style="text-align:center;color:var(--gray-500);grid-column:1/-1;padding:40px;">暂无今日限免应用，明天再来看看~</p>';
+
+  const featured = apps.filter(a => a.featured).slice(0, 4);
+  document.getElementById('featuredApps').innerHTML = featured.map(createFeaturedCard).join('');
+
+  document.getElementById('categoriesList').innerHTML = categories.map(c =>
+    `<a href="category.html?cat=${c.key}" class="cat-chip"><span class="emoji">${c.emoji}</span>${c.name}</a>`
+  ).join('');
+
+  const latest = [...apps].sort((a,b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 8);
+  document.getElementById('latestApps').innerHTML = latest.map(createAppCard).join('');
+
+  startCountdown();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应用分类 | iosyun</title>
+<meta name="description" content="按分类浏览 iOS 优质应用 - 效率、摄影、设计、健康、工具，总有一款适合你。">
+<meta name="keywords" content="iOS应用分类,效率应用,摄影应用,设计应用,限免应用,iPhone应用推荐">
+<meta property="og:title" content="应用分类 | iosyun">
+<meta property="og:description" content="按分类浏览 iOS 优质应用 - 效率、摄影、设计、健康、工具，总有一款适合你。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iosyun.com/category.html">
+<meta property="og:site_name" content="iosyun">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="应用分类 | iosyun">
+<meta name="twitter:description" content="按分类浏览 iOS 优质应用。">
+<link rel="canonical" href="https://iosyun.com/category.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"iOS 应用分类 | iosyun","description":"按分类浏览 iOS 优质应用","url":"https://iosyun.com/category.html","isPartOf":{"@type":"WebSite","name":"iosyun","url":"https://iosyun.com/"}}
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="category.html" class="active">应用分类</a></li>
+      <li><a href="category.html?filter=free">今日限免</a></li>
+      <li><a href="submit.html">投稿推荐</a></li>
+      <li><a href="about.html">关于</a></li>
+    </ul>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="navSearch" placeholder="搜索应用...">
+    </div>
+    <button class="nav-mobile" style="background:none;font-size:24px;cursor:pointer;">☰</button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1 id="pageTitle">📱 全部应用</h1>
+    <p id="pageSubtitle">探索我们精选的 iOS 优质应用</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="categories" id="categoriesList"></div>
+    <div class="filter-bar">
+      <select id="sortSelect" onchange="applyFilters()">
+        <option value="default">默认排序</option>
+        <option value="rating">评分最高</option>
+        <option value="newest">最新收录</option>
+        <option value="price-asc">价格最低</option>
+        <option value="price-desc">价格最高</option>
+      </select>
+      <select id="filterSelect" onchange="applyFilters()">
+        <option value="all">全部应用</option>
+        <option value="free">限免 / 免费</option>
+        <option value="paid">付费应用</option>
+        <option value="discount">降价中</option>
+      </select>
+    </div>
+    <div class="app-grid" id="appGrid"></div>
+    <div class="pagination" id="pagination"></div>
+    <div id="noResults" style="display:none;text-align:center;padding:60px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">🔍</div>
+      <h3 style="margin-bottom:8px;">没有找到相关应用</h3>
+      <p style="color:var(--gray-500);">试试调整筛选条件或搜索关键词</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>iosyun.com</h4>
+        <p style="color:var(--gray-500);line-height:1.8;">发现 App Store 里的宝藏应用。每日更新限免速报、编辑精选推荐和深度应用测评。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">应用分类</a></li>
+          <li><a href="category.html?filter=free">限免应用</a></li>
+          <li><a href="submit.html">投稿推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门分类</h4>
+        <ul>
+          <li><a href="category.html?cat=效率">效率工具</a></li>
+          <li><a href="category.html?cat=摄影">摄影修图</a></li>
+          <li><a href="category.html?cat=健康">健康生活</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="about.html">关于 iosyun</a></li>
+          <li><a href="about.html#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 iosyun.com</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+let currentCat = params.get('cat') || 'all';
+let currentSearch = params.get('search') || '';
+let currentSort = 'default';
+let currentFilter = params.get('filter') || 'all';
+let currentPage = 1;
+const pageSize = 12;
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('categoriesList').innerHTML = categories.map(c =>
+    `<a href="?cat=${c.key}" class="cat-chip${currentCat === c.key ? ' active' : ''}"><span class="emoji">${c.emoji}</span>${c.name}</a>`
+  ).join('');
+
+  document.getElementById('filterSelect').value = currentFilter;
+  if (currentSearch) document.getElementById('navSearch').value = currentSearch;
+  updatePageTitle();
+  applyFilters();
+});
+
+function updatePageTitle() {
+  const title = document.getElementById('pageTitle');
+  const sub = document.getElementById('pageSubtitle');
+  if (currentCat !== 'all') {
+    const cat = categories.find(c => c.key === currentCat);
+    if (cat) { title.textContent = cat.emoji + ' ' + cat.name + '应用'; sub.textContent = '浏览我们精选的' + cat.name + '类应用'; }
+  }
+  if (currentSearch) { title.textContent = '🔍 搜索：' + currentSearch; sub.textContent = '以下是关于"' + currentSearch + '"的应用'; }
+  if (currentFilter === 'free') { title.textContent = '🎉 限免 & 免费应用'; sub.textContent = '薅羊毛就要快！手慢无的限免应用都在这里'; }
+  else if (currentFilter === 'discount') { title.textContent = '📉 降价应用'; sub.textContent = '发现正在打折的好应用'; }
+}
+
+function applyFilters() {
+  currentSort = document.getElementById('sortSelect').value;
+  currentFilter = document.getElementById('filterSelect').value;
+  currentPage = 1;
+
+  let filtered = [...loadApps()];
+
+  if (currentCat !== 'all') filtered = filtered.filter(a => a.category === currentCat);
+
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    filtered = filtered.filter(a =>
+      a.name.toLowerCase().includes(q) || a.category.toLowerCase().includes(q) ||
+      a.tags.some(t => t.toLowerCase().includes(q)) || a.description.toLowerCase().includes(q)
+    );
+  }
+
+  if (currentFilter === 'free') filtered = filtered.filter(a => a.isFree || a.price === '免费');
+  else if (currentFilter === 'paid') filtered = filtered.filter(a => !a.isFree && a.price !== '免费');
+  else if (currentFilter === 'discount') filtered = filtered.filter(a => a.originalPrice);
+
+  if (currentSort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+  else if (currentSort === 'newest') filtered.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+  else if (currentSort === 'price-asc') {
+    filtered.sort((a, b) => {
+      const pa = a.isFree ? 0 : parseFloat(a.price.replace(/[^0-9.]/g,'')) || 999;
+      const pb = b.isFree ? 0 : parseFloat(b.price.replace(/[^0-9.]/g,'')) || 999;
+      return pa - pb;
+    });
+  } else if (currentSort === 'price-desc') {
+    filtered.sort((a, b) => {
+      const pa = a.isFree ? 0 : parseFloat(a.price.replace(/[^0-9.]/g,'')) || 999;
+      const pb = b.isFree ? 0 : parseFloat(b.price.replace(/[^0-9.]/g,'')) || 999;
+      return pb - pa;
+    });
+  }
+
+  const totalPages = Math.ceil(filtered.length / pageSize);
+  const start = (currentPage - 1) * pageSize;
+  const paged = filtered.slice(start, start + pageSize);
+
+  document.getElementById('appGrid').innerHTML = paged.map(createAppCard).join('');
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+
+  const pagEl = document.getElementById('pagination');
+  if (totalPages <= 1) { pagEl.innerHTML = ''; return; }
+  let html = '';
+  if (currentPage > 1) html += '<button onclick="goPage(' + (currentPage-1) + ')">←</button>';
+  for (let i = 1; i <= totalPages; i++) {
+    html += '<button class="' + (i === currentPage ? 'active' : '') + '" onclick="goPage(' + i + ')">' + i + '</button>';
+  }
+  if (currentPage < totalPages) html += '<button onclick="goPage(' + (currentPage+1) + ')">→</button>';
+  pagEl.innerHTML = html;
+}
+
+function goPage(page) { currentPage = page; applyFilters(); window.scrollTo({ top: 400, behavior: 'smooth' }); }
+</script>
+</body>
+</html>
