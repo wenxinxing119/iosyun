@@ -27,9 +27,9 @@
 
 <nav class="navbar">
   <div class="container">
-    <a href="index.html" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
+    <a href="./" class="nav-logo"><span class="dot"></span>iosyun<span>.com</span></a>
     <ul class="nav-links">
-      <li><a href="index.html">首页</a></li>
+      <li><a href="./">首页</a></li>
       <li><a href="category.html">应用分类</a></li>
       <li><a href="category.html?filter=free">今日限免</a></li>
       <li><a href="submit.html">投稿推荐</a></li>
@@ -46,7 +46,7 @@
 <section class="detail-hero" id="detailHero">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">首页</a><span>/</span>
+      <a href="./">首页</a><span>/</span>
       <a href="category.html" id="breadCat">应用分类</a><span>/</span>
       <span id="breadName">加载中...</span>
     </div>
@@ -87,7 +87,7 @@
       <div>
         <h4>快速导航</h4>
         <ul>
-          <li><a href="index.html">首页</a></li>
+          <li><a href="./">首页</a></li>
           <li><a href="category.html">应用分类</a></li>
           <li><a href="submit.html">投稿推荐</a></li>
         </ul>
@@ -166,7 +166,7 @@ function updateMetaTags(app) {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!app) {
-    document.getElementById('detailHero').innerHTML = '<div class="container" style="text-align:center;padding:80px 0;"><div style="font-size:64px;margin-bottom:16px;">📱</div><h2 style="margin-bottom:8px;">应用未找到</h2><p style="color:rgba(255,255,255,.5);margin-bottom:24px;">该应用可能已下架或链接无效</p><a href="index.html" style="color:var(--blue);font-weight:500;">← 返回首页</a></div>';
+    document.getElementById('detailHero').innerHTML = '<div class="container" style="text-align:center;padding:80px 0;"><div style="font-size:64px;margin-bottom:16px;">📱</div><h2 style="margin-bottom:8px;">应用未找到</h2><p style="color:rgba(255,255,255,.5);margin-bottom:24px;">该应用可能已下架或链接无效</p><a href="./" style="color:var(--blue);font-weight:500;">← 返回首页</a></div>';
     document.getElementById('screenshotsSection').style.display = 'none';
     return;
   }
