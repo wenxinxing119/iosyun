@@ -163,7 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('statFree').textContent = apps.filter(a => a.isFree || a.price === '免费').length.toLocaleString() + '+';
   document.getElementById('statFeatured').textContent = apps.filter(a => a.featured).length.toLocaleString() + '+';
 
-  const freeApps = apps.filter(a => a.isFree && a.originalPrice);
+  // 优先展示有原价信息的真正限免，没有则展示所有免费应用
+  const realFree = apps.filter(a => a.isFree && a.originalPrice);
+  const freeApps = realFree.length > 0 ? realFree : apps.filter(a => a.isFree).slice(0, 8);
+  const freeTitle = realFree.length > 0 ? '🎉 今日限免应用' : '🎁 免费好应用';
+  document.querySelector('.fb-info h3').textContent = freeTitle;
   document.getElementById('freeApps').innerHTML = freeApps.length
     ? freeApps.map(createAppCard).join('')
     : '<p style="text-align:center;color:var(--gray-500);grid-column:1/-1;padding:40px;">暂无今日限免应用，明天再来看看~</p>';

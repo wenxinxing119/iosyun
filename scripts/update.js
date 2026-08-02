@@ -91,6 +91,15 @@ async function main() {
     if (diffs.length > 0) {
       console.log(` 🔄 ${diffs.join(' | ')}`);
 
+      // 检测降价/限免：如果从付费变成免费，记录原价
+      if (fresh.isFree && !app.isFree) {
+        app.originalPrice = app.price; // 保存原价
+        diffs.push(`🎉 限免！原价: ${app.price}`);
+      }
+      if (!fresh.isFree && app.isFree) {
+        app.originalPrice = null; // 恢复收费，清除原价标记
+      }
+
       // 更新字段（保留自定义内容）
       app.price = fresh.price;
       app.isFree = fresh.isFree;
