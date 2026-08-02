@@ -1,5 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
+const DATA_VERSION = 2; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -821,7 +822,8 @@ const defaultApps = [
 function loadApps() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
+    const ver = localStorage.getItem(STORAGE_KEY + '_v');
+    if (stored && ver == DATA_VERSION) {
       const parsed = JSON.parse(stored);
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
     }
@@ -832,6 +834,7 @@ function loadApps() {
 // Save to localStorage
 function saveApps(newApps) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(newApps));
+  localStorage.setItem(STORAGE_KEY + '_v', DATA_VERSION);
 }
 
 // Reset to defaults (from admin panel)
@@ -853,7 +856,8 @@ function exportDataJS(appList) {
     'function loadApps() {\n' +
     '  try {\n' +
     '    const stored = localStorage.getItem(\'' + STORAGE_KEY + '\');\n' +
-    '    if (stored) {\n' +
+    '    const ver = localStorage.getItem(\'' + STORAGE_KEY + '_v\');\n' +
+    '    if (stored && ver == DATA_VERSION) {\n' +
     '      const parsed = JSON.parse(stored);\n' +
     '      if (Array.isArray(parsed) && parsed.length > 0) return parsed;\n' +
     '    }\n' +
@@ -862,6 +866,7 @@ function exportDataJS(appList) {
     '}\n\n' +
     'function saveApps(newApps) {\n' +
     '  localStorage.setItem(\'' + STORAGE_KEY + '\', JSON.stringify(newApps));\n' +
+    '  localStorage.setItem(\'' + STORAGE_KEY + '_v\', DATA_VERSION);\n' +
     '}\n\n' +
     'function resetApps() {\n' +
     '  localStorage.removeItem(\'' + STORAGE_KEY + '\');\n' +
