@@ -168,9 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('statFree').textContent = apps.filter(a => a.isFree || a.price === '免费').length.toLocaleString() + '+';
   document.getElementById('statFeatured').textContent = apps.filter(a => a.featured).length.toLocaleString() + '+';
 
-  // 优先展示有原价信息的真正限免，没有则展示所有免费应用
+  // 真正限免优先，不够8个用其他免费应用补齐
   const realFree = apps.filter(a => a.isFree && a.originalPrice);
-  const freeApps = realFree.length > 0 ? realFree : apps.filter(a => a.isFree).slice(0, 8);
+  const otherFree = apps.filter(a => a.isFree && !a.originalPrice);
+  const freeApps = [...realFree, ...otherFree].slice(0, 8);
   const freeTitle = realFree.length > 0 ? '🎉 今日限免应用' : '🎁 免费好应用';
   document.querySelector('.fb-info h3').textContent = freeTitle;
   document.getElementById('freeApps').innerHTML = freeApps.length
