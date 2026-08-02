@@ -122,14 +122,26 @@
 <script src="js/data.js?v=4"></script>
 <script src="js/main.js?v=4"></script>
 <script>
-const params = new URLSearchParams(window.location.search);
-const appId = parseInt(params.get('id'));
+// 从 URL 路径读取 slug: /app/things-3 → "things-3"
+const pathParts = window.location.pathname.split('/').filter(Boolean);
+let slug = pathParts[pathParts.length - 1] || null;
 const apps = loadApps();
-const app = apps.find(a => a.id === appId);
+
+// 兼容旧链接 /detail.html?id=5 → 301 跳转到 /app/:slug
+const oldId = new URLSearchParams(window.location.search).get('id');
+if (oldId) {
+  const oldApp = apps.find(a => a.id === parseInt(oldId));
+  if (oldApp && oldApp.slug) {
+    window.location.replace('/app/' + oldApp.slug);
+    throw new Error('redirect');
+  }
+}
+
+const app = apps.find(a => a.slug === slug);
 
 function updateMetaTags(app) {
   const desc = `${app.name} - ${app.category}应用，${app.price}${app.originalPrice ? '（原价' + app.originalPrice + '）' : ''}，⭐${app.rating}分${app.reviewCount > 0 ? ' / ' + app.reviewCount + '条评价' : ''}。${(app.description || '').slice(0, 120)}`;
-  const url = 'https://iosyun.com/detail.html?id=' + app.id;
+  const url = 'https://iosyun.com/app/' + app.slug;
   const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
   const setContent = (sel, val) => setMeta(sel, 'content', val);
 

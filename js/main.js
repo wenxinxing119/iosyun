@@ -75,7 +75,7 @@ function createAppCard(app) {
   else if (app.originalPrice) badgeHTML = '<span class="badge badge-off">降价</span>';
 
   return `
-    <div class="app-card" onclick="window.location.href='detail.html?id=${app.id}'">
+    <div class="app-card" onclick="window.location.href='/app/${app.slug}'">
       ${badgeHTML}
       ${appIcon(app, 64)}
       <div class="card-title">${app.name}</div>
@@ -96,7 +96,7 @@ function createFeaturedCard(app) {
   const gradients = ['gradient-1', 'gradient-2'];
   const grad = gradients[app.id % 2];
   return `
-    <div class="featured-card" onclick="window.location.href='detail.html?id=${app.id}'">
+    <div class="featured-card" onclick="window.location.href='/app/${app.slug}'">
       <div class="fc-img ${grad}">
         ${appIcon(app, 80)}
       </div>

@@ -6,6 +6,12 @@
       "statusCode": 301
     }
   ],
+  "rewrites": [
+    {
+      "source": "/app/*",
+      "destination": "/detail.html"
+    }
+  ],
   "headers": [
     {
       "source": "/*",

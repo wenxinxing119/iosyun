@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 2; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 3; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -28,7 +28,8 @@ const defaultApps = [
     "screenshots": [],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "things-3"
   },
   {
     "id": 2,
@@ -67,7 +68,8 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-02"
+    "updatedAt": "2026-08-02",
+    "slug": "procreate"
   },
   {
     "id": 3,
@@ -106,7 +108,8 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "carrot-weather"
   },
   {
     "id": 4,
@@ -139,7 +142,8 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "halide-mark-iii"
   },
   {
     "id": 5,
@@ -166,7 +170,8 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "fantastical"
   },
   {
     "id": 6,
@@ -199,7 +204,8 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "1password"
   },
   {
     "id": 7,
@@ -238,7 +244,8 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-02"
+    "updatedAt": "2026-08-02",
+    "slug": "goodnotes-6"
   },
   {
     "id": 8,
@@ -275,7 +282,8 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "pixelmator-pro"
   },
   {
     "id": 9,
@@ -311,7 +319,8 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "dark-noise"
   },
   {
     "id": 10,
@@ -346,7 +355,8 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-01",
+    "slug": "reeder-5"
   },
   {
     "name": "番茄ToDo-极简高效自律番茄钟",
@@ -380,7 +390,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 11
+    "id": 11,
+    "slug": "番茄todo-极简高效自律番茄钟"
   },
   {
     "name": "我要做计划-时间管理＆学习打卡＆工作计划清单",
@@ -414,7 +425,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 12
+    "id": 12,
+    "slug": "我要做计划-时间管理-学习打卡-工作计划清单"
   },
   {
     "name": "极简待办:日程安排 计划清单 提醒事项管理 便签备忘录记事本",
@@ -448,7 +460,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 13
+    "id": 13,
+    "slug": "极简待办-日程安排-计划清单-提醒事项管理-便签备忘录记事本"
   },
   {
     "name": "指尖时光-日程计划&日历记事&目标打卡",
@@ -482,7 +495,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 14
+    "id": 14,
+    "slug": "指尖时光-日程计划-日历记事-目标打卡"
   },
   {
     "name": "幕布 - 大纲笔记&思维导图",
@@ -509,7 +523,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 15
+    "id": 15,
+    "slug": "幕布-大纲笔记-思维导图"
   },
   {
     "name": "豆包 - 随时帮忙的 AI 助手",
@@ -537,7 +552,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 16
+    "id": 16,
+    "slug": "豆包-随时帮忙的-ai-助手"
   },
   {
     "name": "汽水音乐 - 随时听好歌",
@@ -564,7 +580,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 17
+    "id": 17,
+    "slug": "汽水音乐-随时听好歌"
   },
   {
     "name": "红果短剧 - 海量热门短剧随心看",
@@ -591,7 +608,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 18
+    "id": 18,
+    "slug": "红果短剧-海量热门短剧随心看"
   },
   {
     "name": "自由笔记",
@@ -625,7 +643,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 19
+    "id": 19,
+    "slug": "自由笔记"
   },
   {
     "name": "Notability: 笔记, PDF",
@@ -659,7 +678,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 20
+    "id": 20,
+    "slug": "notability-笔记-pdf"
   },
   {
     "name": "有道云笔记-笔记扫描效率办公",
@@ -693,7 +713,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 21
+    "id": 21,
+    "slug": "有道云笔记-笔记扫描效率办公"
   },
   {
     "name": "Berry胶片相机 - 韩系自拍神器",
@@ -721,7 +742,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 22
+    "id": 22,
+    "slug": "berry胶片相机-韩系自拍神器"
   },
   {
     "name": "航旅纵横PRO-民航官方直销平台",
@@ -748,7 +770,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 23
+    "id": 23,
+    "slug": "航旅纵横pro-民航官方直销平台"
   },
   {
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
@@ -782,7 +805,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 24
+    "id": 24,
+    "slug": "扫描全能王-官方出品1元畅用版-扫描pdf文件-文字识别"
   },
   {
     "name": "同花顺至尊版-股票软件",
@@ -815,7 +839,8 @@ const defaultApps = [
     "featured": false,
     "isHot": false,
     "updatedAt": "2026-08-02",
-    "id": 25
+    "id": 25,
+    "slug": "同花顺至尊版-股票软件"
   }
 ];
 // Load from localStorage or fallback to defaults
