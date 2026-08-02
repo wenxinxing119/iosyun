@@ -107,13 +107,93 @@ async function searchTrending() {
   return results;
 }
 
+// 根据 App ID 拉取完整信息
+async function fetchAppInfo(id) {
+  for (const country of ['cn', 'us']) {
+    try {
+      const res = await fetch(`https://itunes.apple.com/lookup?id=${id}&country=${country}`);
+      const data = await res.json();
+      if (data.results?.length > 0) return data.results[0];
+    } catch(e) {}
+  }
+  return null;
+}
+
+function mb(bytes) {
+  if (!bytes) return '未知';
+  const m = bytes / (1024 * 1024);
+  return m >= 1000 ? `${(m/1024).toFixed(0)} GB` : `${Math.round(m)} MB`;
+}
+
+// 自动将优质候选入库到 data.js
+async function autoAddTopCandidates(candidates) {
+  const { readFileSync, writeFileSync } = await import('fs');
+  const content = readFileSync('js/data.js', 'utf8');
+  const match = content.match(/const defaultApps = (\[[\s\S]*?\])/);
+  if (!match) return 0;
+  const apps = JSON.parse(match[1]);
+  let nextId = Math.max(...apps.map(a => a.id)) + 1;
+
+  // 优先高分搜索候选，再取排行榜
+  const scored = candidates
+    .filter(c => c.rating >= 4.0 || c.source.includes('搜索'))
+    .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+    .slice(0, 8);
+
+  let added = 0;
+  for (const c of scored) {
+    await new Promise(r => setTimeout(r, 400));
+    const info = await fetchAppInfo(c.id);
+    if (!info) { console.log(`  ✗ ${c.name}: 无数据`); continue; }
+
+    const price = info.price || 0;
+    const icon = info.artworkUrl512 || info.artworkUrl100 || '';
+    const screenshots = (info.screenshotUrls || []).slice(0, 5);
+
+    apps.push({
+      id: nextId++,
+      name: info.trackCensoredName || info.trackName,
+      icon,
+      category: c.category || GENRE_MAP[info.primaryGenreName] || '工具',
+      price: price === 0 ? '免费' : (info.currency === 'USD' ? '$'+price.toFixed(2) : '¥'+price.toFixed(2)),
+      originalPrice: null,
+      isFree: price === 0,
+      rating: Math.round((info.averageUserRating || 0) * 10) / 10,
+      reviewCount: info.userRatingCount || 0,
+      developer: info.artistName,
+      appStoreUrl: info.trackViewUrl || c.appStoreUrl,
+      size: mb(info.fileSizeBytes),
+      version: info.version || '',
+      compatibility: info.minimumOsVersion ? `iOS ${info.minimumOsVersion}+` : '未知',
+      language: '中文',
+      tags: [c.category || '工具'],
+      description: (info.description || '').substring(0, 150).replace(/\n/g, ' '),
+      screenshots,
+      featured: false,
+      isHot: false,
+      updatedAt: new Date().toISOString().split('T')[0]
+    });
+    console.log(`  ✓ 入库: ${info.trackName} (id:${c.id})`);
+    added++;
+  }
+
+  if (added > 0) {
+    const newContent = content.replace(
+      /const defaultApps = \[[\s\S]*?\];/,
+      `const defaultApps = ${JSON.stringify(apps, null, 2)};`
+    );
+    writeFileSync('js/data.js', newContent, 'utf8');
+  }
+  return added;
+}
+
 async function main() {
   const chartList = await getTopCharts();
   const trendingList = await searchTrending();
 
   const all = [...chartList, ...trendingList];
 
-  // 去重 + 按评分/来源排序
+  // 去重
   const seen = new Set();
   const unique = all.filter(a => {
     if (seen.has(a.id)) return false;
@@ -122,7 +202,7 @@ async function main() {
   });
 
   console.log('\n═══════════════════════════════════════');
-  console.log('🎯 热门候选汇总 (复制App ID到管理后台拉取)\n');
+  console.log('🎯 热门候选汇总\n');
   console.log('| 应用名 | App ID | 来源 | 价格 | 评分 |');
   console.log('|--------|--------|------|------|------|');
 
@@ -132,7 +212,10 @@ async function main() {
     console.log(`| ${a.name.slice(0,20).padEnd(20)} | ${String(a.id).padStart(10)} | ${a.source} | ${price} | ${rating} |`);
   });
 
-  console.log(`\n共发现 ${unique.length} 个候选，进入管理后台 → 添加应用 → 粘贴App Store ID → 自动拉取`);
+  // 自动入库优质候选
+  console.log('\n🤖 自动入库优质应用...\n');
+  const added = await autoAddTopCandidates(unique);
+  console.log(`\n共发现 ${unique.length} 个候选，自动入库 ${added} 个`);
 }
 
 main().catch(console.error);
