@@ -38,7 +38,7 @@ const defaultApps = [
     "originalPrice": null,
     "isFree": false,
     "rating": 4.2,
-    "reviewCount": 35753,
+    "reviewCount": 35769,
     "developer": "Savage Interactive",
     "appStoreUrl": "https://apps.apple.com/cn/app/procreate/id425073498?uo=4",
     "size": "1105 MB",
@@ -66,7 +66,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-02"
   },
   {
     "id": 3,
@@ -209,7 +209,7 @@ const defaultApps = [
     "originalPrice": "¥68",
     "isFree": true,
     "rating": 4.5,
-    "reviewCount": 679286,
+    "reviewCount": 679513,
     "developer": "Goodnotes",
     "appStoreUrl": "https://apps.apple.com/cn/app/goodnotes-ai-%E7%AC%94%E8%AE%B0-%E7%99%BD%E6%9D%BF-pdf/id1444383602?uo=4",
     "size": "928 MB",
@@ -237,7 +237,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-01"
+    "updatedAt": "2026-08-02"
   },
   {
     "id": 8,
