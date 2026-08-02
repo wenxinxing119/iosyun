@@ -52,14 +52,14 @@
   <div class="container">
     <div class="categories" id="categoriesList"></div>
     <div class="filter-bar">
-      <select id="sortSelect" onchange="applyFilters()">
+      <select id="sortSelect" onchange="currentPage=1;applyFilters()">
         <option value="default">默认排序</option>
         <option value="rating">评分最高</option>
         <option value="newest">最新收录</option>
         <option value="price-asc">价格最低</option>
         <option value="price-desc">价格最高</option>
       </select>
-      <select id="filterSelect" onchange="applyFilters()">
+      <select id="filterSelect" onchange="currentPage=1;applyFilters()">
         <option value="all">全部应用</option>
         <option value="free">限免 / 免费</option>
         <option value="paid">付费应用</option>
@@ -153,7 +153,6 @@ function updatePageTitle() {
 function applyFilters() {
   currentSort = document.getElementById('sortSelect').value;
   currentFilter = document.getElementById('filterSelect').value;
-  currentPage = 1;
 
   let filtered = [...loadApps()];
 
