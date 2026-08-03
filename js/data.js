@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 6; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 8; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -36,9 +36,9 @@ const defaultApps = [
     "name": "Procreate",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/36/95/7b36957c-dc43-6e38-99e5-31ecd83ff2dd/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
     "category": "设计",
-    "price": "¥88.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥88.00",
+    "isFree": true,
     "rating": 4.2,
     "reviewCount": 35769,
     "developer": "Savage Interactive",
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "免费",
-    "originalPrice": "¥98",
-    "isFree": true,
+    "price": "¥98",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -212,9 +212,9 @@ const defaultApps = [
     "name": "GoodNotes 6",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/39/39/1a39395c-f1d7-af6d-a627-ca55a8934691/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥68",
-    "isFree": true,
+    "price": "¥68",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.5,
     "reviewCount": 679513,
     "developer": "Goodnotes",
@@ -252,9 +252,9 @@ const defaultApps = [
     "name": "Pixelmator Pro",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/e9/19/a1e91908-afba-6b30-d789-b03300253ab2/AppIcon-0-0-85-220-0-0-5-0-2x-0-0-0.png/512x512bb.png",
     "category": "设计",
-    "price": "¥328.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥328.00",
+    "isFree": true,
     "rating": 0,
     "reviewCount": 0,
     "developer": "Pixelmator Team",
@@ -282,7 +282,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "slug": "pixelmator-pro"
   },
   {
@@ -327,9 +327,9 @@ const defaultApps = [
     "name": "Reeder 5",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5f/3e/d4/5f3ed4e2-9ada-1102-af29-1c9bf490cb71/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "$4.99",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "$4.99",
+    "isFree": true,
     "rating": 4.1,
     "reviewCount": 821,
     "developer": "Silvio Rizzi",
@@ -777,9 +777,9 @@ const defaultApps = [
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/f1/97/22f1975d-adfc-dd01-16d4-6cee2e076e20/AppIconPlus-0-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥1.00",
-    "isFree": true,
+    "price": "¥1.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.9,
     "reviewCount": 98283,
     "developer": "Linguan Data",
@@ -940,6 +940,89 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8F%9C%E8%B0%B1%E5%A4%A7%E5%85%A8pro-%E5%B0%8F%E7%99%BD%E5%AD%A6%E5%81%9A%E5%AE%B6%E5%B8%B8%E8%8F%9C%E5%81%9A%E6%B3%95%E5%BF%85%E5%A4%87%E7%83%B9%E9%A5%AA%E5%8A%A9%E6%89%8B/id1183632694?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/96/a7/dd/96a7dd76-8501-5a6c-de4d-3bdd367ac24d/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Youyi Interaction Science and Technology Co.,Ltd",
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": 30,
+    "slug": "小公主贝儿的甜品食谱制作教室-厨房游戏",
+    "name": "小公主贝儿的甜品食谱制作教室-厨房游戏",
+    "desc": "这是一个根据真实甜品食谱做成的亲子游戏，适合2-5岁的幼儿，游戏操作十分简单，可以有效启发孩子思维和思考，另一方面也可以让父母制作甜品的正确方法。游戏包含多个甜品的制作方法有炖蛋,黄金蛋糕,饼干,布丁,鲜奶冻,甜甜圈,樱桃奶酪和海绵蛋糕。  家长与孩子在游戏过程中必须互动，比如说每一个动作怎么表达，每一个步骤有什么用，游戏里都有哪一些物品，每当小朋友答对问题的时候必须称赞他们，这样可以有效提高孩子的自信，让他面对问题或困难的时候，可以有自信的解决。在和小朋友游戏结束后，家长可以尝试制作真实的甜品和小朋友一起吃。这样可以有效加强家长和孩子之间的关系。  游戏能够启发孩子的智慧。这就要求游戏活动既",
+    "category": "Games",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.4,
+    "reviewCount": 21432,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "厨房游戏"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/4d/ef/15/4def15c3-84dc-2f63-662e-432ae0492c5a/pr_source.jpg/406x228bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/fe/99/73/fe997373-997b-3df7-4263-c7a5ceaca4a3/pr_source.jpg/406x228bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/83/30/46/833046a1-2287-7add-b3e6-bb506d112bca/pr_source.jpg/406x228bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/bb/d2/56/bbd256fd-7735-8495-8491-6bd8ad5d79de/pr_source.jpg/406x228bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c6/75/e4/c675e47d-d8f0-c267-2dd8-37aafb6ef920/pr_source.jpg/406x228bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E5%85%AC%E4%B8%BB%E8%B4%9D%E5%84%BF%E7%9A%84%E7%94%9C%E5%93%81%E9%A3%9F%E8%B0%B1%E5%88%B6%E4%BD%9C%E6%95%99%E5%AE%A4-%E5%8E%A8%E6%88%BF%E6%B8%B8%E6%88%8F/id1071512246?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ec/ac/10/ecac105b-f7b1-5704-f723-2c615c1ad022/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
+    "developer": "Wai Chin Ng",
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": 31,
+    "slug": "烹饪大全-下厨房好帮手",
+    "name": "烹饪大全-下厨房好帮手",
+    "desc": "【汇集海量美食制作视频，高清教学】 【美食爱好者的必备App】  教程包括 • 热门家常菜的做法 • 烹饪的常用方法 • 家庭厨具的使用、介绍 • 中国八大菜系的做法 川菜、湘菜、鲁菜 • 鸡、鸭、鱼的常用做法  赶紧下载吧，厨艺大大的提高！",
+    "category": "Food & Drink",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewCount": 1618,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "烹饪大全"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/7e/d8/40/7ed840ff-e995-035b-7a02-1eda21c05fea/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/2a/73/ed/2a73edc2-ed45-3cc3-02b3-103fe5b4a22d/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/dc/a4/fa/dca4fad0-8973-fade-6f1d-354851363736/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/41/13/01/411301bd-3170-be68-fea6-ae5d0ead2ade/pr_source.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E7%83%B9%E9%A5%AA%E5%A4%A7%E5%85%A8-%E4%B8%8B%E5%8E%A8%E6%88%BF%E5%A5%BD%E5%B8%AE%E6%89%8B/id1136974705?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/80/a1/6c80a1e0-27c1-1c89-8cc6-09ec616aca51/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
+    "developer": "亮 王",
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": 32,
+    "slug": "逍遥客栈-美食烹饪餐厅经营游戏",
+    "name": "逍遥客栈 - 美食烹饪餐厅经营游戏",
+    "desc": "玩家交流群：821383711  江湖是什么？ 是那白衣剑客，一人一马，仗剑行遍万里山河。 是那红衣佳人，端坐雕楼，唱罢人世悲欢喜乐。 是那七旬老叟，华发散乱，山门前枯等后辈归来。 江湖是什么？ 是那山门在一个雪夜轰然倒塌，老叟不见踪影。 是那雕楼画栋化作飞灰，红衣佳人挽起长发，抹去妆容，入红尘之中。 是那老马蹒跚，长剑染锈，白衣剑客再回市井之间。 江湖是什么？ 是那红尘烟火三千，小城、客栈、一碗浊酒。 是那镖客手中的一碗扯面，衙役筷下的半斤牛肉。 是那脚夫的口若悬河，是那戏子不曾卸下的妆容。  游戏特色: 1.从别样的角度解读江湖，江湖是刀光剑影，江湖是侠肝义胆，但江湖也是侠客手中美酒，筷下",
+    "category": "Games",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewCount": 36968,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "逍遥客栈"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/49/4c/14/494c14e4-53cf-528c-0f1e-cc9775580ecb/ac0f9408-955f-4b07-9ddb-63fe4d751ab1_1.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/0d/18/24/0d182478-d79f-9382-ebbd-0d4e4b0d7697/4528ad6d-3650-41dd-a285-205ab62cff68_2.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/55/bc/84/55bc846d-7e82-7e11-ea7d-9190925bca53/41143180-97b2-49f5-95b9-d22bb5144119_3.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/f6/a4/5f/f6a45f5b-a6eb-6c6a-9f13-dc2cdde79b41/efdba89e-e6e0-450b-a324-3baa0f505a7a_4.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/81/8f/24/818f2464-5604-e860-f10d-7f60ec9c142f/f88aa888-895c-4875-93f9-cb6ca2844a4c_5.png/406x228bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E9%80%8D%E9%81%A5%E5%AE%A2%E6%A0%88-%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E9%A4%90%E5%8E%85%E7%BB%8F%E8%90%A5%E6%B8%B8%E6%88%8F/id1631529003?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/39/41/273941c0-b21e-43ea-83e8-ffedc499568c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+    "developer": "Ghost Rabbit Co., Ltd.",
     "updatedAt": "2026-08-03"
   }
 ];
