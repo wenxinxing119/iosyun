@@ -124,8 +124,11 @@
 <script src="/js/main.js?v=5"></script>
 <script>
 // 从 URL 路径读取 slug: /app/things-3 → "things-3"
+// 部分浏览器 pathname 保留百分号编码，需要 decode
 const pathParts = window.location.pathname.split('/').filter(Boolean);
-let slug = pathParts[pathParts.length - 1] || null;
+const raw = pathParts[pathParts.length - 1] || '';
+let slug;
+try { slug = decodeURIComponent(raw); } catch(e) { slug = raw; }
 const apps = loadApps();
 
 // 兼容旧链接 /detail.html?id=5 → 301 跳转到 /app/:slug
