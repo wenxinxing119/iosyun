@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
 
       - name: 🔍 发现新应用
-        run: node scripts/fetch-new-apps.js
+        run: node scripts/fetch-new-apps.mjs
 
       - name: 🔄 限免轮换
         run: node scripts/update-daily.js
