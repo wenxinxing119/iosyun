@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 3; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 4; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -8,9 +8,9 @@ const defaultApps = [
     "name": "Things 3",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/46/9c/3c469c49-4f13-ef80-f88a-cd35f9ea1a69/AppIcon-0-0-1x_U007ephone-0-0-0-1-0-0-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "¥68.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥68.00",
+    "isFree": true,
     "rating": 4.8,
     "reviewCount": 5053,
     "developer": "Cultured Code",
@@ -28,7 +28,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "slug": "things-3"
   },
   {
@@ -36,9 +36,9 @@ const defaultApps = [
     "name": "Procreate",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/36/95/7b36957c-dc43-6e38-99e5-31ecd83ff2dd/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
     "category": "设计",
-    "price": "¥88.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥88.00",
+    "isFree": true,
     "rating": 4.2,
     "reviewCount": 35769,
     "developer": "Savage Interactive",
@@ -68,7 +68,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "slug": "procreate"
   },
   {
@@ -76,9 +76,9 @@ const defaultApps = [
     "name": "CARROT Weather",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/88/94/1b889460-7b24-47eb-0b76-cf53c676e31b/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
     "category": "天气",
-    "price": "免费",
-    "originalPrice": "¥30",
-    "isFree": true,
+    "price": "¥30",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.3,
     "reviewCount": 1012,
     "developer": "Grailr LLC",
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "免费",
-    "originalPrice": "¥98",
-    "isFree": true,
+    "price": "¥98",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -170,7 +170,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "slug": "fantastical"
   },
   {
@@ -204,7 +204,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "slug": "1password"
   },
   {
@@ -212,9 +212,9 @@ const defaultApps = [
     "name": "GoodNotes 6",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/39/39/1a39395c-f1d7-af6d-a627-ca55a8934691/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥68",
-    "isFree": true,
+    "price": "¥68",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.5,
     "reviewCount": 679513,
     "developer": "Goodnotes",
@@ -290,9 +290,9 @@ const defaultApps = [
     "name": "Dark Noise",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/45/b5/8c/45b58ca4-e35e-6bf9-117d-b3d175bb046f/dark-noise-primary-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥30",
-    "isFree": true,
+    "price": "¥30",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.8,
     "reviewCount": 64,
     "developer": "Charlie Chapman",
@@ -327,9 +327,9 @@ const defaultApps = [
     "name": "Reeder 5",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5f/3e/d4/5f3ed4e2-9ada-1102-af29-1c9bf490cb71/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "$4.99",
-    "originalPrice": "¥68",
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "$4.99",
+    "isFree": true,
     "rating": 4.1,
     "reviewCount": 821,
     "developer": "Silvio Rizzi",
@@ -355,7 +355,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "slug": "reeder-5"
   },
   {
@@ -389,7 +389,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 11,
     "slug": "番茄todo-极简高效自律番茄钟"
   },
@@ -424,7 +424,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 12,
     "slug": "我要做计划-时间管理-学习打卡-工作计划清单"
   },
@@ -459,7 +459,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 13,
     "slug": "极简待办-日程安排-计划清单-提醒事项管理-便签备忘录记事本"
   },
@@ -494,7 +494,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 14,
     "slug": "指尖时光-日程计划-日历记事-目标打卡"
   },
@@ -522,7 +522,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 15,
     "slug": "幕布-大纲笔记-思维导图"
   },
@@ -551,7 +551,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 16,
     "slug": "豆包-随时帮忙的-ai-助手"
   },
@@ -579,7 +579,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 17,
     "slug": "汽水音乐-随时听好歌"
   },
@@ -607,7 +607,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 18,
     "slug": "红果短剧-海量热门短剧随心看"
   },
@@ -642,7 +642,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 19,
     "slug": "自由笔记"
   },
@@ -677,7 +677,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 20,
     "slug": "notability-笔记-pdf"
   },
@@ -712,7 +712,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 21,
     "slug": "有道云笔记-笔记扫描效率办公"
   },
@@ -749,9 +749,9 @@ const defaultApps = [
     "name": "航旅纵横PRO-民航官方直销平台",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/fc/69/35fc690f-ffb7-f014-3d0a-f6b5ec3af329/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.7,
     "reviewCount": 51338,
     "developer": "China Travelsky Technology Limited",
@@ -769,7 +769,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 23,
     "slug": "航旅纵横pro-民航官方直销平台"
   },
@@ -777,9 +777,9 @@ const defaultApps = [
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/f1/97/22f1975d-adfc-dd01-16d4-6cee2e076e20/AppIconPlus-0-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.9,
     "reviewCount": 98283,
     "developer": "Linguan Data",
@@ -804,7 +804,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 24,
     "slug": "扫描全能王-官方出品1元畅用版-扫描pdf文件-文字识别"
   },
@@ -812,9 +812,9 @@ const defaultApps = [
     "name": "同花顺至尊版-股票软件",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/97/f4/1e/97f41e27-5f68-f412-8656-101a94e2bf74/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.9,
     "reviewCount": 121207,
     "developer": "Zhejiang Royalflush Cloud Software Co., Ltd.",
@@ -838,7 +838,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-02",
+    "updatedAt": "2026-08-03",
     "id": 25,
     "slug": "同花顺至尊版-股票软件"
   }
