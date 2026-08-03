@@ -1,4 +1,4 @@
-name: 每日限免轮换
+name: 每日自动更新
 
 on:
   schedule:
@@ -22,7 +22,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: 执行限免轮换
+      - name: 🔍 发现新应用
+        run: node scripts/fetch-new-apps.js
+
+      - name: 🔄 限免轮换
         run: node scripts/update-daily.js
 
       - name: 提交并推送
@@ -33,6 +36,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "没有变更，跳过提交"
           else
-            git commit -m "🤖 每日限免自动轮换 [skip ci]"
+            git commit -m "🤖 每日自动更新（新应用+限免轮换）[skip ci]"
             git push
           fi
