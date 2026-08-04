@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 8; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 10; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -8,9 +8,9 @@ const defaultApps = [
     "name": "Things 3",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/46/9c/3c469c49-4f13-ef80-f88a-cd35f9ea1a69/AppIcon-0-0-1x_U007ephone-0-0-0-1-0-0-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "¥68.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥68.00",
+    "isFree": true,
     "rating": 4.8,
     "reviewCount": 5053,
     "developer": "Cultured Code",
@@ -28,7 +28,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "things-3"
   },
   {
@@ -68,7 +68,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "procreate"
   },
   {
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "¥98",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥98",
+    "isFree": true,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -142,7 +142,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "halide-mark-iii"
   },
   {
@@ -170,7 +170,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "fantastical"
   },
   {
@@ -204,7 +204,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "1password"
   },
   {
@@ -252,9 +252,9 @@ const defaultApps = [
     "name": "Pixelmator Pro",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/e9/19/a1e91908-afba-6b30-d789-b03300253ab2/AppIcon-0-0-85-220-0-0-5-0-2x-0-0-0.png/512x512bb.png",
     "category": "设计",
-    "price": "免费",
-    "originalPrice": "¥328.00",
-    "isFree": true,
+    "price": "¥328.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 0,
     "reviewCount": 0,
     "developer": "Pixelmator Team",
@@ -355,7 +355,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "slug": "reeder-5"
   },
   {
@@ -389,7 +389,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 11,
     "slug": "番茄todo-极简高效自律番茄钟"
   },
@@ -424,7 +424,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 12,
     "slug": "我要做计划-时间管理-学习打卡-工作计划清单"
   },
@@ -459,7 +459,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 13,
     "slug": "极简待办-日程安排-计划清单-提醒事项管理-便签备忘录记事本"
   },
@@ -494,7 +494,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 14,
     "slug": "指尖时光-日程计划-日历记事-目标打卡"
   },
@@ -522,7 +522,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 15,
     "slug": "幕布-大纲笔记-思维导图"
   },
@@ -551,7 +551,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 16,
     "slug": "豆包-随时帮忙的-ai-助手"
   },
@@ -579,7 +579,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 17,
     "slug": "汽水音乐-随时听好歌"
   },
@@ -607,7 +607,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 18,
     "slug": "红果短剧-海量热门短剧随心看"
   },
@@ -642,7 +642,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 19,
     "slug": "自由笔记"
   },
@@ -677,7 +677,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 20,
     "slug": "notability-笔记-pdf"
   },
@@ -712,7 +712,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 21,
     "slug": "有道云笔记-笔记扫描效率办公"
   },
@@ -720,9 +720,9 @@ const defaultApps = [
     "name": "Berry胶片相机 - 韩系自拍神器",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/62/7d/2b/627d2b7d-189b-7ac5-527c-3e31472fec3d/berryfilm-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "免费",
-    "originalPrice": "¥15.00",
-    "isFree": true,
+    "price": "¥15.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.9,
     "reviewCount": 1773,
     "developer": "Seungyun Kim",
@@ -749,9 +749,9 @@ const defaultApps = [
     "name": "航旅纵横PRO-民航官方直销平台",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/fc/69/35fc690f-ffb7-f014-3d0a-f6b5ec3af329/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.7,
     "reviewCount": 51338,
     "developer": "China Travelsky Technology Limited",
@@ -769,7 +769,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 23,
     "slug": "航旅纵横pro-民航官方直销平台"
   },
@@ -777,9 +777,9 @@ const defaultApps = [
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/f1/97/22f1975d-adfc-dd01-16d4-6cee2e076e20/AppIconPlus-0-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.9,
     "reviewCount": 98283,
     "developer": "Linguan Data",
@@ -804,7 +804,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-04",
     "id": 24,
     "slug": "扫描全能王-官方出品1元畅用版-扫描pdf文件-文字识别"
   },
@@ -812,9 +812,9 @@ const defaultApps = [
     "name": "同花顺至尊版-股票软件",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/97/f4/1e/97f41e27-5f68-f412-8656-101a94e2bf74/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥1.00",
-    "isFree": true,
+    "price": "¥1.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.9,
     "reviewCount": 121207,
     "developer": "Zhejiang Royalflush Cloud Software Co., Ltd.",
@@ -862,7 +862,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%80%81%E6%9D%BF%E9%A3%9F%E7%A5%9E-%E4%BD%A0%E7%9A%84ai%E7%83%B9%E9%A5%AA%E4%BC%99%E4%BC%B4/id972641888?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/f9/dd/54f9dd9d-90f3-ca5a-3b5c-f5784451b824/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
     "developer": "Hangzhou Robam Industrial Group Co., Ltd",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
   },
   {
     "id": 27,
@@ -888,7 +888,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E5%A4%A9%E7%88%B1%E7%83%B9%E9%A5%AA/id1247069377?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/94/d9/1794d976-3f7f-6647-3212-6159e644eee0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Shenzhen Runqian Technology Limited",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
   },
   {
     "id": 28,
@@ -914,7 +914,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A5%87%E5%A6%99%E6%96%99%E7%90%86%E9%A4%90%E5%8E%85-%E5%84%BF%E7%AB%A5%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E5%81%9A%E9%A5%AD%E8%BD%AF%E4%BB%B6/id1624871138?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/89/2d/ef892da2-45ed-343d-9d90-b4cb513acec7/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
     "developer": "SINGAPORE BABYBUS PTE. LTD.",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
   },
   {
     "id": 29,
@@ -968,7 +968,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E5%85%AC%E4%B8%BB%E8%B4%9D%E5%84%BF%E7%9A%84%E7%94%9C%E5%93%81%E9%A3%9F%E8%B0%B1%E5%88%B6%E4%BD%9C%E6%95%99%E5%AE%A4-%E5%8E%A8%E6%88%BF%E6%B8%B8%E6%88%8F/id1071512246?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ec/ac/10/ecac105b-f7b1-5704-f723-2c615c1ad022/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Wai Chin Ng",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
   },
   {
     "id": 31,
@@ -995,7 +995,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%83%B9%E9%A5%AA%E5%A4%A7%E5%85%A8-%E4%B8%8B%E5%8E%A8%E6%88%BF%E5%A5%BD%E5%B8%AE%E6%89%8B/id1136974705?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/80/a1/6c80a1e0-27c1-1c89-8cc6-09ec616aca51/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "亮 王",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
   },
   {
     "id": 32,
@@ -1023,7 +1023,116 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%80%8D%E9%81%A5%E5%AE%A2%E6%A0%88-%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E9%A4%90%E5%8E%85%E7%BB%8F%E8%90%A5%E6%B8%B8%E6%88%8F/id1631529003?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/39/41/273941c0-b21e-43ea-83e8-ffedc499568c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Ghost Rabbit Co., Ltd.",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": 33,
+    "slug": "翻译-实时ai翻译-出国旅行必备翻译软件",
+    "name": "翻译 - 实时AI翻译, 出国旅行必备翻译软件",
+    "desc": "翻译软件 — 你的智能翻译助手 翻译软件是一款功能强大的 AI 翻译助手， 支持 文本、语音、图片、文档 等多种形式的实时翻译，随时随地畅通交流。 无论是阅读外文文章、出国旅行， 还是跨语言聊天、识别图片文字， 翻译软件都能帮你快速、准确地完成翻译，让沟通更加自然流畅。 主要功能 • 文本翻译 —— 支持 100+ 语言，快速、精准的多语言翻译。 • 拍照翻译 —— 打开相机即可翻译菜单、标识、图片内容。 • 对话模式 —— 实时语音互译，面对面交流无障碍。 • 文档翻译 —— 支持 PDF、Word 等文件导入与整篇翻译。 • 离线翻译 —— 下载语言包，无网环境也能使用。 • 翻译历史 —",
+    "category": "Utilities",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.5,
+    "reviewCount": 2743,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "翻译"
+    ],
+    "screenshots": [],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91-%E5%AE%9E%E6%97%B6ai%E7%BF%BB%E8%AF%91-%E5%87%BA%E5%9B%BD%E6%97%85%E8%A1%8C%E5%BF%85%E5%A4%87%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id6754841237?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/2b/e1/cb2be13c-86d5-2624-3569-8946036ce9b9/AppIcon-1x_U007ephone-0-1-0-sRGB-85-220-0.png/512x512bb.jpg",
+    "developer": "Chongqing Guanling Interactive Network Technology Co., Ltd",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": 34,
+    "slug": "英语翻译官-学英语必备中英文翻译词典",
+    "name": "英语翻译官-学英语必备中英文翻译词典",
+    "desc": "《英语翻译官》更懂国人专注英汉翻译，依托最新人工智能，采用NMT（神经网络机器翻译）系统，上下文理解更准确翻译。AI随身拍照语音识别翻译，出国旅行英语学习翻译专家。  英语学习，旅游出行必备翻译利器！赶紧试试吧！   ——【核心功能】—— 1，文本翻译：专注英汉翻译，更懂国人，依托人工智能，采用NMT（神经网络机器翻译）系统，上下文理解更准确的译文。  2，拍照翻译：随身拍照片识别翻译、相册选图翻译任意选；拍照一键翻译，旅游出行、阅读英语学习，高效率翻译利器。  3，语音翻译：最新人工智能技术，高分辨率人声识别转为文字翻译！出国旅游/英语学习必备翻译助手。  4，对话翻译：实时语音翻译，专业英",
+    "category": "Education",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewCount": 23229,
+    "platform": "iPhone / iPad",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/dc/fb/27/dcfb2714-b6af-5495-b54f-401c7d60a406/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/0a/64/84/0a64846d-c519-12df-7445-682da7afb055/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/af/19/8f/af198fd8-155d-163a-62a1-996259a93581/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/fb/2f/19/fb2f1965-0d3d-f614-7eb5-2f133adbfa6a/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/dd/9f/06/dd9f06eb-8da5-3b49-5082-b6d3be86b460/pr_source.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E5%BF%85%E5%A4%87%E4%B8%AD%E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91%E8%AF%8D%E5%85%B8/id1388845809?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/05/2f/2d/052f2de2-2936-b65f-89ab-2373d67ee3d4/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
+    "developer": "Shanghai Quentin network technology co. LTD",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": 35,
+    "slug": "翻译官-出国旅游语音图片全能翻译软件",
+    "name": "翻译官-出国旅游语音图片全能翻译软件",
+    "desc": "出国翻译软件支持200多种语言翻译；实现语音翻译，图片翻译，拍照翻译，文本翻译；满足出国翻译，旅行翻译，在线翻译等场景翻译；支持英语日语词典查询。在生活上，工作上，学习上能给小伙伴带来帮助的智能翻译软件。  app主要功能包括：  =多种翻译平台= - 支持百度翻翻译，谷歌翻译，微软翻译，能更稳定，更准确的翻译。  =语音翻译= - 告别手写打字输入，通过语音准确的翻译成目标语言。  =图片拍照翻译= - 支持菜单、路标、文章等一键翻译，自动保存拍照翻译结果，支持中文、英语、日语、韩语、泰语、越南语、俄语、波兰语、德语、丹麦语、法语、葡萄牙语、西班牙语、意大利语、希腊语、瑞典语、印地语等语言。",
+    "category": "Utilities",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.9,
+    "reviewCount": 1691,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "旅游",
+      "出行",
+      "导航",
+      "翻译官"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/95/a0/75/95a07512-d922-16cf-6817-fb9d134b8e2d/c53eaf6e-d792-4bb2-bd97-43febf59096c_5.5-new-11.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/e6/eb/ec/e6ebec07-f544-3a16-a298-181cd3593880/03a121ed-ee79-4045-9e9a-d2114e479f66_5.5-new-81.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/6e/cb/e96ecb61-2fd2-a632-7b7c-9d9ec6350aed/3ee70dee-abfd-4b46-ba77-d400ba927273_5.5-new-7.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/93/57/94/93579433-41cb-9dd8-f37d-850c71fac3ca/468491e7-0473-4227-a6d6-f4858b2b635b_5.5-new-41.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/07/6b/08/076b0860-dea5-92de-a569-2f7e2a6c3e41/22476379-43d8-444f-909c-afb78ca0bc79_5.5-new-9.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%87%BA%E5%9B%BD%E6%97%85%E6%B8%B8%E8%AF%AD%E9%9F%B3%E5%9B%BE%E7%89%87%E5%85%A8%E8%83%BD%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id1056652191?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/92/28/87/9228873b-c965-6416-0502-7d6c6306acc7/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
+    "developer": "有忠 黄",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": 36,
+    "slug": "泰语翻译官-泰国旅游泰语学习随身译",
+    "name": "泰语翻译官-泰国旅游泰语学习随身译",
+    "desc": "《泰语翻译官》中文泰语互译神器，语音识别翻译、地道发音，泰语日常口语库。泰国旅游泰语学习随身必备！新版更强大翻译功能，更丰富内容，更具价值的泰语翻译官，等你来试。  ——【核心功能】—— 1，文本翻译：接入泰国本土字词库，精准极速地道的中泰文互译！ 2，语音翻译：最新人工智能技术，高分辨率人声识别转为文字翻译！泰国旅游/泰语学习必备翻译助手。 3，拍照翻译：手机拍照片泰文识别翻译，相册选图翻译任意选；拍照一键翻译，旅游出行、泰语学习，高效率翻译利器。 4，翻译收藏：单词生词、不熟的常用语、经典名句、旅游专用语、商务泰常用语、通通收藏，随时随地翻看和朗读。 5，学习拓展：字母发音、有声节目、词汇",
+    "category": "Reference",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.9,
+    "reviewCount": 25324,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "旅游",
+      "出行",
+      "导航"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/45/29/e1/4529e14e-51f7-c1f4-aecf-b1c680920086/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/db/8f/2f/db8f2f89-5696-321c-dbc2-315ce3b6ae6d/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/dc/db/0f/dcdb0f57-c658-acc4-3bcc-a5f5cabac0ba/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/a2/ec/cc/a2eccc15-b67a-7201-8cf1-efc940f7ca6f/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/99/c1/f5/99c1f54d-485c-73f8-2532-fd45c1eba78d/pr_source.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E6%B3%B0%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E6%B3%B0%E5%9B%BD%E6%97%85%E6%B8%B8%E6%B3%B0%E8%AF%AD%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%BA%AB%E8%AF%91/id1397676648?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/34/a2/a434a200-fdb3-27fe-d604-1d5e45533819/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
+    "developer": "Shanghai Quentin network technology co. LTD",
+    "updatedAt": "2026-08-04"
   }
 ];
 // Load from localStorage or fallback to defaults
