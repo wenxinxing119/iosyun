@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 10; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 12; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -8,9 +8,9 @@ const defaultApps = [
     "name": "Things 3",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/46/9c/3c469c49-4f13-ef80-f88a-cd35f9ea1a69/AppIcon-0-0-1x_U007ephone-0-0-0-1-0-0-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥68.00",
-    "isFree": true,
+    "price": "¥68.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.8,
     "reviewCount": 5053,
     "developer": "Cultured Code",
@@ -68,7 +68,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "slug": "procreate"
   },
   {
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "免费",
-    "originalPrice": "¥98",
-    "isFree": true,
+    "price": "¥98",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -150,9 +150,9 @@ const defaultApps = [
     "name": "Fantastical",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cd/0f/5a/cd0f5a2a-d0ca-ab26-67bb-f8523ddcc0a0/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥58",
-    "isFree": true,
+    "price": "¥58",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 3,
     "reviewCount": 579,
     "developer": "Flexibits Inc.",
@@ -204,7 +204,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "slug": "1password"
   },
   {
@@ -212,9 +212,9 @@ const defaultApps = [
     "name": "GoodNotes 6",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/39/39/1a39395c-f1d7-af6d-a627-ca55a8934691/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "¥68",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥68",
+    "isFree": true,
     "rating": 4.5,
     "reviewCount": 679513,
     "developer": "Goodnotes",
@@ -244,7 +244,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-05",
     "slug": "goodnotes-6"
   },
   {
@@ -252,9 +252,9 @@ const defaultApps = [
     "name": "Pixelmator Pro",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/e9/19/a1e91908-afba-6b30-d789-b03300253ab2/AppIcon-0-0-85-220-0-0-5-0-2x-0-0-0.png/512x512bb.png",
     "category": "设计",
-    "price": "¥328.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥328.00",
+    "isFree": true,
     "rating": 0,
     "reviewCount": 0,
     "developer": "Pixelmator Team",
@@ -282,7 +282,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-03",
+    "updatedAt": "2026-08-05",
     "slug": "pixelmator-pro"
   },
   {
@@ -290,9 +290,9 @@ const defaultApps = [
     "name": "Dark Noise",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/45/b5/8c/45b58ca4-e35e-6bf9-117d-b3d175bb046f/dark-noise-primary-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥30",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥30",
+    "isFree": true,
     "rating": 4.8,
     "reviewCount": 64,
     "developer": "Charlie Chapman",
@@ -319,7 +319,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-05",
     "slug": "dark-noise"
   },
   {
@@ -327,9 +327,9 @@ const defaultApps = [
     "name": "Reeder 5",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5f/3e/d4/5f3ed4e2-9ada-1102-af29-1c9bf490cb71/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "$4.99",
-    "isFree": true,
+    "price": "$4.99",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.1,
     "reviewCount": 821,
     "developer": "Silvio Rizzi",
@@ -389,7 +389,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 11,
     "slug": "番茄todo-极简高效自律番茄钟"
   },
@@ -424,7 +424,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 12,
     "slug": "我要做计划-时间管理-学习打卡-工作计划清单"
   },
@@ -459,7 +459,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 13,
     "slug": "极简待办-日程安排-计划清单-提醒事项管理-便签备忘录记事本"
   },
@@ -494,7 +494,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 14,
     "slug": "指尖时光-日程计划-日历记事-目标打卡"
   },
@@ -522,7 +522,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 15,
     "slug": "幕布-大纲笔记-思维导图"
   },
@@ -551,7 +551,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 16,
     "slug": "豆包-随时帮忙的-ai-助手"
   },
@@ -579,7 +579,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 17,
     "slug": "汽水音乐-随时听好歌"
   },
@@ -607,7 +607,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 18,
     "slug": "红果短剧-海量热门短剧随心看"
   },
@@ -642,7 +642,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 19,
     "slug": "自由笔记"
   },
@@ -677,7 +677,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 20,
     "slug": "notability-笔记-pdf"
   },
@@ -712,7 +712,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-05",
     "id": 21,
     "slug": "有道云笔记-笔记扫描效率办公"
   },
@@ -749,9 +749,9 @@ const defaultApps = [
     "name": "航旅纵横PRO-民航官方直销平台",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/fc/69/35fc690f-ffb7-f014-3d0a-f6b5ec3af329/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥1.00",
-    "isFree": true,
+    "price": "¥1.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.7,
     "reviewCount": 51338,
     "developer": "China Travelsky Technology Limited",
@@ -777,9 +777,9 @@ const defaultApps = [
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/f1/97/22f1975d-adfc-dd01-16d4-6cee2e076e20/AppIconPlus-0-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥1.00",
-    "isFree": true,
+    "price": "¥1.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.9,
     "reviewCount": 98283,
     "developer": "Linguan Data",
@@ -862,7 +862,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%80%81%E6%9D%BF%E9%A3%9F%E7%A5%9E-%E4%BD%A0%E7%9A%84ai%E7%83%B9%E9%A5%AA%E4%BC%99%E4%BC%B4/id972641888?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/f9/dd/54f9dd9d-90f3-ca5a-3b5c-f5784451b824/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
     "developer": "Hangzhou Robam Industrial Group Co., Ltd",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 27,
@@ -888,7 +888,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E5%A4%A9%E7%88%B1%E7%83%B9%E9%A5%AA/id1247069377?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/94/d9/1794d976-3f7f-6647-3212-6159e644eee0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Shenzhen Runqian Technology Limited",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 28,
@@ -914,7 +914,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A5%87%E5%A6%99%E6%96%99%E7%90%86%E9%A4%90%E5%8E%85-%E5%84%BF%E7%AB%A5%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E5%81%9A%E9%A5%AD%E8%BD%AF%E4%BB%B6/id1624871138?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/89/2d/ef892da2-45ed-343d-9d90-b4cb513acec7/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
     "developer": "SINGAPORE BABYBUS PTE. LTD.",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 29,
@@ -922,8 +922,8 @@ const defaultApps = [
     "name": "菜谱大全Pro－小白学做家常菜做法必备烹饪助手",
     "desc": "菜谱大全，汇集了来自全国各地的数十万道家常菜，并配以精美的图片，内容丰富详细，图文搭配更容易上手，页面简洁大方，超级好用，瞬间爱上了有木有！  我们的产品特色： （1）数十万精品菜谱，统统免费使用！ （2）强大的搜索，帮你找到所有你想要的！ （3）强大的收藏，喜欢就毫不犹豫地留住！ （4）贴心的浏览记录，看过的菜谱都在这里！ （5）描述详细，图片高清，做菜轻松又容易！ （6）精品好菜推荐，天天都能吃出新花样！  有了菜谱大全，让你立马爱上做菜，轻松成为完美的厨房小能手！ ———————来自友友们的认可——————— “挺好的软件，对于厨房小白来说，是非常棒的助手，学会做饭，想吃什么做什么……”",
     "category": "Food & Drink",
-    "price": "¥49.90",
-    "originalPrice": null,
+    "price": "免费",
+    "originalPrice": "¥49.90",
     "rating": 4,
     "reviewCount": 83,
     "platform": "iPhone / iPad",
@@ -936,11 +936,11 @@ const defaultApps = [
       "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/27/7b/6c/277b6c1a-42f8-fed0-3837-f57650c2cc18/pr_source.png/392x696bb.png"
     ],
     "featured": false,
-    "isFree": false,
+    "isFree": true,
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8F%9C%E8%B0%B1%E5%A4%A7%E5%85%A8pro-%E5%B0%8F%E7%99%BD%E5%AD%A6%E5%81%9A%E5%AE%B6%E5%B8%B8%E8%8F%9C%E5%81%9A%E6%B3%95%E5%BF%85%E5%A4%87%E7%83%B9%E9%A5%AA%E5%8A%A9%E6%89%8B/id1183632694?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/96/a7/dd/96a7dd76-8501-5a6c-de4d-3bdd367ac24d/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Youyi Interaction Science and Technology Co.,Ltd",
-    "updatedAt": "2026-08-03"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 30,
@@ -968,7 +968,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E5%85%AC%E4%B8%BB%E8%B4%9D%E5%84%BF%E7%9A%84%E7%94%9C%E5%93%81%E9%A3%9F%E8%B0%B1%E5%88%B6%E4%BD%9C%E6%95%99%E5%AE%A4-%E5%8E%A8%E6%88%BF%E6%B8%B8%E6%88%8F/id1071512246?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ec/ac/10/ecac105b-f7b1-5704-f723-2c615c1ad022/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Wai Chin Ng",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 31,
@@ -995,7 +995,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%83%B9%E9%A5%AA%E5%A4%A7%E5%85%A8-%E4%B8%8B%E5%8E%A8%E6%88%BF%E5%A5%BD%E5%B8%AE%E6%89%8B/id1136974705?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/80/a1/6c80a1e0-27c1-1c89-8cc6-09ec616aca51/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "亮 王",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 32,
@@ -1023,7 +1023,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%80%8D%E9%81%A5%E5%AE%A2%E6%A0%88-%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E9%A4%90%E5%8E%85%E7%BB%8F%E8%90%A5%E6%B8%B8%E6%88%8F/id1631529003?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/39/41/273941c0-b21e-43ea-83e8-ffedc499568c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Ghost Rabbit Co., Ltd.",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 33,
@@ -1045,7 +1045,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91-%E5%AE%9E%E6%97%B6ai%E7%BF%BB%E8%AF%91-%E5%87%BA%E5%9B%BD%E6%97%85%E8%A1%8C%E5%BF%85%E5%A4%87%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id6754841237?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/2b/e1/cb2be13c-86d5-2624-3569-8946036ce9b9/AppIcon-1x_U007ephone-0-1-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Chongqing Guanling Interactive Network Technology Co., Ltd",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 34,
@@ -1071,7 +1071,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E5%BF%85%E5%A4%87%E4%B8%AD%E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91%E8%AF%8D%E5%85%B8/id1388845809?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/05/2f/2d/052f2de2-2936-b65f-89ab-2373d67ee3d4/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 35,
@@ -1102,7 +1102,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%87%BA%E5%9B%BD%E6%97%85%E6%B8%B8%E8%AF%AD%E9%9F%B3%E5%9B%BE%E7%89%87%E5%85%A8%E8%83%BD%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id1056652191?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/92/28/87/9228873b-c965-6416-0502-7d6c6306acc7/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
     "developer": "有忠 黄",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
   },
   {
     "id": 36,
@@ -1132,7 +1132,114 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%B3%B0%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E6%B3%B0%E5%9B%BD%E6%97%85%E6%B8%B8%E6%B3%B0%E8%AF%AD%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%BA%AB%E8%AF%91/id1397676648?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/34/a2/a434a200-fdb3-27fe-d604-1d5e45533819/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-05"
+  },
+  {
+    "id": 37,
+    "slug": "力扣-leetcode",
+    "name": "力扣 LeetCode",
+    "desc": "力扣（LeetCode）App 全新功能，支持移动端代码编程，实时判题，让你码不停题。  - 学习提升，快拿 Offer - 力扣社区，有问必答 - 脑力健身，极客必备  全球极客职业技能成长平台，想要提升技术能力从这里开始。海量技术题库、求职面试经验、充足技术干货等你来，力扣助你职业技能快速成长！  [趣学习] - 免费力扣题库、剑指 Offer - 职业化编程 - 上万社区题解 - 企业面试考题 - 技术交流分享社区  「扣代码」 电脑不在身边，iPhone 也可实操代码学习编程。针对 iPad 全面优化，配合键盘、鼠标、快捷键，动动手指、刷刷键盘，让你迅速开启不受打扰的沉浸式编程学习体验",
+    "category": "Developer Tools",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.9,
+    "reviewCount": 41947,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "力扣"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/e0/35/50/e035505a-aa1c-b2ea-6395-d97f74558103/7db0bc82-3ed7-4c8f-a841-01afa64bd6ef_iphone_5.5-1.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/59/c6/fe/59c6fe09-5cb0-0ad2-c8e1-d2ba971a5a77/48ef1629-bdd1-4c6e-9455-da36b2a498dc_1242x2208.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/a1/df/dd/a1dfdd97-fe54-3c57-f334-13fac008ac9b/a6026e56-9fe6-4f9b-a156-1a8acc27ed0d_iphone_5.5-3.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/cf/f7/03/cff703ec-2b64-6d75-af3f-b6f1e777c7be/80304057-cbf3-4418-b3bc-458f21609f5e_iphone_5.5-4.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/af/77/48/af774894-b995-5bef-66a2-59bfa85e97ef/a8976c82-b9f6-4d67-98a7-9ced1cf0fd88_iphone_5.5-5.jpg/392x696bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E5%8A%9B%E6%89%A3-leetcode/id1470936215?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/34/e7/0034e7cd-8085-8a62-bedc-ba91d37473dd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developer": "Lingkou Network",
+    "updatedAt": "2026-08-05"
+  },
+  {
+    "id": 38,
+    "slug": "app开发中的神兵利器",
+    "name": "app开发中的神兵利器",
+    "desc": "【学员在App Store上的真实评价】 『先给个五星好评 等你们更新了 再给你5星 凑十颗』by 孙洪展 – Jun 29, 2017 『非常不错  学习到了不少语法。看的非常明白』by 照顾儿子 – Jun 25, 2017  【章节列表】 第一章：超级控件 - 给UILabel文字中的tag和url添加点击事件 - 制作漂亮的环形进度条 - 带切换Icon的密码文本框 - 使用UIWebView加载HTML和Gif动画 - 使用UIWebView加载本地页面并调用Js代码 - 通过Javascript代码调用原生程序 - 创建一个图文并茂的笔记本 - MKMapView的代理方法 - 在",
+    "category": "Education",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.6,
+    "reviewCount": 34,
+    "platform": "iPhone / iPad",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/1a/f9/36/1af93635-0ef8-f850-4ae0-6d4ced85a7ba/mzl.gyugtakq.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/13/da/8e/13da8e2f-8bb8-72d1-5fe8-bfc34fff12e4/92c17820-5ec9-46e6-bd5e-2d678df3cc4b_oldIphone1.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/c5/f5/80/c5f580e0-485d-5c5f-2d82-85ba7fc01690/mzl.vlgqrrdr.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/12/0c/a4/120ca4ee-9aac-3102-9814-a23a5838a93f/mzl.hxdutmcq.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/app%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/id1209739676?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/47/d6/7a/47d67ae9-89f5-2826-706f-d8eb97b7bc0b/AppIcon-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
+    "developer": "发展 李",
+    "updatedAt": "2026-08-05"
+  },
+  {
+    "id": 39,
+    "slug": "python3ide",
+    "name": "Python3IDE",
+    "desc": "Python3IDE 是iOS平台上的应用程序集成开发环境。可以离线编译运行Python/Node/JS/C/C++/PHP/Lua/Perl脚本，内置常用扩展库，是您在iOS/iPad上编程的利器。   特性:  - Python3.11 运行时及标准库 - Node18 运行时 - LLVM/Clang - PHP/Lua/Perl - 内置终端，100+ Linux命令 - Python/Node/JS/C/C++/PHP/Lua/Perl脚本本地离线运行 - Pip 安装纯Python库 - Npm 安装Node库 - Git 版本控制 | Clone, Commit, Push - ",
+    "category": "Developer Tools",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 3.9,
+    "reviewCount": 239,
+    "platform": "iPhone / iPad",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/ab/aa/d3abaa2e-d252-206b-40c3-22eb678fea62/f64f487c-911f-48f4-90e7-daf38ce73369_phone5.5_1_code__cn.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/35/84/1435844a-3a25-e41e-b6d3-518ae9b1ba20/4e71c9c5-52cc-4d0b-ad47-ab7733790fc2_phone5.5_3_completion__cn.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9b/bd/b3/9bbdb3a2-c547-66b9-69ce-cd577da3f6b2/92d7714f-dd6e-444d-96ed-a471527f9f2c_phone5.5_2_pip_cn.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/c0/ed/afc0ed86-f29e-e8ef-55a5-d74b8077a43c/95a7154a-fc75-480a-8c41-0a80c86ca7b2_phone5.5_4_jupyter__cn.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/3e/39/d33e39c7-ebab-e849-395a-36d660f84d80/db9c3e2b-f8c5-4b60-85b7-e0631249df44_phone5.5_6_git_cn.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/python3ide/id1357215444?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c8/f0/99/c8f0993b-4f16-90c8-b0e1-44b4ba564492/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
+    "developer": "辉 马",
+    "updatedAt": "2026-08-05"
+  },
+  {
+    "id": 40,
+    "slug": "java编译器-程序员必备开发工具",
+    "name": "Java编译器-程序员必备开发工具",
+    "desc": "Java代码编辑器，开发文大全，更有服务端、数据库、算法，带你从Java新手进阶到大神，还包含Java编程入门课程、编程文档、教程查阅等功能，一个 新型的Java编程学习平台。        零基础学Java编程，从Java修炼手册开始，让你的编程技术不断提高、更上一层楼。  配套Java编译器，帮助新人快速上手",
+    "category": "Reference",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 3.3,
+    "reviewCount": 136,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "工具",
+      "实用",
+      "便捷"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/22/8b/39/228b39d4-0ecd-0f4d-2ae3-41c4f9b5aacc/f3a36c16-2650-4f68-8cc1-a723d6407a17_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2022-05-05_at_10.19.26.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/6b/b2/74/6bb27488-cd4c-f168-daa7-b3fc3cb89add/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/9a/46/20/9a4620eb-163a-6196-e2b6-38dbdb0ca774/pr_source.png/392x696bb.png"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/java%E7%BC%96%E8%AF%91%E5%99%A8-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/id1459795517?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/c6/32/03/c63203c1-26d0-2f1e-3c49-58f580dbfb2f/AppIcon-1x_U007emarketing-0-7-0-0-sRGB-85-220-0.png/512x512bb.jpg",
+    "developer": "凌云 蔡",
+    "updatedAt": "2026-08-05"
   }
 ];
 // Load from localStorage or fallback to defaults
