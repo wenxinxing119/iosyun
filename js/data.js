@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 14; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 16; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -8,9 +8,9 @@ const defaultApps = [
     "name": "Things 3",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/46/9c/3c469c49-4f13-ef80-f88a-cd35f9ea1a69/AppIcon-0-0-1x_U007ephone-0-0-0-1-0-0-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥68.00",
-    "isFree": true,
+    "price": "¥68.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.8,
     "reviewCount": 5053,
     "developer": "Cultured Code",
@@ -36,9 +36,9 @@ const defaultApps = [
     "name": "Procreate",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/36/95/7b36957c-dc43-6e38-99e5-31ecd83ff2dd/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
     "category": "设计",
-    "price": "免费",
-    "originalPrice": "¥88.00",
-    "isFree": true,
+    "price": "¥88.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.2,
     "reviewCount": 35769,
     "developer": "Savage Interactive",
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "¥98",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥98",
+    "isFree": true,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -142,7 +142,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-07",
     "slug": "halide-mark-iii"
   },
   {
@@ -150,9 +150,9 @@ const defaultApps = [
     "name": "Fantastical",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cd/0f/5a/cd0f5a2a-d0ca-ab26-67bb-f8523ddcc0a0/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "免费",
-    "originalPrice": "¥58",
-    "isFree": true,
+    "price": "¥58",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 3,
     "reviewCount": 579,
     "developer": "Flexibits Inc.",
@@ -204,7 +204,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "slug": "1password"
   },
   {
@@ -244,7 +244,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "slug": "goodnotes-6"
   },
   {
@@ -290,9 +290,9 @@ const defaultApps = [
     "name": "Dark Noise",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/45/b5/8c/45b58ca4-e35e-6bf9-117d-b3d175bb046f/dark-noise-primary-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥30",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥30",
+    "isFree": true,
     "rating": 4.8,
     "reviewCount": 64,
     "developer": "Charlie Chapman",
@@ -319,7 +319,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-05",
+    "updatedAt": "2026-08-07",
     "slug": "dark-noise"
   },
   {
@@ -355,7 +355,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "slug": "reeder-5"
   },
   {
@@ -389,7 +389,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 11,
     "slug": "番茄todo-极简高效自律番茄钟"
   },
@@ -424,7 +424,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 12,
     "slug": "我要做计划-时间管理-学习打卡-工作计划清单"
   },
@@ -459,7 +459,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 13,
     "slug": "极简待办-日程安排-计划清单-提醒事项管理-便签备忘录记事本"
   },
@@ -494,7 +494,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 14,
     "slug": "指尖时光-日程计划-日历记事-目标打卡"
   },
@@ -522,7 +522,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 15,
     "slug": "幕布-大纲笔记-思维导图"
   },
@@ -551,7 +551,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 16,
     "slug": "豆包-随时帮忙的-ai-助手"
   },
@@ -579,7 +579,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 17,
     "slug": "汽水音乐-随时听好歌"
   },
@@ -607,7 +607,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 18,
     "slug": "红果短剧-海量热门短剧随心看"
   },
@@ -642,7 +642,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 19,
     "slug": "自由笔记"
   },
@@ -677,7 +677,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 20,
     "slug": "notability-笔记-pdf"
   },
@@ -712,7 +712,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-06",
+    "updatedAt": "2026-08-07",
     "id": 21,
     "slug": "有道云笔记-笔记扫描效率办公"
   },
@@ -749,9 +749,9 @@ const defaultApps = [
     "name": "航旅纵横PRO-民航官方直销平台",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/fc/69/35fc690f-ffb7-f014-3d0a-f6b5ec3af329/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.7,
     "reviewCount": 51338,
     "developer": "China Travelsky Technology Limited",
@@ -769,7 +769,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-07",
     "id": 23,
     "slug": "航旅纵横pro-民航官方直销平台"
   },
@@ -777,9 +777,9 @@ const defaultApps = [
     "name": "扫描全能王 - 官方出品1元畅用版，扫描PDF文件，文字识别",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/f1/97/22f1975d-adfc-dd01-16d4-6cee2e076e20/AppIconPlus-0-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.9,
     "reviewCount": 98283,
     "developer": "Linguan Data",
@@ -804,7 +804,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-04",
+    "updatedAt": "2026-08-07",
     "id": 24,
     "slug": "扫描全能王-官方出品1元畅用版-扫描pdf文件-文字识别"
   },
@@ -862,7 +862,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%80%81%E6%9D%BF%E9%A3%9F%E7%A5%9E-%E4%BD%A0%E7%9A%84ai%E7%83%B9%E9%A5%AA%E4%BC%99%E4%BC%B4/id972641888?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/f9/dd/54f9dd9d-90f3-ca5a-3b5c-f5784451b824/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
     "developer": "Hangzhou Robam Industrial Group Co., Ltd",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 27,
@@ -888,7 +888,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E5%A4%A9%E7%88%B1%E7%83%B9%E9%A5%AA/id1247069377?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/94/d9/1794d976-3f7f-6647-3212-6159e644eee0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Shenzhen Runqian Technology Limited",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 28,
@@ -914,7 +914,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A5%87%E5%A6%99%E6%96%99%E7%90%86%E9%A4%90%E5%8E%85-%E5%84%BF%E7%AB%A5%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E5%81%9A%E9%A5%AD%E8%BD%AF%E4%BB%B6/id1624871138?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/89/2d/ef892da2-45ed-343d-9d90-b4cb513acec7/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
     "developer": "SINGAPORE BABYBUS PTE. LTD.",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 29,
@@ -922,8 +922,8 @@ const defaultApps = [
     "name": "菜谱大全Pro－小白学做家常菜做法必备烹饪助手",
     "desc": "菜谱大全，汇集了来自全国各地的数十万道家常菜，并配以精美的图片，内容丰富详细，图文搭配更容易上手，页面简洁大方，超级好用，瞬间爱上了有木有！  我们的产品特色： （1）数十万精品菜谱，统统免费使用！ （2）强大的搜索，帮你找到所有你想要的！ （3）强大的收藏，喜欢就毫不犹豫地留住！ （4）贴心的浏览记录，看过的菜谱都在这里！ （5）描述详细，图片高清，做菜轻松又容易！ （6）精品好菜推荐，天天都能吃出新花样！  有了菜谱大全，让你立马爱上做菜，轻松成为完美的厨房小能手！ ———————来自友友们的认可——————— “挺好的软件，对于厨房小白来说，是非常棒的助手，学会做饭，想吃什么做什么……”",
     "category": "Food & Drink",
-    "price": "免费",
-    "originalPrice": "¥49.90",
+    "price": "¥49.90",
+    "originalPrice": null,
     "rating": 4,
     "reviewCount": 83,
     "platform": "iPhone / iPad",
@@ -936,7 +936,7 @@ const defaultApps = [
       "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/27/7b/6c/277b6c1a-42f8-fed0-3837-f57650c2cc18/pr_source.png/392x696bb.png"
     ],
     "featured": false,
-    "isFree": true,
+    "isFree": false,
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8F%9C%E8%B0%B1%E5%A4%A7%E5%85%A8pro-%E5%B0%8F%E7%99%BD%E5%AD%A6%E5%81%9A%E5%AE%B6%E5%B8%B8%E8%8F%9C%E5%81%9A%E6%B3%95%E5%BF%85%E5%A4%87%E7%83%B9%E9%A5%AA%E5%8A%A9%E6%89%8B/id1183632694?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/96/a7/dd/96a7dd76-8501-5a6c-de4d-3bdd367ac24d/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Youyi Interaction Science and Technology Co.,Ltd",
@@ -968,7 +968,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E5%85%AC%E4%B8%BB%E8%B4%9D%E5%84%BF%E7%9A%84%E7%94%9C%E5%93%81%E9%A3%9F%E8%B0%B1%E5%88%B6%E4%BD%9C%E6%95%99%E5%AE%A4-%E5%8E%A8%E6%88%BF%E6%B8%B8%E6%88%8F/id1071512246?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ec/ac/10/ecac105b-f7b1-5704-f723-2c615c1ad022/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Wai Chin Ng",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 31,
@@ -995,7 +995,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%83%B9%E9%A5%AA%E5%A4%A7%E5%85%A8-%E4%B8%8B%E5%8E%A8%E6%88%BF%E5%A5%BD%E5%B8%AE%E6%89%8B/id1136974705?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/80/a1/6c80a1e0-27c1-1c89-8cc6-09ec616aca51/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "亮 王",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 32,
@@ -1023,7 +1023,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%80%8D%E9%81%A5%E5%AE%A2%E6%A0%88-%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E9%A4%90%E5%8E%85%E7%BB%8F%E8%90%A5%E6%B8%B8%E6%88%8F/id1631529003?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/39/41/273941c0-b21e-43ea-83e8-ffedc499568c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Ghost Rabbit Co., Ltd.",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 33,
@@ -1045,7 +1045,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91-%E5%AE%9E%E6%97%B6ai%E7%BF%BB%E8%AF%91-%E5%87%BA%E5%9B%BD%E6%97%85%E8%A1%8C%E5%BF%85%E5%A4%87%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id6754841237?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/2b/e1/cb2be13c-86d5-2624-3569-8946036ce9b9/AppIcon-1x_U007ephone-0-1-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Chongqing Guanling Interactive Network Technology Co., Ltd",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 34,
@@ -1071,7 +1071,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E5%BF%85%E5%A4%87%E4%B8%AD%E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91%E8%AF%8D%E5%85%B8/id1388845809?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/05/2f/2d/052f2de2-2936-b65f-89ab-2373d67ee3d4/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 35,
@@ -1102,7 +1102,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%87%BA%E5%9B%BD%E6%97%85%E6%B8%B8%E8%AF%AD%E9%9F%B3%E5%9B%BE%E7%89%87%E5%85%A8%E8%83%BD%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id1056652191?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/92/28/87/9228873b-c965-6416-0502-7d6c6306acc7/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
     "developer": "有忠 黄",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 36,
@@ -1132,7 +1132,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%B3%B0%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E6%B3%B0%E5%9B%BD%E6%97%85%E6%B8%B8%E6%B3%B0%E8%AF%AD%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%BA%AB%E8%AF%91/id1397676648?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/34/a2/a434a200-fdb3-27fe-d604-1d5e45533819/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 37,
@@ -1160,7 +1160,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%8A%9B%E6%89%A3-leetcode/id1470936215?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/34/e7/0034e7cd-8085-8a62-bedc-ba91d37473dd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "developer": "Lingkou Network",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 38,
@@ -1185,7 +1185,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/app%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/id1209739676?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/47/d6/7a/47d67ae9-89f5-2826-706f-d8eb97b7bc0b/AppIcon-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
     "developer": "发展 李",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 39,
@@ -1211,7 +1211,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/python3ide/id1357215444?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c8/f0/99/c8f0993b-4f16-90c8-b0e1-44b4ba564492/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "辉 马",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 40,
@@ -1239,7 +1239,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/java%E7%BC%96%E8%AF%91%E5%99%A8-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/id1459795517?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/c6/32/03/c63203c1-26d0-2f1e-3c49-58f580dbfb2f/AppIcon-1x_U007emarketing-0-7-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "凌云 蔡",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 41,
@@ -1265,7 +1265,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/photomath/id919087726?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/7f/46/0a7f4650-c4ad-91ed-a71c-388a3398839f/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
     "developer": "Google LLC",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 42,
@@ -1291,7 +1291,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%9C%80%E7%89%9B%E8%AE%A1%E7%AE%97%E5%99%A8-%E7%A7%91%E5%AD%A6%E9%80%9A%E7%94%A8%E8%B6%85%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8/id1161975388?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/33/74/2c/33742c3d-1330-62d3-34ce-e9e4897300b9/zuiniuAppIcon-1x_U007emarketing-85-220-6.png/512x512bb.jpg",
     "developer": "继红 王",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 43,
@@ -1315,7 +1315,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E6%95%B0%E8%AE%A1%E7%AE%97%E5%99%A8-%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97%E5%99%A8/id816849128?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/76/25/727625b7-9852-e8c6-368d-b20daa77e3a1/TimeAppIcon-0-0-1x_U007ephone-0-5-85-220.png/512x512bb.jpg",
     "developer": "山 钟",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
   },
   {
     "id": 44,
@@ -1341,7 +1341,89 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%AE%A1%E7%AE%97%E5%99%A8-%E6%96%B0%E7%89%88%E8%AE%A1%E7%AE%97%E6%9C%BA/id1458583388?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/a6/b3/34a6b385-de18-a844-56ad-940c973eec8c/AppIcon-0-0-1x_U007ephone-0-9-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Free Calculator Technology Co., Ltd.",
-    "updatedAt": "2026-08-06"
+    "updatedAt": "2026-08-07"
+  },
+  {
+    "id": 45,
+    "slug": "智能写作大师一键文章生成写作助手",
+    "name": "智能写作大师一键文章生成写作助手",
+    "desc": "智能写作大师一键文章生成写作助手是一款创意工具。无论是寻找创作灵感，还是打造独一无二的艺术作品，我们的应用都能满足你的需求。  智能写作： 即刻获得创意冲击，轻松编写出精彩纷呈的文字。 文章生成： 一键生成生动文本，迅速传达您的思想和创意。 智能绘图： 创意无限可能，借助智能绘画功能，打造出惊艳的艺术品。  为何选择我们的应用？  创意激发： 我们是您创作的引擎，激发源源不断的灵感。 智能助手： 应用智能技术，提升创作效率，助您专注于创意表达。 多功能性： 一个应用满足您多样化的创作需求。  1、付款：用户确认购买并付款后计入iTunes账户； 2、取消续订：如需取消续订，请在当前订阅周期到期",
+    "category": "Utilities",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.6,
+    "reviewCount": 257,
+    "platform": "iPhone / iPad",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/dd/e9/f0/dde9f08d-c0ba-ac9b-2ce5-9d37ce4f2a61/acf8ed65-36dd-4386-821e-900c41168aa9_2208-1.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/94/2d/e2/942de240-0c4f-5e83-21b7-ac58626d6e8d/52a92781-404a-41c1-b778-9d7e8371007e_2208-2.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/7f/79/d6/7f79d66f-7cbd-9c99-f653-d124b806f581/8d762d70-0b04-48c2-a5c8-4c6f91d4a97e_2208-3.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/a7/6d/92/a76d92c1-5141-0505-1177-8291ed94d398/371f8f6a-97d7-4e2c-ae89-52d033d541ea_2208-4.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/4b/a4/bf/4ba4bf91-6125-b414-1f06-b3d8df51b4e9/f69d6269-f44e-4df3-a34e-f3affa83055d_2208-5.jpg/392x696bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E5%86%99%E4%BD%9C%E5%A4%A7%E5%B8%88%E4%B8%80%E9%94%AE%E6%96%87%E7%AB%A0%E7%94%9F%E6%88%90%E5%86%99%E4%BD%9C%E5%8A%A9%E6%89%8B/id6472870993?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4f/3d/25/4f3d251f-abdd-dc51-4b8a-0a7264c4d899/AppIcon-1x_U007ephone-0-10-0-85-220.jpeg/512x512bb.jpg",
+    "developer": "Guangzhou Junyao Technology Co., Ltd",
+    "updatedAt": "2026-08-07"
+  },
+  {
+    "id": 46,
+    "slug": "文书岛-ai公文写作-老笔杆写材料神器",
+    "name": "文书岛-AI公文写作&老笔杆写材料神器",
+    "desc": "在繁忙的职场中，公文撰写往往占据了大量宝贵时间。现在，有了AI公文写作，这一切都将变得轻松高效。我们利用前沿的人工智能技术，为您打造了一款集智能生成、合规审核于一体的公文写作神器。 ====核心功能亮点==== 【智能生成，一键成稿】 只需简单输入公文的基本信息和要点，AI公文写作助手便能迅速理解您的需求，并自动生成符合规范的公文草稿。无论是通知、报告、请示还是决定，都能轻松应对，让您的公文撰写工作事半功倍。 【范文素材库，随时查阅】 内置海量官方公文和事务性公文范文素材，覆盖各行各业、各类场景。这些权威资料不仅为您提供了丰富的写作灵感，还能确保您的公文内容准确无误、专业规范。 【合规审核，规",
+    "category": "Utilities",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.7,
+    "reviewCount": 1427,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "文书岛"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/79/62/29/79622940-db03-6d75-6722-81652a11e438/1.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/c4/39/64c439c3-c1cb-8421-1a3c-e8541cf9b785/2.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/18/b8/4318b827-bc81-1624-8ae4-94785357fcef/3.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/48/b9/c148b9e6-9bcd-53d9-1e38-2494dcf62988/4.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/7b/57/df7b5724-d85c-dc45-9b9d-e72315806402/5.png/320x480bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E6%96%87%E4%B9%A6%E5%B2%9B-ai%E5%85%AC%E6%96%87%E5%86%99%E4%BD%9C-%E8%80%81%E7%AC%94%E6%9D%86%E5%86%99%E6%9D%90%E6%96%99%E7%A5%9E%E5%99%A8/id6670460386?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f7/f6/18/f7f618a3-3222-50fc-5842-84374b040ee6/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "developer": "Shisi information technology co., ltd",
+    "updatedAt": "2026-08-07"
+  },
+  {
+    "id": 47,
+    "slug": "摸鱼文案-ai写作神器",
+    "name": "摸鱼文案 - AI写作神器",
+    "desc": "AI摸鱼文案，开启机器人写作新时代!  AI摸鱼文案，针对大家难于向机器人发出好的指令的痛点，特别内嵌了数十种优秀的指令模板，让您轻松玩转A写作!  AI摸鱼文案，是您的机器人助理，他可以帮你处理日常性工作，比如写周报月报以及年度总结等等，让您有更多的时间精力，放到更有创造力的工作上来。只需一个指令，以秒计算生成相关内容以及格式。  AI摸鱼文案，是您的机器人帮手。因为智能，所以机器人可以迅速生成有吸引力的内容。无论是写媒体文章，还是起标题，以及生成朋友圈文案，它都可以选定吸引哪样的人群，从而更有针对性，更有效果!  AI摸鱼文案，是您的机器人合伙人。内嵌多种指令模板，比如SWOT 分析，以及",
+    "category": "Productivity",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.9,
+    "reviewCount": 153,
+    "platform": "iPhone / iPad",
+    "tags": [
+      "摸鱼文案"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/f4/6c/83/f46c8371-a3af-bb38-77e7-c9bebf54ae55/a53a51e9-bb26-4b4a-ae0c-4f76738585cc_01.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/66/35/e9/6635e912-d5ed-c7d5-96e1-12b986be31bd/e8222fa9-c823-498f-a167-bdee3cf2213b_02.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/09/4c/74/094c7475-5577-3097-ac07-6e85cba487e0/62405de3-da5c-4932-936f-d242bd0cdddd_03.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/19/dd/62/19dd629f-3178-9d2f-785a-f3cb04c0d6c6/9d4448d6-a571-4096-9c71-d8a3019b95d7_04.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/85/33/e2/8533e226-686b-a697-a655-d5849d8cd1ef/b78f3b7e-a9dd-4f9c-9bc9-8afaf5a07f03_05.jpg/392x696bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/%E6%91%B8%E9%B1%BC%E6%96%87%E6%A1%88-ai%E5%86%99%E4%BD%9C%E7%A5%9E%E5%99%A8/id6447236472?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/47/a5/70/47a57059-533d-9156-bbac-de58143f70ca/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
+    "developer": "Beijing Sunsoul Media Co., Ltd.",
+    "updatedAt": "2026-08-07"
   }
 ];
 // Load from localStorage or fallback to defaults
