@@ -68,6 +68,12 @@ function appIcon(app, size) {
 }
 
 // === App Card Renderer ===
+function appDetailPath(app) {
+  const slug = app && (app.slug || (app.id != null ? 'app-' + app.id : ''));
+  if (!slug) return 'category.html';
+  return '/app/' + encodeURIComponent(slug);
+}
+
 function createAppCard(app) {
   let badgeHTML = '';
   if (app.isFree && app.originalPrice) badgeHTML = '<span class="badge badge-free">限免</span>';
@@ -75,7 +81,7 @@ function createAppCard(app) {
   else if (app.originalPrice) badgeHTML = '<span class="badge badge-off">降价</span>';
 
   return `
-    <div class="app-card" onclick="window.location.href='/app/${app.slug}'">
+    <div class="app-card" onclick="window.location.href='${appDetailPath(app)}'">
       ${badgeHTML}
       ${appIcon(app, 64)}
       <div class="card-title">${app.name}</div>
@@ -95,15 +101,16 @@ function createAppCard(app) {
 function createFeaturedCard(app) {
   const gradients = ['gradient-1', 'gradient-2'];
   const grad = gradients[app.id % 2];
+  const desc = (app.description || app.desc || '').slice(0, 60);
   return `
-    <div class="featured-card" onclick="window.location.href='/app/${app.slug}'">
+    <div class="featured-card" onclick="window.location.href='${appDetailPath(app)}'">
       <div class="fc-img ${grad}">
         ${appIcon(app, 80)}
       </div>
       <div class="fc-content">
         <div class="fc-tag">${app.isFree && app.originalPrice ? '今日限免' : '编辑推荐'}</div>
         <div class="fc-title">${app.name}</div>
-        <div class="fc-desc">${app.description.slice(0, 60)}...</div>
+        <div class="fc-desc">${desc}${desc ? '...' : ''}</div>
       </div>
     </div>
   `;

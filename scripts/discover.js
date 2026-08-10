@@ -150,9 +150,20 @@ async function autoAddTopCandidates(candidates) {
     const icon = info.artworkUrl512 || info.artworkUrl100 || '';
     const screenshots = (info.screenshotUrls || []).slice(0, 5);
 
+    const name = info.trackCensoredName || info.trackName;
+    const baseSlug = String(name || '')
+      .toLowerCase()
+      .replace(/[^\w\u4e00-\u9fff]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/-+/g, '-') || ('app-' + nextId);
+    const usedSlugs = new Set(apps.map(a => a.slug).filter(Boolean));
+    let slug = baseSlug, n = 1;
+    while (usedSlugs.has(slug)) slug = baseSlug + '-' + (++n);
+
     apps.push({
       id: nextId++,
-      name: info.trackCensoredName || info.trackName,
+      name,
+      slug,
       icon,
       category: c.category || GENRE_MAP[info.primaryGenreName] || '工具',
       price: price === 0 ? '免费' : (info.currency === 'USD' ? '$'+price.toFixed(2) : '¥'+price.toFixed(2)),

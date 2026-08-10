@@ -201,7 +201,7 @@ async function main() {
       id: maxId,
       slug: candidate,
       name: item.trackName,
-      desc: desc || item.trackName,
+      description: desc || item.trackName,
       category: item.primaryGenreName || '工具',
       price: price,
       originalPrice: null,

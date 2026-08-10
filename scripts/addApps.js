@@ -68,9 +68,16 @@ async function addOne(appId, category, language, tags) {
   
   const screenshots = (info.screenshotUrls || []).slice(0, 5);
   const rating = Math.round((info.averageUserRating || 0) * 10) / 10;
+  const name = info.trackName || info.trackCensoredName;
+  const slug = String(name || '')
+    .toLowerCase()
+    .replace(/[^\w\u4e00-\u9fff]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-') || ('app-' + appId);
   
   const app = {
-    name: info.trackName || info.trackCensoredName,
+    name,
+    slug,
     icon: info.artworkUrl512 || info.artworkUrl100,
     category: category,
     price: priceDisplay,
@@ -112,6 +119,7 @@ async function main() {
   const apps = JSON.parse(match[1]);
   const existingIds = new Set(apps.map(a => a.id));
   const existingAppStoreIds = new Set();
+  const usedSlugs = new Set(apps.map(a => a.slug).filter(Boolean));
   for (const a of apps) {
     const m = a.appStoreUrl && a.appStoreUrl.match(/id(\d+)/);
     if (m) existingAppStoreIds.add(parseInt(m[1]));
@@ -132,6 +140,10 @@ async function main() {
     const app = await addOne(appId, category, language, tags);
     if (app) {
       app.id = nextId++;
+      let candidate = app.slug || ('app-' + app.id), n = 1;
+      while (usedSlugs.has(candidate)) candidate = (app.slug || ('app-' + app.id)) + '-' + (++n);
+      app.slug = candidate;
+      usedSlugs.add(candidate);
       apps.push(app);
       added++;
     }
