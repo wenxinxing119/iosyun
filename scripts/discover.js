@@ -129,7 +129,7 @@ function mb(bytes) {
 async function autoAddTopCandidates(candidates) {
   const { readFileSync, writeFileSync } = await import('fs');
   const content = readFileSync('js/data.js', 'utf8');
-  const match = content.match(/const defaultApps = (\[[\s\S]*?\])/);
+  const match = content.match(/const defaultApps = (\[[\s\S]*?\]);/);
   if (!match) return 0;
   const apps = JSON.parse(match[1]);
   let nextId = Math.max(...apps.map(a => a.id)) + 1;

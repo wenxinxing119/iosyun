@@ -174,7 +174,8 @@ function applyFilters() {
   else if (currentFilter === 'discount') filtered = filtered.filter(a => a.originalPrice);
 
   if (currentSort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
-  else if (currentSort === 'newest') filtered.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+  else if (currentSort === 'newest') filtered.sort((a, b) => b.id - a.id);
+  else if (currentSort === 'default') filtered.sort((a, b) => b.id - a.id);
   else if (currentSort === 'price-asc') {
     filtered.sort((a, b) => {
       const pa = a.isFree ? 0 : parseFloat(a.price.replace(/[^0-9.]/g,'')) || 999;

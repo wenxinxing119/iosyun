@@ -6,8 +6,8 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="app-version" content="4">
-<script>if(!document.querySelector('meta[name="app-version"]')||document.querySelector('meta[name="app-version"]').content!=='4')location.reload()</script>
+<meta name="app-version" content="5">
+<script>if(!document.querySelector('meta[name="app-version"]')||document.querySelector('meta[name="app-version"]').content!=='5')location.reload()</script>
 <title>iosyun - 发现好应用，每天都有新推荐</title>
 <meta name="description" content="iosyun 每日精选推荐 iOS 优质应用，限免速报、深度测评、分类浏览，帮你发现 App Store 里的宝藏应用。">
 <meta name="keywords" content="iOS应用推荐,App推荐,限免,App Store,应用测评,iPhone应用,iPad应用">
@@ -171,21 +171,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // 真正限免优先，不够8个用其他免费应用补齐
   const realFree = apps.filter(a => a.isFree && a.originalPrice);
   const otherFree = apps.filter(a => a.isFree && !a.originalPrice);
-  const freeApps = [...realFree, ...otherFree].slice(0, 8);
+  const shuffle = arr => { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const freeApps = [...shuffle(realFree), ...shuffle(otherFree)].slice(0, 8);
   const freeTitle = realFree.length > 0 ? '🎉 今日限免应用' : '🎁 免费好应用';
   document.querySelector('.fb-info h3').textContent = freeTitle;
   document.getElementById('freeApps').innerHTML = freeApps.length
     ? freeApps.map(createAppCard).join('')
     : '<p style="text-align:center;color:var(--gray-500);grid-column:1/-1;padding:40px;">暂无今日限免应用，明天再来看看~</p>';
 
-  const featured = apps.filter(a => a.featured).slice(0, 4);
+  const featured = [...apps].filter(a => a.featured).sort((a,b) => b.id - a.id).slice(0, 4);
   document.getElementById('featuredApps').innerHTML = featured.map(createFeaturedCard).join('');
 
   document.getElementById('categoriesList').innerHTML = categories.map(c =>
     `<a href="category.html?cat=${c.key}" class="cat-chip"><span class="emoji">${c.emoji}</span>${c.name}</a>`
   ).join('');
 
-  const latest = [...apps].sort((a,b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 8);
+  const latest = [...apps].sort((a,b) => b.id - a.id).slice(0, 8);
   document.getElementById('latestApps').innerHTML = latest.map(createAppCard).join('');
 
   startCountdown();
