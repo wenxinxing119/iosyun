@@ -120,8 +120,8 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
 </button>
 
-<script src="/js/data.js?v=6"></script>
-<script src="/js/main.js?v=6"></script>
+<script src="/js/data.js?v=7"></script>
+<script src="/js/main.js?v=7"></script>
 <script>
 // 从 URL 路径读取 slug: /app/things-3 → "things-3"
 // 部分浏览器 pathname 保留百分号编码，需要 decode
@@ -141,8 +141,14 @@ if (oldId) {
   }
 }
 
-let app = apps.find(a => a.slug === slug);
-// 兼容历史数据缺 slug：/app/app-123 或纯数字 id
+let app = apps.find(a => a.slug === slug || (Array.isArray(a.slugAliases) && a.slugAliases.includes(slug)));
+// 兼容 App Store id 形式：/app/id123456 或历史 /app/app-123
+if (!app) {
+  const storeId = slug.match(/^id(\d+)$/);
+  if (storeId) {
+    app = apps.find(a => (a.appStoreUrl || '').includes('id' + storeId[1]));
+  }
+}
 if (!app) {
   const idMatch = slug.match(/^app-(\d+)$/) || slug.match(/^(\d+)$/);
   if (idMatch) app = apps.find(a => a.id === parseInt(idMatch[1], 10));
@@ -150,6 +156,11 @@ if (!app) {
 if (app) {
   if (!app.description && app.desc) app.description = app.desc;
   if (!Array.isArray(app.tags)) app.tags = [];
+  // 旧中文 slug / 别名 → 301 到 canonical ASCII slug
+  if (app.slug && slug !== app.slug) {
+    window.location.replace('/app/' + encodeURIComponent(app.slug));
+    throw new Error('redirect');
+  }
 }
 
 function updateMetaTags(app) {

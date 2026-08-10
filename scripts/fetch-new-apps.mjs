@@ -7,6 +7,10 @@
  * 由 GitHub Actions 每天定时运行
  */
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { generateSlug, uniqueSlug } = require('./slug-utils.cjs');
+
 const dataFile = new URL('../js/data.js', import.meta.url).pathname;
 
 // ============================================================
@@ -26,13 +30,6 @@ const SEARCH_TERMS = [
 // ============================================================
 // 工具函数
 // ============================================================
-function generateSlug(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^\w\u4e00-\u9fff]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .replace(/-+/g, '-');
-}
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
@@ -178,19 +175,13 @@ async function main() {
 
   // 生成新 ID（在现有最大 ID 基础上递增）
   let maxId = apps.reduce((max, a) => Math.max(max, a.id || 0), 0);
-  const addedSlugs = new Set(apps.map(a => a.slug));
+  const addedSlugs = new Set(apps.map(a => a.slug).filter(Boolean));
 
   const newApps = [];
   for (const item of picked) {
     maxId++;
-    let slug = generateSlug(item.trackName);
-    if (!slug) slug = 'app-' + maxId;
-    // 防重名
-    let candidate = slug, n = 1;
-    while (addedSlugs.has(candidate)) {
-      candidate = slug + '-' + (++n);
-    }
-    addedSlugs.add(candidate);
+    const base = generateSlug(item.trackName, item.trackId) || ('app-' + maxId);
+    const candidate = uniqueSlug(base, addedSlugs);
 
     const price = item.price === 0 || item.formattedPrice === '免费'
       ? '免费'

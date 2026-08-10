@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { generateSlug, uniqueSlug } = require('./slug-utils.cjs');
 
 // Apps to add: [appId, category, language, tags]
 const NEW_APPS = [
@@ -69,11 +70,7 @@ async function addOne(appId, category, language, tags) {
   const screenshots = (info.screenshotUrls || []).slice(0, 5);
   const rating = Math.round((info.averageUserRating || 0) * 10) / 10;
   const name = info.trackName || info.trackCensoredName;
-  const slug = String(name || '')
-    .toLowerCase()
-    .replace(/[^\w\u4e00-\u9fff]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .replace(/-+/g, '-') || ('app-' + appId);
+  const slug = generateSlug(name, appId) || ('app-' + appId);
   
   const app = {
     name,
@@ -140,10 +137,7 @@ async function main() {
     const app = await addOne(appId, category, language, tags);
     if (app) {
       app.id = nextId++;
-      let candidate = app.slug || ('app-' + app.id), n = 1;
-      while (usedSlugs.has(candidate)) candidate = (app.slug || ('app-' + app.id)) + '-' + (++n);
-      app.slug = candidate;
-      usedSlugs.add(candidate);
+      app.slug = uniqueSlug(app.slug || ('app-' + app.id), usedSlugs);
       apps.push(app);
       added++;
     }

@@ -5,6 +5,8 @@
  * 用法: node scripts/discover.js
  */
 
+const { generateSlug, uniqueSlug, extractTrackId } = require('./slug-utils.cjs');
+
 const GENRE_MAP = {
   'Productivity':'效率','Utilities':'工具','Lifestyle':'生活','Health & Fitness':'健康',
   'Education':'教育','Finance':'财务','Business':'商务','Social Networking':'社交',
@@ -151,14 +153,9 @@ async function autoAddTopCandidates(candidates) {
     const screenshots = (info.screenshotUrls || []).slice(0, 5);
 
     const name = info.trackCensoredName || info.trackName;
-    const baseSlug = String(name || '')
-      .toLowerCase()
-      .replace(/[^\w\u4e00-\u9fff]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-      .replace(/-+/g, '-') || ('app-' + nextId);
+    const trackId = info.trackId || extractTrackId(info.trackViewUrl || c.appStoreUrl);
     const usedSlugs = new Set(apps.map(a => a.slug).filter(Boolean));
-    let slug = baseSlug, n = 1;
-    while (usedSlugs.has(slug)) slug = baseSlug + '-' + (++n);
+    const slug = uniqueSlug(generateSlug(name, trackId) || ('app-' + nextId), usedSlugs);
 
     apps.push({
       id: nextId++,
