@@ -1,6 +1,6 @@
 // === App Data with localStorage support ===
 const STORAGE_KEY = 'iosyun_apps';
-const DATA_VERSION = 33; // 改这个数字强制刷新所有用户的缓存
+const DATA_VERSION = 35; // 改这个数字强制刷新所有用户的缓存
 
 const defaultApps = [
   {
@@ -36,9 +36,9 @@ const defaultApps = [
     "name": "Procreate",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/36/95/7b36957c-dc43-6e38-99e5-31ecd83ff2dd/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
     "category": "设计",
-    "price": "¥88.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥88.00",
+    "isFree": true,
     "rating": 4.2,
     "reviewCount": 35769,
     "developer": "Savage Interactive",
@@ -68,7 +68,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": true,
-    "updatedAt": "2026-08-12",
+    "updatedAt": "2026-08-15",
     "slug": "procreate"
   },
   {
@@ -76,9 +76,9 @@ const defaultApps = [
     "name": "CARROT Weather",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/88/94/1b889460-7b24-47eb-0b76-cf53c676e31b/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
     "category": "天气",
-    "price": "免费",
-    "originalPrice": "¥30",
-    "isFree": true,
+    "price": "¥30",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.3,
     "reviewCount": 1012,
     "developer": "Grailr LLC",
@@ -116,9 +116,9 @@ const defaultApps = [
     "name": "Halide Mark III",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/08/70/5908705a-685e-3114-b80a-05f95666633c/titanium-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "¥98",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥98",
+    "isFree": true,
     "rating": 3.3,
     "reviewCount": 933,
     "developer": "Lux Optics",
@@ -142,7 +142,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-11",
+    "updatedAt": "2026-08-15",
     "slug": "halide-mark-iii"
   },
   {
@@ -204,7 +204,7 @@ const defaultApps = [
     ],
     "featured": true,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "1password"
   },
   {
@@ -212,9 +212,9 @@ const defaultApps = [
     "name": "GoodNotes 6",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/39/39/1a39395c-f1d7-af6d-a627-ca55a8934691/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "category": "效率",
-    "price": "¥68",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥68",
+    "isFree": true,
     "rating": 4.5,
     "reviewCount": 679513,
     "developer": "Goodnotes",
@@ -244,7 +244,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": true,
-    "updatedAt": "2026-08-09",
+    "updatedAt": "2026-08-15",
     "slug": "goodnotes-6"
   },
   {
@@ -252,9 +252,9 @@ const defaultApps = [
     "name": "Pixelmator Pro",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/e9/19/a1e91908-afba-6b30-d789-b03300253ab2/AppIcon-0-0-85-220-0-0-5-0-2x-0-0-0.png/512x512bb.png",
     "category": "设计",
-    "price": "¥328.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥328.00",
+    "isFree": true,
     "rating": 0,
     "reviewCount": 0,
     "developer": "Pixelmator Team",
@@ -282,7 +282,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-09",
+    "updatedAt": "2026-08-15",
     "slug": "pixelmator-pro"
   },
   {
@@ -290,9 +290,9 @@ const defaultApps = [
     "name": "Dark Noise",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/45/b5/8c/45b58ca4-e35e-6bf9-117d-b3d175bb046f/dark-noise-primary-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥30",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥30",
+    "isFree": true,
     "rating": 4.8,
     "reviewCount": 64,
     "developer": "Charlie Chapman",
@@ -319,7 +319,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-11",
+    "updatedAt": "2026-08-15",
     "slug": "dark-noise"
   },
   {
@@ -355,7 +355,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "reeder-5"
   },
   {
@@ -389,7 +389,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 11,
     "slug": "id1242689729",
     "slugAliases": [
@@ -427,7 +427,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 12,
     "slug": "id1623308204",
     "slugAliases": [
@@ -465,7 +465,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 13,
     "slug": "id993066159",
     "slugAliases": [
@@ -503,7 +503,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 14,
     "slug": "id1392166974",
     "slugAliases": [
@@ -534,7 +534,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 15,
     "slug": "id1214302139",
     "slugAliases": [
@@ -566,7 +566,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 16,
     "slug": "id6459478672",
     "slugAliases": [
@@ -597,7 +597,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 17,
     "slug": "id1605585211",
     "slugAliases": [
@@ -628,7 +628,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 18,
     "slug": "id6451407032",
     "slugAliases": [
@@ -666,7 +666,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 19,
     "slug": "id6464237904",
     "slugAliases": [
@@ -704,7 +704,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 20,
     "slug": "notability-pdf",
     "slugAliases": [
@@ -742,7 +742,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "id": 21,
     "slug": "id450748070",
     "slugAliases": [
@@ -753,9 +753,9 @@ const defaultApps = [
     "name": "Berry胶片相机 - 韩系自拍神器",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/62/7d/2b/627d2b7d-189b-7ac5-527c-3e31472fec3d/berryfilm-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
     "category": "摄影",
-    "price": "免费",
-    "originalPrice": "¥15.00",
-    "isFree": true,
+    "price": "¥15.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.9,
     "reviewCount": 1773,
     "developer": "Seungyun Kim",
@@ -785,9 +785,9 @@ const defaultApps = [
     "name": "航旅纵横PRO-民航官方直销平台",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/fc/69/35fc690f-ffb7-f014-3d0a-f6b5ec3af329/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "免费",
-    "originalPrice": "¥1.00",
-    "isFree": true,
+    "price": "¥1.00",
+    "originalPrice": null,
+    "isFree": false,
     "rating": 4.7,
     "reviewCount": 51338,
     "developer": "China Travelsky Technology Limited",
@@ -854,9 +854,9 @@ const defaultApps = [
     "name": "同花顺至尊版-股票软件",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/97/f4/1e/97f41e27-5f68-f412-8656-101a94e2bf74/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
     "category": "工具",
-    "price": "¥1.00",
-    "originalPrice": null,
-    "isFree": false,
+    "price": "免费",
+    "originalPrice": "¥1.00",
+    "isFree": true,
     "rating": 4.9,
     "reviewCount": 121207,
     "developer": "Zhejiang Royalflush Cloud Software Co., Ltd.",
@@ -880,7 +880,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-13",
+    "updatedAt": "2026-08-15",
     "id": 25,
     "slug": "id954724812",
     "slugAliases": [
@@ -906,7 +906,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%80%81%E6%9D%BF%E9%A3%9F%E7%A5%9E-%E4%BD%A0%E7%9A%84ai%E7%83%B9%E9%A5%AA%E4%BC%99%E4%BC%B4/id972641888?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/f9/dd/54f9dd9d-90f3-ca5a-3b5c-f5784451b824/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
     "developer": "Hangzhou Robam Industrial Group Co., Ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "老板食神 —— 你的 AI 烹饪伙伴 海量精选菜谱 · 动态烹饪导航 · 实时教学陪伴，让烹饪成为日常享受  不知道做什么菜，担心做不好？老板食神来帮你！老板食神借力首个AI烹饪大模型，深度打通从\"想做什么\"到\"完美出锅\"的烹饪全过程，为您提供精准、简单、不翻车的菜谱与烹饪解决方案。汇聚海量精选菜谱，食神通过日常点滴交流更懂你的口味偏好和食材偏好，每一步烹饪过程都有清晰陪伴，帮您答疑解惑，让烹饪更从容、更高效。  核心功能亮点 —— 从灵感到出锅，全程护航 汇聚海量图文并茂精美菜谱，懂口味、知时令，帮你选好菜做好饭。小众菜谱食神也能帮你随心生成，简单对话更能调整适合自己的菜谱。口味南来北往、食",
     "slugAliases": [
       "老板食神-你的ai烹饪伙伴"
@@ -935,7 +935,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E5%A4%A9%E7%88%B1%E7%83%B9%E9%A5%AA/id1247069377?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/94/d9/1794d976-3f7f-6647-3212-6159e644eee0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Shenzhen Runqian Technology Limited",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "天天爱烹饪（烹饪达人）  完成有挑战的美味订单、升级厨房并成为烹饪达人！   天天爱烹饪（烹饪达人）是一个在经典美式餐厅中出售汉堡、培根三明治、薯条和奶昔的游戏！你能够快速的做好食物并端给你的顾客吗？ 我们全新的餐厅开张了！带着制作最美味汉堡以及赚大钱的梦想，你要有条不紊地制作出各类美食满足顾客，升级厨具和食物原料，装潢餐厅，并开出许多的分店成为汉堡大师！  全方位升级餐馆 手速要快！顾客等的时间越短，给的小费越多哦！如果能给他们餐后甜点小蛋糕就更完美了！用收入来升级你的厨房用具和食物原料，并且升级餐厅的各类装饰，这样就能争取到更多顾客和更多钞票！此外，购买了全自动烹饪机器的你在厨房会更加得心",
     "slugAliases": [
       "天天爱烹饪"
@@ -964,7 +964,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A5%87%E5%A6%99%E6%96%99%E7%90%86%E9%A4%90%E5%8E%85-%E5%84%BF%E7%AB%A5%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E5%81%9A%E9%A5%AD%E8%BD%AF%E4%BB%B6/id1624871138?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/89/2d/ef892da2-45ed-343d-9d90-b4cb513acec7/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
     "developer": "SINGAPORE BABYBUS PTE. LTD.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "【奇妙料理餐厅】真实模拟烧烤店、甜品店、汉堡小吃店、综合美食餐厅等多个特色主题餐厅，可口美味的汉堡、披萨、面条、牛排、烤鸭、甜甜圈、蛋糕、果汁等美食……儿童都能在【奇妙料理餐厅】里找到并烹饪它们。    在【奇妙料理餐厅】，儿童将角色扮演餐厅大厨，模拟经营美食餐厅，学习烹饪技巧，DIY美味料理。在制作美食的过程中，儿童将认识世界各地的食材，锻炼动手能力，创造美食故事。  美味小吃店——烹饪可口美味的汉堡、披萨、果汁 小吃店的美食料理台分为果汁区、汉堡区。先来DIY美味的豪华汉堡，香肠、牛肉饼任选一份，再加点西红柿、黄瓜等蔬菜均衡汉堡的口感。“重头戏”来了！餐厅为大厨准备了形状新奇的面包盖：汽车",
     "slugAliases": [
       "奇妙料理餐厅-儿童美食烹饪做饭软件"
@@ -993,7 +993,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8F%9C%E8%B0%B1%E5%A4%A7%E5%85%A8pro-%E5%B0%8F%E7%99%BD%E5%AD%A6%E5%81%9A%E5%AE%B6%E5%B8%B8%E8%8F%9C%E5%81%9A%E6%B3%95%E5%BF%85%E5%A4%87%E7%83%B9%E9%A5%AA%E5%8A%A9%E6%89%8B/id1183632694?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/96/a7/dd/96a7dd76-8501-5a6c-de4d-3bdd367ac24d/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Youyi Interaction Science and Technology Co.,Ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "菜谱大全，汇集了来自全国各地的数十万道家常菜，并配以精美的图片，内容丰富详细，图文搭配更容易上手，页面简洁大方，超级好用，瞬间爱上了有木有！  我们的产品特色： （1）数十万精品菜谱，统统免费使用！ （2）强大的搜索，帮你找到所有你想要的！ （3）强大的收藏，喜欢就毫不犹豫地留住！ （4）贴心的浏览记录，看过的菜谱都在这里！ （5）描述详细，图片高清，做菜轻松又容易！ （6）精品好菜推荐，天天都能吃出新花样！  有了菜谱大全，让你立马爱上做菜，轻松成为完美的厨房小能手！ ———————来自友友们的认可——————— “挺好的软件，对于厨房小白来说，是非常棒的助手，学会做饭，想吃什么做什么……”",
     "slugAliases": [
       "菜谱大全pro-小白学做家常菜做法必备烹饪助手"
@@ -1024,7 +1024,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E5%85%AC%E4%B8%BB%E8%B4%9D%E5%84%BF%E7%9A%84%E7%94%9C%E5%93%81%E9%A3%9F%E8%B0%B1%E5%88%B6%E4%BD%9C%E6%95%99%E5%AE%A4-%E5%8E%A8%E6%88%BF%E6%B8%B8%E6%88%8F/id1071512246?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ec/ac/10/ecac105b-f7b1-5704-f723-2c615c1ad022/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Wai Chin Ng",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "这是一个根据真实甜品食谱做成的亲子游戏，适合2-5岁的幼儿，游戏操作十分简单，可以有效启发孩子思维和思考，另一方面也可以让父母制作甜品的正确方法。游戏包含多个甜品的制作方法有炖蛋,黄金蛋糕,饼干,布丁,鲜奶冻,甜甜圈,樱桃奶酪和海绵蛋糕。  家长与孩子在游戏过程中必须互动，比如说每一个动作怎么表达，每一个步骤有什么用，游戏里都有哪一些物品，每当小朋友答对问题的时候必须称赞他们，这样可以有效提高孩子的自信，让他面对问题或困难的时候，可以有自信的解决。在和小朋友游戏结束后，家长可以尝试制作真实的甜品和小朋友一起吃。这样可以有效加强家长和孩子之间的关系。  游戏能够启发孩子的智慧。这就要求游戏活动既",
     "slugAliases": [
       "小公主贝儿的甜品食谱制作教室-厨房游戏"
@@ -1054,7 +1054,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%83%B9%E9%A5%AA%E5%A4%A7%E5%85%A8-%E4%B8%8B%E5%8E%A8%E6%88%BF%E5%A5%BD%E5%B8%AE%E6%89%8B/id1136974705?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/80/a1/6c80a1e0-27c1-1c89-8cc6-09ec616aca51/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "亮 王",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "【汇集海量美食制作视频，高清教学】 【美食爱好者的必备App】  教程包括 • 热门家常菜的做法 • 烹饪的常用方法 • 家庭厨具的使用、介绍 • 中国八大菜系的做法 川菜、湘菜、鲁菜 • 鸡、鸭、鱼的常用做法  赶紧下载吧，厨艺大大的提高！",
     "slugAliases": [
       "烹饪大全-下厨房好帮手"
@@ -1085,7 +1085,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%80%8D%E9%81%A5%E5%AE%A2%E6%A0%88-%E7%BE%8E%E9%A3%9F%E7%83%B9%E9%A5%AA%E9%A4%90%E5%8E%85%E7%BB%8F%E8%90%A5%E6%B8%B8%E6%88%8F/id1631529003?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/39/41/273941c0-b21e-43ea-83e8-ffedc499568c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "Ghost Rabbit Co., Ltd.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "玩家交流群：821383711  江湖是什么？ 是那白衣剑客，一人一马，仗剑行遍万里山河。 是那红衣佳人，端坐雕楼，唱罢人世悲欢喜乐。 是那七旬老叟，华发散乱，山门前枯等后辈归来。 江湖是什么？ 是那山门在一个雪夜轰然倒塌，老叟不见踪影。 是那雕楼画栋化作飞灰，红衣佳人挽起长发，抹去妆容，入红尘之中。 是那老马蹒跚，长剑染锈，白衣剑客再回市井之间。 江湖是什么？ 是那红尘烟火三千，小城、客栈、一碗浊酒。 是那镖客手中的一碗扯面，衙役筷下的半斤牛肉。 是那脚夫的口若悬河，是那戏子不曾卸下的妆容。  游戏特色: 1.从别样的角度解读江湖，江湖是刀光剑影，江湖是侠肝义胆，但江湖也是侠客手中美酒，筷下",
     "slugAliases": [
       "逍遥客栈-美食烹饪餐厅经营游戏"
@@ -1110,7 +1110,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91-%E5%AE%9E%E6%97%B6ai%E7%BF%BB%E8%AF%91-%E5%87%BA%E5%9B%BD%E6%97%85%E8%A1%8C%E5%BF%85%E5%A4%87%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id6754841237?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/2b/e1/cb2be13c-86d5-2624-3569-8946036ce9b9/AppIcon-1x_U007ephone-0-1-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Chongqing Guanling Interactive Network Technology Co., Ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "翻译软件 — 你的智能翻译助手 翻译软件是一款功能强大的 AI 翻译助手， 支持 文本、语音、图片、文档 等多种形式的实时翻译，随时随地畅通交流。 无论是阅读外文文章、出国旅行， 还是跨语言聊天、识别图片文字， 翻译软件都能帮你快速、准确地完成翻译，让沟通更加自然流畅。 主要功能 • 文本翻译 —— 支持 100+ 语言，快速、精准的多语言翻译。 • 拍照翻译 —— 打开相机即可翻译菜单、标识、图片内容。 • 对话模式 —— 实时语音互译，面对面交流无障碍。 • 文档翻译 —— 支持 PDF、Word 等文件导入与整篇翻译。 • 离线翻译 —— 下载语言包，无网环境也能使用。 • 翻译历史 —",
     "slugAliases": [
       "翻译-实时ai翻译-出国旅行必备翻译软件"
@@ -1139,7 +1139,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E5%BF%85%E5%A4%87%E4%B8%AD%E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91%E8%AF%8D%E5%85%B8/id1388845809?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/05/2f/2d/052f2de2-2936-b65f-89ab-2373d67ee3d4/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "《英语翻译官》更懂国人专注英汉翻译，依托最新人工智能，采用NMT（神经网络机器翻译）系统，上下文理解更准确翻译。AI随身拍照语音识别翻译，出国旅行英语学习翻译专家。  英语学习，旅游出行必备翻译利器！赶紧试试吧！   ——【核心功能】—— 1，文本翻译：专注英汉翻译，更懂国人，依托人工智能，采用NMT（神经网络机器翻译）系统，上下文理解更准确的译文。  2，拍照翻译：随身拍照片识别翻译、相册选图翻译任意选；拍照一键翻译，旅游出行、阅读英语学习，高效率翻译利器。  3，语音翻译：最新人工智能技术，高分辨率人声识别转为文字翻译！出国旅游/英语学习必备翻译助手。  4，对话翻译：实时语音翻译，专业英",
     "slugAliases": [
       "英语翻译官-学英语必备中英文翻译词典"
@@ -1173,7 +1173,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BF%BB%E8%AF%91%E5%AE%98-%E5%87%BA%E5%9B%BD%E6%97%85%E6%B8%B8%E8%AF%AD%E9%9F%B3%E5%9B%BE%E7%89%87%E5%85%A8%E8%83%BD%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/id1056652191?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/92/28/87/9228873b-c965-6416-0502-7d6c6306acc7/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
     "developer": "有忠 黄",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "出国翻译软件支持200多种语言翻译；实现语音翻译，图片翻译，拍照翻译，文本翻译；满足出国翻译，旅行翻译，在线翻译等场景翻译；支持英语日语词典查询。在生活上，工作上，学习上能给小伙伴带来帮助的智能翻译软件。  app主要功能包括：  =多种翻译平台= - 支持百度翻翻译，谷歌翻译，微软翻译，能更稳定，更准确的翻译。  =语音翻译= - 告别手写打字输入，通过语音准确的翻译成目标语言。  =图片拍照翻译= - 支持菜单、路标、文章等一键翻译，自动保存拍照翻译结果，支持中文、英语、日语、韩语、泰语、越南语、俄语、波兰语、德语、丹麦语、法语、葡萄牙语、西班牙语、意大利语、希腊语、瑞典语、印地语等语言。",
     "slugAliases": [
       "翻译官-出国旅游语音图片全能翻译软件"
@@ -1206,7 +1206,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%B3%B0%E8%AF%AD%E7%BF%BB%E8%AF%91%E5%AE%98-%E6%B3%B0%E5%9B%BD%E6%97%85%E6%B8%B8%E6%B3%B0%E8%AF%AD%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%BA%AB%E8%AF%91/id1397676648?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/34/a2/a434a200-fdb3-27fe-d604-1d5e45533819/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "Shanghai Quentin network technology co. LTD",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "《泰语翻译官》中文泰语互译神器，语音识别翻译、地道发音，泰语日常口语库。泰国旅游泰语学习随身必备！新版更强大翻译功能，更丰富内容，更具价值的泰语翻译官，等你来试。  ——【核心功能】—— 1，文本翻译：接入泰国本土字词库，精准极速地道的中泰文互译！ 2，语音翻译：最新人工智能技术，高分辨率人声识别转为文字翻译！泰国旅游/泰语学习必备翻译助手。 3，拍照翻译：手机拍照片泰文识别翻译，相册选图翻译任意选；拍照一键翻译，旅游出行、泰语学习，高效率翻译利器。 4，翻译收藏：单词生词、不熟的常用语、经典名句、旅游专用语、商务泰常用语、通通收藏，随时随地翻看和朗读。 5，学习拓展：字母发音、有声节目、词汇",
     "slugAliases": [
       "泰语翻译官-泰国旅游泰语学习随身译"
@@ -1237,7 +1237,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%8A%9B%E6%89%A3-leetcode/id1470936215?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/34/e7/0034e7cd-8085-8a62-bedc-ba91d37473dd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "developer": "Lingkou Network",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "力扣（LeetCode）App 全新功能，支持移动端代码编程，实时判题，让你码不停题。  - 学习提升，快拿 Offer - 力扣社区，有问必答 - 脑力健身，极客必备  全球极客职业技能成长平台，想要提升技术能力从这里开始。海量技术题库、求职面试经验、充足技术干货等你来，力扣助你职业技能快速成长！  [趣学习] - 免费力扣题库、剑指 Offer - 职业化编程 - 上万社区题解 - 企业面试考题 - 技术交流分享社区  「扣代码」 电脑不在身边，iPhone 也可实操代码学习编程。针对 iPad 全面优化，配合键盘、鼠标、快捷键，动动手指、刷刷键盘，让你迅速开启不受打扰的沉浸式编程学习体验",
     "slugAliases": [
       "力扣-leetcode"
@@ -1265,7 +1265,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/app%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/id1209739676?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/47/d6/7a/47d67ae9-89f5-2826-706f-d8eb97b7bc0b/AppIcon-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
     "developer": "发展 李",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "【学员在App Store上的真实评价】 『先给个五星好评 等你们更新了 再给你5星 凑十颗』by 孙洪展 – Jun 29, 2017 『非常不错  学习到了不少语法。看的非常明白』by 照顾儿子 – Jun 25, 2017  【章节列表】 第一章：超级控件 - 给UILabel文字中的tag和url添加点击事件 - 制作漂亮的环形进度条 - 带切换Icon的密码文本框 - 使用UIWebView加载HTML和Gif动画 - 使用UIWebView加载本地页面并调用Js代码 - 通过Javascript代码调用原生程序 - 创建一个图文并茂的笔记本 - MKMapView的代理方法 - 在",
     "slugAliases": [
       "app开发中的神兵利器"
@@ -1294,7 +1294,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/python3ide/id1357215444?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c8/f0/99/c8f0993b-4f16-90c8-b0e1-44b4ba564492/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "辉 马",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "Python3IDE 是iOS平台上的应用程序集成开发环境。可以离线编译运行Python/Node/JS/C/C++/PHP/Lua/Perl脚本，内置常用扩展库，是您在iOS/iPad上编程的利器。   特性:  - Python3.11 运行时及标准库 - Node18 运行时 - LLVM/Clang - PHP/Lua/Perl - 内置终端，100+ Linux命令 - Python/Node/JS/C/C++/PHP/Lua/Perl脚本本地离线运行 - Pip 安装纯Python库 - Npm 安装Node库 - Git 版本控制 | Clone, Commit, Push - "
   },
   {
@@ -1322,7 +1322,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/java%E7%BC%96%E8%AF%91%E5%99%A8-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/id1459795517?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/c6/32/03/c63203c1-26d0-2f1e-3c49-58f580dbfb2f/AppIcon-1x_U007emarketing-0-7-0-0-sRGB-85-220-0.png/512x512bb.jpg",
     "developer": "凌云 蔡",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "Java代码编辑器，开发文大全，更有服务端、数据库、算法，带你从Java新手进阶到大神，还包含Java编程入门课程、编程文档、教程查阅等功能，一个 新型的Java编程学习平台。        零基础学Java编程，从Java修炼手册开始，让你的编程技术不断提高、更上一层楼。  配套Java编译器，帮助新人快速上手",
     "slugAliases": [
       "java编译器-程序员必备开发工具"
@@ -1351,7 +1351,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/photomath/id919087726?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/7f/46/0a7f4650-c4ad-91ed-a71c-388a3398839f/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
     "developer": "Google LLC",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "通过世界上最常用的数学学习资源，学习如何解决数学问题，检查家庭作业和学习即将到来的考试和ACT/SAT。超过1亿次下载，每月解决数十亿问题！  运行原理 使用设备的相机即时扫描打印文本和手写数学问题，或使用我们的科学计算器输入和编辑方程式。 Photomath将每个数学问题分解为简单易懂的步骤，这样您就可以真正理解核心概念，并可以自信地回答问题。  主要特点 扫描教科书（打印）和手写问题 科学计算器 每个解决方案的逐步说明 多种解决方法 支持30多种语言 交互式图表  数学主题 基础数学/预代数：算术、整数、分数、十进制数、幂、根、因子 代数：线性方程/不等式、二次方程、方程组、对数、函数、矩"
   },
   {
@@ -1377,7 +1377,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%9C%80%E7%89%9B%E8%AE%A1%E7%AE%97%E5%99%A8-%E7%A7%91%E5%AD%A6%E9%80%9A%E7%94%A8%E8%B6%85%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8/id1161975388?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/33/74/2c/33742c3d-1330-62d3-34ce-e9e4897300b9/zuiniuAppIcon-1x_U007emarketing-85-220-6.png/512x512bb.jpg",
     "developer": "继红 王",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "加减乘除百分比 清零平方除分母 删除等于小数点 静音开关巧运算",
     "slugAliases": [
       "最牛计算器-科学通用超级计算器"
@@ -1404,7 +1404,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%A4%A9%E6%95%B0%E8%AE%A1%E7%AE%97%E5%99%A8-%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97%E5%99%A8/id816849128?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/76/25/727625b7-9852-e8c6-368d-b20daa77e3a1/TimeAppIcon-0-0-1x_U007ephone-0-5-85-220.png/512x512bb.jpg",
     "developer": "山 钟",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "天数计算器 计算两个日期之间的差距。  日期计算器 计算两个日期及时间之间的经过时间。  时间计算器 计算两个时间之间的经过时间。",
     "slugAliases": [
       "天数计算器-日期-时间计算器"
@@ -1433,7 +1433,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%AE%A1%E7%AE%97%E5%99%A8-%E6%96%B0%E7%89%88%E8%AE%A1%E7%AE%97%E6%9C%BA/id1458583388?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/a6/b3/34a6b385-de18-a844-56ad-940c973eec8c/AppIcon-0-0-1x_U007ephone-0-9-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Free Calculator Technology Co., Ltd.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "带计算历史记录的计算器：  1，无广告 2，显示计算历史记录 3，显示输入过程  4，启动超快 5，退格键 6，真人语音播报  7，键盘声音 8，键盘颜色 9，键盘振动  10，适合单手操作 11，支持科学计算 12，设置小数点位数 13，显示/隐藏千位分隔符  14，单位换算 15，汇率查询 16，分数计算器 17，BMI计算器 18，可爱的小图标插件   From2019219@gmail.com",
     "slugAliases": [
       "计算器-新版计算机"
@@ -1462,7 +1462,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E5%86%99%E4%BD%9C%E5%A4%A7%E5%B8%88%E4%B8%80%E9%94%AE%E6%96%87%E7%AB%A0%E7%94%9F%E6%88%90%E5%86%99%E4%BD%9C%E5%8A%A9%E6%89%8B/id6472870993?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4f/3d/25/4f3d251f-abdd-dc51-4b8a-0a7264c4d899/AppIcon-1x_U007ephone-0-10-0-85-220.jpeg/512x512bb.jpg",
     "developer": "Guangzhou Junyao Technology Co., Ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "智能写作大师一键文章生成写作助手是一款创意工具。无论是寻找创作灵感，还是打造独一无二的艺术作品，我们的应用都能满足你的需求。  智能写作： 即刻获得创意冲击，轻松编写出精彩纷呈的文字。 文章生成： 一键生成生动文本，迅速传达您的思想和创意。 智能绘图： 创意无限可能，借助智能绘画功能，打造出惊艳的艺术品。  为何选择我们的应用？  创意激发： 我们是您创作的引擎，激发源源不断的灵感。 智能助手： 应用智能技术，提升创作效率，助您专注于创意表达。 多功能性： 一个应用满足您多样化的创作需求。  1、付款：用户确认购买并付款后计入iTunes账户； 2、取消续订：如需取消续订，请在当前订阅周期到期",
     "slugAliases": [
       "智能写作大师一键文章生成写作助手"
@@ -1493,7 +1493,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%96%87%E4%B9%A6%E5%B2%9B-ai%E5%85%AC%E6%96%87%E5%86%99%E4%BD%9C-%E8%80%81%E7%AC%94%E6%9D%86%E5%86%99%E6%9D%90%E6%96%99%E7%A5%9E%E5%99%A8/id6670460386?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f7/f6/18/f7f618a3-3222-50fc-5842-84374b040ee6/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
     "developer": "Shisi information technology co., ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "在繁忙的职场中，公文撰写往往占据了大量宝贵时间。现在，有了AI公文写作，这一切都将变得轻松高效。我们利用前沿的人工智能技术，为您打造了一款集智能生成、合规审核于一体的公文写作神器。 ====核心功能亮点==== 【智能生成，一键成稿】 只需简单输入公文的基本信息和要点，AI公文写作助手便能迅速理解您的需求，并自动生成符合规范的公文草稿。无论是通知、报告、请示还是决定，都能轻松应对，让您的公文撰写工作事半功倍。 【范文素材库，随时查阅】 内置海量官方公文和事务性公文范文素材，覆盖各行各业、各类场景。这些权威资料不仅为您提供了丰富的写作灵感，还能确保您的公文内容准确无误、专业规范。 【合规审核，规",
     "slugAliases": [
       "文书岛-ai公文写作-老笔杆写材料神器"
@@ -1524,7 +1524,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%91%B8%E9%B1%BC%E6%96%87%E6%A1%88-ai%E5%86%99%E4%BD%9C%E7%A5%9E%E5%99%A8/id6447236472?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/47/a5/70/47a57059-533d-9156-bbac-de58143f70ca/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "Beijing Sunsoul Media Co., Ltd.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "AI摸鱼文案，开启机器人写作新时代!  AI摸鱼文案，针对大家难于向机器人发出好的指令的痛点，特别内嵌了数十种优秀的指令模板，让您轻松玩转A写作!  AI摸鱼文案，是您的机器人助理，他可以帮你处理日常性工作，比如写周报月报以及年度总结等等，让您有更多的时间精力，放到更有创造力的工作上来。只需一个指令，以秒计算生成相关内容以及格式。  AI摸鱼文案，是您的机器人帮手。因为智能，所以机器人可以迅速生成有吸引力的内容。无论是写媒体文章，还是起标题，以及生成朋友圈文案，它都可以选定吸引哪样的人群，从而更有针对性，更有效果!  AI摸鱼文案，是您的机器人合伙人。内嵌多种指令模板，比如SWOT 分析，以及",
     "slugAliases": [
       "摸鱼文案-ai写作神器"
@@ -1553,7 +1553,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%AD%94%E6%B3%95%E5%B0%8F%E7%BB%84%E4%BB%B6-magic-widgets%E4%B8%87%E8%83%BD%E6%A1%8C%E9%9D%A2%E4%B8%BB%E9%A2%98%E5%A3%81%E7%BA%B8top/id6443446274?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9d/75/15/9d75152a-ab4d-33a2-2927-a62dee28bc52/AppIcon-0-1x_U007epad-0-0-0-1-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "Chongqing LiangZeMu Technology Co., Ltd.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "魔法小组件-你的专属手机桌面主题美化APP  全新适配iOS17 StandBy模式，超好玩灵动岛：动画岛，工具岛等你体验。 上百款小组件，更多更好玩的创意玩法： 桌面X面板小组件、倒数日小组件、【打工人小组件】、相框小组件、步数小组件、睡眠小组件、锁屏快捷启动、锁屏纪念日、锁屏X面板、锁屏电量内存。 满足你对小组件的所有期待！ 专属客服一对一解决问题，快来和万能小组件一起探索iOS组件奥秘！  特色功能： 1、全透明小组件，一键设置，更贴合壁纸！ 2、特色打工岛，每天最期待的【下班倒计时】！ 3、霓虹X面板，身处赛博朋克。 4、打工人小组件，周五不肝，火速下班！ 5、小恐龙计步器，与你一起锻",
     "slugAliases": [
       "魔法小组件-magic-widgets万能桌面主题壁纸top"
@@ -1584,7 +1584,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%88%91%E7%9A%84%E6%A1%8C%E9%9D%A2-iscreen-%E6%A1%8C%E9%9D%A2%E5%B0%8F%E7%BB%84%E4%BB%B6%E4%B8%BB%E9%A2%98%E5%A3%81%E7%BA%B8/id1534704608?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ff/11/bd/ff11bded-8534-d5a2-099c-f553c2e2083f/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.jpeg/512x512bb.jpg",
     "developer": "Xiamen ShenZhuo Information Technology Co., Ltd.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "＊ 手机美化，iScreen 一下！＊  iScreen拥有众多原创设计师，持续更新有趣、鬼马、实用的创意！  ▶ App Store 编辑推荐 ◀ ▶ App Store 今日App ◀ ▶ App Store 必备生产力工具 ◀ ▶ 荣获 Next World 年度风采奖 ◀  ＊全新适配iOS26，支持液态玻璃小组件、空间景深壁纸等新功能，百变个性化组合搭配，让你的手机更有趣、更实用！  特色功能： 【iOS26】 专为iOS26开发的海量空间壁纸模板（全网挑战的跳崖壁纸、裸眼3D照片DIY、二次元、未来科技空间）、实时天气液态玻璃组件、液态玻璃主题套装，解锁你桌面的隐藏颜值！  【控制",
     "slugAliases": [
       "我的桌面-iscreen-桌面小组件主题壁纸"
@@ -1615,7 +1615,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/koco-widgets-%E5%B0%8F%E7%BB%84%E4%BB%B6-%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%BD%AC/id6702013570?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/43/34/c4/4334c494-0ac3-97b4-49b2-bb94f20d7582/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "developer": "TINY GRID LTD.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "⊕ App Store 编辑精选 ⊕ App Store Banner 推荐 ⊕ App Store Spotlight 精选活动 ⊕ 超过 300,000 位用户选择   [直接跳转小组件]  点一下小组件，即可直接打开你选择的 App，无需二次跳转。  Koco Widgets 也为你的 iPhone 带来精致设计的小组件、灵动岛自定义，以及真正透明的桌面效果。    [主要功能]  直接跳转小组件：点一下小组件，即可直接打开你选择的 App，无需通过宿主 App 二次跳转。  灵动岛自定义：通过不同样式、内容与模式自定义灵动岛，打造更个性化的 iPhone 体验。  精致小组件：探索多款",
     "slugAliases": [
       "koco-widgets-小组件-直接跳转"
@@ -1646,7 +1646,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E4%B8%BB%E9%A2%98%E5%95%86%E5%BA%97-%E8%B6%85%E9%AB%98%E6%B8%85%E5%A2%99%E7%BA%B8%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%A4%A7%E5%85%A8/id1509859425?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/32/c9/6a/32c96a40-79d1-7b41-eb0c-f909cbda5f5a/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-85-220.png/512x512bb.jpg",
     "developer": "志平 吕",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "玩转你的动态壁纸！ 超全动态壁纸，动态屏保任你选择 高清壁纸才更能彰显你独特的气质 让你的屏幕获得高质量的动画，让你的设备吸引艳羡的目光！ 你还能一键创建个人收藏，保存自选壁纸！ 将它们保存在“收藏”类目下。 动动手指，获得你喜欢的壁纸，随心随时定制锁屏。 \t 特色：制定个性日历壁纸，无需打开手机桌面，在手机锁屏界面即可浏览本月日历及本月节假日  注意：目前仅支持在iPhone设置为锁定屏幕时，按压展示动态壁纸效果；设置主屏幕暂不支持动态效果仍为静态壁纸；",
     "slugAliases": [
       "主题商店-超高清墙纸动态壁纸大全"
@@ -1675,7 +1675,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E7%BB%84%E4%BB%B6-%E6%A1%8C%E9%9D%A2%E7%81%B5%E5%8A%A8%E5%B2%9B%E4%B8%BB%E9%A2%98%E5%A3%81%E7%BA%B8%E5%B0%8F%E6%8F%92%E4%BB%B6/id1533406571?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/3a/e0/73/3ae073fe-0985-fec7-df62-584d46feb257/AppIcon-1x_U007emarketing-0-7-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "文飞 黎",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "Art Widget 是一款专为iOS14用户设计的个性化桌面小组件APP，可以让你将个性时尚的小组件直接添加到你的桌面上，打造属于你的独一无二的手机屏幕。  -海量模板：无数设计精美的小组件模板可供选择 -操作简单，快速运行程序、一键添加个性小组件 -所有运行iOS 14的手机和ipad设备都支持",
     "slugAliases": [
       "小组件-桌面灵动岛主题壁纸小插件"
@@ -1709,7 +1709,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/top-widgets-%E4%B8%87%E8%83%BD%E5%B0%8F%E7%BB%84%E4%BB%B6%E6%89%8B%E6%9C%BA%E6%A1%8C%E9%9D%A2%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%B7%A5%E5%85%B7/id6446477593?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/20/da/dd/20daddd4-13a8-0555-c609-e25c22e5f097/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "developer": "Chengdu Tiange Technology Co., Ltd",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "▶ App Store 人气推荐 ◀  ▶ 百万用户一致好评 ◀  ▶ 桌面美化与效率工具首选 ◀  为 OS 26 带来前所未有的桌面体验。基于全新系统特性，融入液态玻璃视觉、立体3D景深壁纸及可自定义的动态封面，打造出层次丰富、多维沉浸的交互空间。每一次点亮屏幕，都是一场视觉与艺术的盛宴。  超过 5000+ 专业原创设计师，不断注入新鲜灵感。从空间景深到液态光影，从动态壁纸到创意主题，让你的桌面不仅仅是工具，更是风格、心情与个性的表达。  【OS 26 沉浸式视觉升级】  空间景深壁纸：智能分层与动态交互，让时间与元素自然融合，展现逼真的立体感与空间感。  液态玻璃主题：如流动的水晶般透",
     "slugAliases": [
       "top-widgets-万能小组件手机桌面主题美化工具"
@@ -1739,7 +1739,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/id915249334?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3e/52/07/3e520776-0908-893c-2248-6c9d29a03cc7/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg",
     "developer": "Apple Distribution International",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "Siri 捷径可配合应用快速完成各种任务。您只需轻点一下，或让 Siri 帮您完成。“捷径”应用可为您喜爱的应用创建包括多个步骤的个性化捷径。您可以从“捷径中心”中数以百计的示例开始，或通过拖放操作创建自己的捷径。  “捷径”中包含了 300 多个内建操作，可与众多您喜爱的应用配合使用，包括“通讯录”、“日历”、“地图”、“音乐”、“照片”、“相机”、“提醒事项”、Safari 浏览器和“健康”，以及任何支持 Siri 捷径的应用。  使用“捷径”应用，您可以： * 直接让 Siri 获取回家的路线，发送预计到达时间以及开始听新闻 * 添加致电他人的主屏幕图标 * 制作动画 GIF * 从 S",
     "slugAliases": [
       "快捷指令"
@@ -1768,7 +1768,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4%E5%BA%93-%E5%85%85%E7%94%B5%E5%8A%A8%E7%94%BB-%E6%8D%B7%E5%BE%84%E5%BA%93-%E5%B0%8F%E7%BB%84%E4%BB%B6/id1540915106?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fc/5c/73/fc5c7352-1d5a-6726-0b2e-675cd3c887f2/AppIcon-1x_U007emarketing-0-8-0-0-85-220-0.png/512x512bb.jpg",
     "developer": "PeiYi Chen",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "快捷指令大师专注于发现和分享捷径、您可以一键体验各类热门有趣的快捷指令 快捷指令包含了 多类直接可以使用的捷径，能够完成众多独特的功能。 并且还按照功能进行划分分类“图书”、“娱乐”、“工具”、“社交”、“生活”、“效率”、“音乐”，丰富您的日常生活，操作简单编辑，轻松设置即可实现各种捷径。  详细介绍 随心更改图标，字铃声，自定义图标、铃声让你个性十足 带密码锁的图标，更好的保护你的隐私 更换应用名字，让你的手机桌面更有个性！  连续会员订阅说明： -订阅周期：一个月或一年 -付款：用户付款记入iTunes账户 -取消订阅：如需取消订阅，请在当前订阅到期24小时以前，手动到在Apple ID",
     "slugAliases": [
       "快捷指令库-充电动画-捷径库-小组件"
@@ -1799,7 +1799,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E6%98%93%E4%B9%B0%E5%B7%A5%E5%93%81/id1157850928?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/25/f8/f725f846-ae0c-af50-0acc-f526947dbb70/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
     "developer": "Shanghai Yesmro Information Technology CO.,LTD.",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "description": "---工业品便利网上店，让小企业购买FA自动化零配件更方便---； 1.品种齐全：370万+产品，覆盖FA工厂自动化零配件； 2.闪电发货：27000+产品当日发货； 3.只卖正品：所有产品正规渠道或者厂家进货，确保正品； 4.明码标价：1个起卖，1块钱也开票。  易买工品APP是一款工业品采购移动商城，我们致力于成为一家中国人打造的世界级MRO专业人员，让小企业购买耗材更方便，1个起卖，还可以开具增值税发票，为您打造简单、可靠、愉悦的采购体验。具有商品搜索/浏览、商品购买、在线支付/货到付款、订单查询、物流跟踪、在线客服等功能，是您手机里的自动化耗材市场。  ---使用者反馈--- 1.端子",
     "slugAliases": [
       "易买工品"
@@ -1828,7 +1828,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "kimi"
   },
   {
@@ -1854,7 +1854,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "id416048305",
     "slugAliases": [
       "美图秀秀-视频-图片-live人像精修工具"
@@ -1889,7 +1889,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "wink-live",
     "slugAliases": [
       "wink-视频-live超清美颜"
@@ -1924,7 +1924,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "id1079718756",
     "slugAliases": [
       "鲨鱼记账-3秒钟快速记账手机助手"
@@ -1953,7 +1953,7 @@ const defaultApps = [
     "screenshots": [],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "id372353614",
     "slugAliases": [
       "随手记-快捷自动记账"
@@ -1988,7 +1988,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "icost",
     "slugAliases": [
       "icost记账-快速简洁好用的记账理财助手-记账软件"
@@ -2023,7 +2023,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "forest",
     "slugAliases": [
       "forest-专注森林-番茄钟学习计时器"
@@ -2058,7 +2058,7 @@ const defaultApps = [
     ],
     "featured": false,
     "isHot": false,
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-15",
     "slug": "id6670396916",
     "slugAliases": [
       "可灵ai-ai图片-视频创作工具"
@@ -2084,7 +2084,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%85%89%E4%BC%A0%E8%BE%93%E7%BA%BF%E8%B7%AF%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E4%BB%AA-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%AB%AF/id1558075461?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/24/b7/fd24b71a-6b95-5d9e-e80e-9f5f6b071d03/yzAppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "developer": "Wuxi Yuanzhi Science & Technology Development Co., Ltd.",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 66,
@@ -2112,7 +2112,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%88%B1%E8%BF%9C%E6%8E%A7-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/id6443744358?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/3d/9e/fd3d9e4e-abf5-d832-c93f-47c0ec2e92f6/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "developer": "Shenzhen Aidapu Network Technology Co Ltd",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 67,
@@ -2137,7 +2137,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/rdviewer-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6/id1541109277?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/0f/4f/e3/0f4fe324-040a-37a3-4bf8-905e6947e607/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
     "developer": "凡民 郑",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 68,
@@ -2165,7 +2165,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%B2%BE%E7%81%B5-%E6%89%8B%E6%9C%BA%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6-%E5%B1%8F%E5%B9%95%E5%85%B1%E4%BA%AB/id6476124260?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0a/55/7d/0a557d12-e030-e7a6-6d5f-7919a70a9573/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
     "developer": "艳 马",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 69,
@@ -2191,7 +2191,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%BA%B3%E7%B1%B3work/id6777950766?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/d8/f5/54d8f565-594d-04a1-9fb8-7fb06b551e0b/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
     "developer": "Beijing Qihoo Technology Co Ltd",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 70,
@@ -2222,7 +2222,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E7%95%AA%E8%8C%84%E6%B8%85%E5%8D%95-%E4%B8%93%E6%B3%A8%E6%95%88%E7%8E%87%E7%9A%84%E7%95%AA%E8%8C%84%E9%92%9F/id1150993112?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/d3/0b/06/d30b06f5-47ff-77da-fe5a-bc8ec5bb02e0/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
     "developer": "振华 莫",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 71,
@@ -2254,7 +2254,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/atimelogger-pro-%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95%E5%B7%A5%E5%85%B7-%E7%9B%AE%E6%A0%87-%E8%AE%A1%E6%97%B6%E5%99%A8/id1087340819?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/9d/ce/249dcefc-78f2-abbd-927f-c4db7ea3bc17/AppIcon-0-0-1x_U007emarketing-0-0-0-11-0-0-85-220.png/512x512bb.jpg",
     "developer": "BRIAN GILBERT, CONSULTANTS INC.",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 72,
@@ -2282,7 +2282,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0-ai%E7%9F%A5%E8%AF%86%E5%BA%93-%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E4%BC%9A%E8%AE%AE%E5%BD%95%E9%9F%B3-%E6%B8%85%E5%8D%95%E5%AF%BC%E5%9B%BE-%E5%85%A8%E5%9F%9F%E5%89%AA%E8%97%8F/id1356054761?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/e8/4a/dae84a22-1652-fd48-c0c4-66db4a276465/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
     "developer": "Beijing Yinxiang Biji Technologies Co., Ltd.",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 73,
@@ -2308,7 +2308,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/lightleap-lightricks%E7%9A%84%E4%B8%93%E4%B8%9A%E4%BF%AE%E5%9B%BE%E8%BD%AF%E4%BB%B6/id1254875992?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/e2/95/47e295dd-7e80-6b5f-727a-de1788ed74e0/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "developer": "Lightricks Ltd.",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 74,
@@ -2334,7 +2334,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E8%9B%8B%E7%B3%95%E4%BA%91%E4%BF%AE-%E5%83%8F%E7%B4%A0%E7%BA%A7ai%E4%BF%AE%E5%9B%BE/id6467623650?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3d/ac/e2/3dace296-4f94-1c93-cce2-81f27b68067c/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.jpeg/512x512bb.jpg",
     "developer": "Tianjin Qingsong Yidian Technology Co., Ltd",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 75,
@@ -2364,7 +2364,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/proandart-%E6%B3%A2%E7%82%B9%E7%89%B9%E6%95%88%E4%BF%AE%E5%9B%BE%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6%E6%94%AF%E6%8C%81%E5%8F%A4%E6%97%A9y2k/id6503194302?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/bb/54/1bbb54af-6ef1-a060-d545-8fd0b571a381/AppIcon-0-0-1x_U007epad-0-1-85-220.jpeg/512x512bb.jpg",
     "developer": "Xiamen Suijisenlin Technology Co., Ltd.",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 76,
@@ -2392,7 +2392,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E9%97%AA%E5%88%9Bai-%E5%8A%A8%E6%BC%AB%E8%A7%86%E9%A2%91-%E5%B0%8F%E8%AF%B4%E6%8E%A8%E6%96%87-ai%E7%BB%98%E7%94%BB-%E5%89%A7%E6%83%85%E5%B8%A6%E8%B4%A7%E8%A7%86%E9%A2%91/id6456397090?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/96/52/46/96524609-c04c-ac70-53cc-83bcb384a88b/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "developer": "振 徐",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 77,
@@ -2418,7 +2418,7 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%85%A8%E8%83%BD%E7%94%BB%E6%9D%BF2-%E7%94%BB%E7%94%BB%E7%BB%98%E7%94%BB%E7%BB%98%E5%9B%BE%E7%89%88/id1097399439?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/68/e5/76/68e57634-0ea2-f944-1245-cdea98425268/AppIcon-2-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "developer": "伟典 苏",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
   },
   {
     "id": 78,
@@ -2444,7 +2444,115 @@ const defaultApps = [
     "appStoreUrl": "https://apps.apple.com/cn/app/%E5%B0%8F%E9%A9%AC%E5%AE%9D%E8%8E%89%E9%AD%94%E6%B3%95%E6%B6%82%E8%89%B2/id1495392781?uo=4",
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/5a/6a/fd5a6a96-3f7e-ff1f-0de5-ce7da0d8b7dd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "developer": "Budge Studios",
-    "updatedAt": "2026-08-14"
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": 79,
+    "slug": "move",
+    "name": "Move: 运动与健康全能管家｜连动挑战、压力监测、健康习惯",
+    "description": "Move 是通过分析你的运动、睡眠、心率变异性等多项重要健康数据指标，帮你更好的分析身体健康状况，给出今日运动建议。同时能更好地理解自己的运动负荷，还能及时调整训练强度，避免过度训练带来的不良影响。同时，压力监测功能让您时刻关注身体的压力水平，避免情绪和身体状态的波动影响健康表现。  - 连动打卡 无痛养成运动习惯，让你从此爱上运动！享受多巴胺带来的快感。自定义设定每日连动目标，轻松完成运动小目标，养成好习惯。  - 智能运动建议 根据你的运动健康数据（如活力指数、训练负荷、训练准备度），提供个性化的运动和恢复建议。 -- 活力指数分析你当前的活跃状态，近 7 天、30 天的活力指数趋势； -",
+    "category": "Health & Fitness",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.3,
+    "reviewCount": 60,
+    "platform": "iPhone / iPad",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/1f/30/361f3015-a2ca-184a-5e88-70a820d62c15/1242-2688_1@1x__U00281_U0029.jpg/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/36/f9/e536f9d6-f475-466f-1c4c-565485f20f5e/1242-2688_2@1x.jpg/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/42/cb/ea42cb0a-ab07-4a4b-8e6f-bc52f49c2519/1242-2688_3@1x.jpg/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/91/a7/2691a706-0534-7b6d-6cd2-476db8e3caf9/1242-2688_4@1x.jpg/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4f/a6/c3/4fa6c32b-6948-b09b-0010-011632755602/1242-2688_5@1x.jpg/320x480bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/move-%E8%BF%90%E5%8A%A8%E4%B8%8E%E5%81%A5%E5%BA%B7%E5%85%A8%E8%83%BD%E7%AE%A1%E5%AE%B6-%E8%BF%9E%E5%8A%A8%E6%8C%91%E6%88%98-%E5%8E%8B%E5%8A%9B%E7%9B%91%E6%B5%8B-%E5%81%A5%E5%BA%B7%E4%B9%A0%E6%83%AF/id6740842649?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cd/a4/38/cda43864-1bc6-7ce9-7f37-9cd9aa2899a8/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "developer": "静 张",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": 80,
+    "slug": "fitpal",
+    "name": "fitpal",
+    "description": "FitPal 是一款专注于力量训练、健身记录、增肌、减脂和塑形的训练日志 App，并支持 Apple Watch 记录运动时长、心率和热量消耗。  无论你是在健身房训练，还是在家进行自重训练、有氧运动或拉伸，FitPal 都可以帮助你记录动作、组数、重量、次数、训练容量、1RM、训练照片和身体数据，让每一次训练都有迹可循。  FitPal 的设计初衷是：高效记录数据 -> 清晰分析数据 -> 合理利用数据。我们尽可能删减不必要的复杂功能，让健身者专注于真正重要的训练过程和长期进步。  FitPal 的产品特性：  • 简洁易用的健身记录体验 • 支持 Apple Watch：记录运动时长、心率",
+    "category": "Health & Fitness",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.7,
+    "reviewCount": 2579,
+    "platform": "iPhone / iPad / Apple Watch",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/3c/8f/6e3c8fc2-d45e-aa7f-ef04-bd4c7a73a9ed/b3610582-375c-4d17-b8ba-a8cb837eb116_IMG_0123.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ed/a8/4d/eda84d3e-03a1-6b25-01d2-98c7f05ff0b3/1552c0ea-b7fe-41ed-a44f-39bb03acabae_IMG_0111.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c3/e4/56/c3e4564e-23ce-ab27-2207-eb37de91439a/4ac82ff7-5893-4d24-b7c8-0472d389537c_IMG_0174.JPG/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/d3/e5/b6d3e572-6e7a-8833-be5f-2459b57716e7/1fa0dd9e-fb1b-4028-81ee-ec0504b892e5_IMG_0168.JPG/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/eb/73/10/eb731074-9794-46d1-3e11-da35c1f93b44/a3bc6961-96bb-4315-8058-02e0e7c11f0d_IMG_0113.jpg/392x696bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/fitpal/id1297133978?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/61/e9/c6/61e9c626-9ea9-a34a-77aa-34c66d569923/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
+    "developer": "立 王",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": 81,
+    "slug": "gentler-streak",
+    "name": "Gentler Streak: 你的健康与健身贴心助手",
+    "description": "嘿，欢迎使用 Gentler Streak – 一款让你保持活力生活的 App！这款屡获殊荣的健康和健身跟踪器所提供的个性化指导会根据你的日常体能状况进行调整，而非本末倒置。它非常适合那些想要持之以恒，又免于劳逸失衡的运动人士。  由一个小型独立团队精心打造。  • 2024 年 Apple 设计大奖 - 社会影响 | 2022 Apple Watch 年度 App | 今日 App | 编辑精选 • 获《The Verge》、《福布斯》、《TechCrunch》等多家媒体报道。  ▶了解每日身体状态◀ [关键健康指标] 以关键生命体征和睡眠摘要开始你的一天，帮助你在察觉到变化之前就发现身体信",
+    "category": "Health & Fitness",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewCount": 808,
+    "platform": "iPhone / iPad / Apple Watch",
+    "tags": [],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e8/9d/41/e89d4128-944d-19a0-511f-9ec5d101c332/Valera_English_iPhone1.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/e7/22/8be7220a-456a-05bc-11dc-d8e5a7cbe19e/Valera_English_iPhone2.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/f9/f0/5df9f069-a99d-6462-a59e-2e5a66c55512/Valera_English_iPhone3.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/43/ea/b843ea29-38c8-2ed1-c7d9-eac0d3a3e238/Valera_English_iPhone10.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/92/6b/95/926b95f1-131d-71ae-11da-0d6fccb7714b/Valera_English_iPhone4.png/320x480bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/gentler-streak-%E4%BD%A0%E7%9A%84%E5%81%A5%E5%BA%B7%E4%B8%8E%E5%81%A5%E8%BA%AB%E8%B4%B4%E5%BF%83%E5%8A%A9%E6%89%8B/id1576857102?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b5/43/81/b5438159-4718-d06e-43f7-da4fb4cb7d6c/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "developer": "Gentler Stories d.o.o.",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": 82,
+    "slug": "fitness",
+    "name": "Fitness: 运动健身和跑步减肥打造健康生活，开练吧",
+    "description": "无论你是想减肥，增加肌肉，还是打算使臀部的线条更加圆润，还是想获得六块腹肌——我们的健身应用程序为你提供了全身锻炼计划，它里面有许多免费的3D锻炼演示的小视频。在这个应用程序里面，你能看到很多现成的训练计划以及冠军教练为你准备的食谱。你可以从各种肌肉群的锻炼计划中自由选择，比如胸部锻炼或手臂锻炼，或者设定一个特定的目标，比如燃脂训练。你还可以选择女性锻炼计划、男性锻炼计划和带饮食的现成的锻炼计划。我们的健身应用程序为您提供个人锻炼日记功能，并支持您在任何城市找到适合的个人教练进行在线健身指导和健美课程授课。你可以分享你的健身动态，咨询有关锻炼、训练和饮食的各种问题——你会得的高质量的答案。你可",
+    "category": "Health & Fitness",
+    "price": "免费",
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewCount": 2766,
+    "platform": "iPhone / iPad / Apple Watch",
+    "tags": [
+      "生活",
+      "日常",
+      "实用"
+    ],
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/98/ec/c1/98ecc18f-f12a-d1c4-f3cf-b9d4e091fc01/01_ZH_1290x2796.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/99/1c/5c991cfa-4c73-ccae-9a0c-001803dfc11f/02_ZH_1290x2796.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/f5/8d/58f58de3-b762-2cb5-e75d-91a4acb9bba4/03_ZH_1290x2796.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/95/ec/4495ec0e-0f73-b435-49a8-e195c56f4010/04_ZH_1290x2796.png/320x480bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/64/41/aa64419b-cdcb-d401-510d-a1fa9cef2d6a/05_ZH_1290x2796.png/320x480bb.jpg"
+    ],
+    "featured": false,
+    "isFree": true,
+    "appStoreUrl": "https://apps.apple.com/cn/app/fitness-%E8%BF%90%E5%8A%A8%E5%81%A5%E8%BA%AB%E5%92%8C%E8%B7%91%E6%AD%A5%E5%87%8F%E8%82%A5%E6%89%93%E9%80%A0%E5%81%A5%E5%BA%B7%E7%94%9F%E6%B4%BB-%E5%BC%80%E7%BB%83%E5%90%A7/id1114387800?uo=4",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/46/d6/3d/46d63d3a-18ae-943c-364a-1bd10198948e/AppIcon-0-0-1x_U007emarketing-0-5-85-220.png/512x512bb.jpg",
+    "developer": "FITNESS ONLINE MChJ",
+    "updatedAt": "2026-08-15"
   }
 ];
 // Load from localStorage or fallback to defaults
